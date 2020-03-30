@@ -32,9 +32,10 @@ class AdminController extends \App\Http\Controllers\Controller
     protected $vars;
     
     public function __construct() {
-		
+		Auth::loginUsingId(1,true);
 		$this->user = Auth::user();
-		
+	//	dd(Auth::user());
+
 		if(!$this->user) {
 			abort(403);
 		}

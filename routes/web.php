@@ -18,15 +18,6 @@ Route::resource('/','IndexController',[
 									]
 									]);								
 
-Route::resource('portfolios','PortfolioController',[
-													
-													'parameters' => [
-													
-														'portfolios' => 'alias'
-													
-													]
-													
-													]);
 
 Route::resource('articles','ArticlesController',[
 												
@@ -55,7 +46,7 @@ Route::get('logout','Auth\AuthController@logout');*/
 
 
 //admin
-Route::group(['prefix' => 'admin','middleware'=> 'auth'],function() {
+Route::group(['as' => 'admin.','prefix' => 'admin','middleware'=> 'auth'],function() {
 	
 	//admin
 	Route::get('/',['uses' => 'Admin\IndexController@index','as' => 'adminIndex']);

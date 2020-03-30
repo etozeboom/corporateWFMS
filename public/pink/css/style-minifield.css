@@ -4557,6 +4557,7 @@ pre.shortcodes {
 	position: relative
 }
 .section .work-thumbnail {
+	display: flex;
 	width: auto;
 }
 .section .work-description {

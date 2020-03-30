@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Repositories\PortfoliosRepository;
 use App\Repositories\ArticlesRepository;
 use App\Repositories\CommentsRepository;
 
@@ -15,11 +14,10 @@ use App\Category;
 class ArticlesController extends SiteController
 {
     
-     public function __construct(PortfoliosRepository $p_rep, ArticlesRepository $a_rep, CommentsRepository $c_rep) {
+     public function __construct(ArticlesRepository $a_rep, CommentsRepository $c_rep) {
     	
     	parent::__construct(new \App\Repositories\MenusRepository(new \App\Menu));
-    	
-    	$this->p_rep = $p_rep;
+
     	$this->a_rep = $a_rep;
     	$this->c_rep = $c_rep;
     	
@@ -43,10 +41,9 @@ class ArticlesController extends SiteController
         $this->vars = array_add($this->vars,'content',$content);
         
         $comments = $this->getComments(config('settings.recent_comments'));
-        $portfolios = $this->getPortfolios(config('settings.recent_portfolios'));
 
         
-        $this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments' => $comments,'portfolios' => $portfolios]);
+        $this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments' => $comments]);
 		
         
         return $this->renderOutput();
@@ -62,11 +59,7 @@ class ArticlesController extends SiteController
 		
 		return $comments;
 	}
-	
-	public function getPortfolios($take) {
-		$portfolios = $this->p_rep->get(['title','text','alias','customer','img','filter_alias'],$take);
-		return $portfolios;
-	}
+
     
     public function getArticles($alias = FALSE) {
     	
@@ -111,10 +104,9 @@ class ArticlesController extends SiteController
 		
 		
 		$comments = $this->getComments(config('settings.recent_comments'));
-        $portfolios = $this->getPortfolios(config('settings.recent_portfolios'));
 
         
-        $this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments' => $comments,'portfolios' => $portfolios]);
+        $this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments' => $comments]);
 		
 		
 		return $this->renderOutput();

@@ -93,37 +93,6 @@
 			<h3>{!! Form::radio('type', 'portfolioLink',(isset($type) && $type == 'portfolioLink') ? TRUE : FALSE,['class' => 'radioMenu']) !!}	
 			<span class="label">Раздел портфолио:</span></h3>
 			
-			<ul>
-			
-				<li class="text-field">
-					<label for="name-contact-us">
-						<span class="label">Ссылка на запись портфолио:</span>
-						<br />
-						<span class="sublabel">Ссылка на запись портфолио</span><br />
-					</label>
-					<div class="input-prepend">
-					{!! Form::select('portfolio_alias', $portfolios, (isset($option) && $option) ? $option :FALSE, ['placeholder' => 'Не используется']) !!}
-			
-					</div>
-					 
-				</li>
-				
-				<li class="text-field">
-					<label for="name-contact-us">
-						<span class="label">Портфолио:</span>
-						<br />
-						<span class="sublabel">Портфолио</span><br />
-					</label>
-					<div class="input-prepend">
-					{!! Form::select('filter_alias', $filters, (isset($option) && $option) ? $option :FALSE, ['placeholder' => 'Не используется']) !!}
-			
-					</div>
-					 
-				</li>
-				
-			
-			</ul>
-			
 			
 			
 		</div>

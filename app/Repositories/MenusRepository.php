@@ -48,18 +48,6 @@ class MenusRepository extends Repository {
 			
 			break;
 			
-			case 'portfolioLink' :
-				if($request->input('filter_alias')) {
-					if($request->input('filter_alias') == 'parent') {
-						$data['path'] = route('portfolios.index');
-					}
-				}
-				
-				else if($request->input('portfolio_alias')) {
-					$data['path'] = route('portfolios.show',['alias' => $request->input('portfolio_alias')]);
-				}
-			break;
-			
 		}
 		
 
@@ -107,18 +95,6 @@ class MenusRepository extends Repository {
 					$data['path'] = route('articles.show',['alias' => $request->input('article_alias')]);
 				}
 			
-			break;
-			
-			case 'portfolioLink' :
-				if($request->input('filter_alias')) {
-					if($request->input('filter_alias') == 'parent') {
-						$data['path'] = route('portfolios.index');
-					}
-				}
-				
-				else if($request->input('portfolio_alias')) {
-					$data['path'] = route('portfolios.show',['alias' => $request->input('portfolio_alias')]);
-				}
 			break;
 			
 		}

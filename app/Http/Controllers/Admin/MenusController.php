@@ -10,7 +10,6 @@ use App\Http\Controllers\Controller;
 
 use App\Repositories\MenusRepository;
 use App\Repositories\ArticlesRepository;
-use App\Repositories\PortfoliosRepository;
 
 use Gate;
 use Menu;
@@ -22,7 +21,7 @@ class MenusController extends AdminController
     protected $m_rep;
     
     
-    public function __construct(MenusRepository $m_rep, ArticlesRepository $a_rep, PortfoliosRepository $p_rep)
+    public function __construct(MenusRepository $m_rep, ArticlesRepository $a_rep)
     {
         parent::__construct();
         
@@ -32,7 +31,6 @@ class MenusController extends AdminController
         
         $this->m_rep = $m_rep;
         $this->a_rep = $a_rep;
-        $this->p_rep = $p_rep;
         
         $this->template = config('settings.theme').'.admin.menus';
         
@@ -132,12 +130,8 @@ class MenusController extends AdminController
 		    return $returnFilters;
 		}, ['parent' => 'Раздел портфолио']);
 		
-		$portfolios = $this->p_rep->get(['id','alias','title'])->reduce(function ($returnPortfolios, $portfolio) {
-		    $returnPortfolios[$portfolio->alias] = $portfolio->title;
-		    return $returnPortfolios;
-		}, []);
 		
-		$this->content = view(config('settings.theme').'.admin.menus_create_content')->with(['menus'=>$menus,'categories'=>$list,'articles'=>$articles,'filters' => $filters,'portfolios' => $portfolios])->render();
+		$this->content = view(config('settings.theme').'.admin.menus_create_content')->with(['menus'=>$menus,'categories'=>$list,'articles'=>$articles,'filters' => $filters])->render();
 		
 		
 		
@@ -211,18 +205,6 @@ class MenusController extends AdminController
 		
 		}
 		
-		else if($aliasRoute == 'portfolios.index') {
-			$type = 'portfolioLink';
-			$option = 'parent';
-		
-		}
-		
-		else if($aliasRoute == 'portfolios.show') {
-			$type = 'portfolioLink';
-			$option = isset($parameters['alias']) ? $parameters['alias'] : '';
-		
-		}
-		
 		else {
 			$type = 'customLink';
 		}
@@ -268,12 +250,8 @@ class MenusController extends AdminController
 		    return $returnFilters;
 		}, ['parent' => 'Раздел портфолио']);
 		
-		$portfolios = $this->p_rep->get(['id','alias','title'])->reduce(function ($returnPortfolios, $portfolio) {
-		    $returnPortfolios[$portfolio->alias] = $portfolio->title;
-		    return $returnPortfolios;
-		}, []);
 		
-		$this->content = view(config('settings.theme').'.admin.menus_create_content')->with(['menu' => $menu,'type' => $type,'option' => $option,'menus'=>$menus,'categories'=>$list,'articles'=>$articles,'filters' => $filters,'portfolios' => $portfolios])->render();
+		$this->content = view(config('settings.theme').'.admin.menus_create_content')->with(['menu' => $menu,'type' => $type,'option' => $option,'menus'=>$menus,'categories'=>$list,'articles'=>$articles,'filters' => $filters])->render();
 		
 		
 		
