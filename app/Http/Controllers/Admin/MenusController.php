@@ -125,13 +125,7 @@ class MenusController extends AdminController
 		}, []);
 		
 		
-		$filters = \App\Filter::select('id','title','alias')->get()->reduce(function ($returnFilters, $filter) {
-		    $returnFilters[$filter->alias] = $filter->title;
-		    return $returnFilters;
-		}, ['parent' => 'Раздел портфолио']);
-		
-		
-		$this->content = view(config('settings.theme').'.admin.menus_create_content')->with(['menus'=>$menus,'categories'=>$list,'articles'=>$articles,'filters' => $filters])->render();
+		$this->content = view(config('settings.theme').'.admin.menus_create_content')->with(['menus'=>$menus,'categories'=>$list,'articles'=>$articles])->render();
 		
 		
 		

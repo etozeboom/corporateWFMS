@@ -27,6 +27,7 @@ class ArticlePolicy
 	}
 	
 	public function edit(User $user) {
+    //dd($user);
 		return $user->canDo('UPDATE_ARTICLES');
 	}
 	

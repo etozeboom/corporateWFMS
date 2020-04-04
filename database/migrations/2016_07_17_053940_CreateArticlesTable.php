@@ -19,8 +19,9 @@ class CreateArticlesTable extends Migration
             $table->text('desc');
             $table->string('alias',150)->unique();
             $table->string('img');
-            
             $table->timestamps();
+            $table->string('keywords');
+        	$table->string('meta_desc');
         });
     }
 

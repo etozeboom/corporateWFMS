@@ -52,21 +52,6 @@
                     
                     <div class="group inner">
                         
-                        <!-- START LOGO -->
-                        <div id="logo" class="group">
-                            <a href="index.html" title="Pink Rio"><img src="{{ asset(config('settings.theme')) }}/images/logo.png" title="Pink Rio" alt="Pink Rio" /></a>
-                        </div>
-                        <!-- END LOGO -->
-                        
-                        <div id="sidebar-header" class="group">
-                            <div class="widget-first widget yit_text_quote">
-                                <blockquote class="text-quote-quote">&#8220;The caterpillar does all the work but the butterfly gets all the publicity.&#8221;</blockquote>
-                                <cite class="text-quote-author">George Carlin</cite>
-                            </div>
-                        </div>
-                        <div class="clearer"></div>
-                        
-                        <hr />
                         
                         <!-- START MAIN NAVIGATION -->
 							@yield('navigation')

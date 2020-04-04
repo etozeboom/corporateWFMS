@@ -27,7 +27,7 @@ class ArticlesRepository extends Repository {
 	}
 	
 	public function addArticle($request) {
-
+		//dd($request); //+
 		if(Gate::denies('save', $this->model)) {
 			abort(403);
 		}

@@ -1,8 +1,5 @@
-<div id="copyright">
+<!-- <div id="copyright">
                     <div class="inner group">
-                        <div class="left">
-                            <a href="http://yithemes.com/?ddownload=2046&ap_id=pinkrio-html"><strong>Download the free version for Wordpress</strong></a>
-                        </div>
                         <div class="right">
                             <a href="#" class="socials-small facebook-small" title="Facebook">facebook</a>
                             <a href="#" class="socials-small rss-small" title="Rss">rss</a>
@@ -13,4 +10,4 @@
                             <a href="#" class="socials-small pinterest-small" title="Pinterest">pinterest</a>
                         </div>
                     </div>
-                </div>
+                </div> -->

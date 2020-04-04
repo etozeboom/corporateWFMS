@@ -90,10 +90,6 @@
 			
 			
 			
-			<h3>{!! Form::radio('type', 'portfolioLink',(isset($type) && $type == 'portfolioLink') ? TRUE : FALSE,['class' => 'radioMenu']) !!}	
-			<span class="label">Раздел портфолио:</span></h3>
-			
-			
 			
 		</div>
 		

@@ -132,6 +132,7 @@ class ArticlesController extends AdminController
      */
     public function edit(Article $article)
     {
+       // dd($article);
         //
         //$article = Article::where('alias', $alias);
         
@@ -196,7 +197,7 @@ class ArticlesController extends AdminController
     public function destroy(Article $article)
     {
         //
-        
+        dd($article);
         $result = $this->a_rep->deleteArticle($article);
 		
 		if(is_array($result) && !empty($result['error'])) {

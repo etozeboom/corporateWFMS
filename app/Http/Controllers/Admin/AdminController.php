@@ -17,7 +17,6 @@ class AdminController extends \App\Http\Controllers\Controller
 {
     //
     
-    protected $p_rep;
     
     protected $a_rep;
     
@@ -72,8 +71,6 @@ class AdminController extends \App\Http\Controllers\Controller
 			
 			}
 			
-			
-			$menu->add('Портфолио',  array('route'  => 'admin.articles.index'));
 			$menu->add('Меню',  array('route'  => 'admin.menus.index'));
 			$menu->add('Пользователи',  array('route'  => 'admin.users.index'));
 			$menu->add('Привилегии',  array('route'  => 'admin.permissions.index'));

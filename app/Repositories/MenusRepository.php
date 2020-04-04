@@ -24,7 +24,7 @@ class MenusRepository extends Repository {
 		}
 		
 		//dd($request->all());
-		
+		//dd($data);
 		switch($data['type']) {
 			
 			case 'customLink':
