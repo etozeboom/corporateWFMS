@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     /*
@@ -39,7 +39,7 @@ class LoginController extends Controller
                 //  dump($user = User::All());
                 //  dump($rol = Role::All());
                  // dump($per = Permission::All());
-                 // dump(Auth::user());
+                 // dd(Auth::user());
                   //dump($user);
                   //echo '<br>'.$pas=Hash::make('testtest');
                   //User::destroy(4);

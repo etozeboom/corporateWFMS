@@ -103,6 +103,7 @@ class ArticlesController extends AdminController
      */
     public function store(ArticleRequest $request)
     {
+       // dd($request);
         //
 		$result = $this->a_rep->addArticle($request);
 		
@@ -130,17 +131,19 @@ class ArticlesController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $article)
+    public function edit(int $id, Article $article)
     {
+        //dd($id);
        // dd($article);
         //
         //$article = Article::where('alias', $alias);
-        
+      //  $articles = $this->getArticles();
+        $article = Article::where('id', $id)->first();
+       // dd($article);
         if(Gate::denies('edit', new Article)) {
 			abort(403);
 		}
 		
-		$article->img = json_decode($article->img);
 		
 		
 		$categories = Category::select(['title','alias','parent_id','id'])->get();
@@ -158,7 +161,7 @@ class ArticlesController extends AdminController
 		
 		$this->title = 'Реадактирование материала - '. $article->title;
 		
-		
+		//dd($article);
 		$this->content = view(config('settings.theme').'.admin.articles_create_content')->with(['categories' =>$lists, 'article' => $article])->render();
 		
 		return $this->renderOutput();
@@ -175,8 +178,11 @@ class ArticlesController extends AdminController
      */
      
      //   articles -> Article  
-    public function update(ArticleRequest $request, Article $article)
+    public function update(int $id, ArticleRequest $request, Article $article)
     {
+        dump("11111");
+       // dd($id);
+        $article = Article::where('id', $id)->first();
         //
         $result = $this->a_rep->updateArticle($request, $article);
 		
@@ -194,12 +200,13 @@ class ArticlesController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Article $article)
+    public function destroy(int $id, Article $article)
     {
         //
-        dd($article);
+       // dd($article);
+       $article = Article::where('id', $id)->first();
+      // dd($article);
         $result = $this->a_rep->deleteArticle($article);
-		
 		if(is_array($result) && !empty($result['error'])) {
 			return back()->with($result);
 		}

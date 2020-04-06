@@ -42,7 +42,7 @@ class ArticlesController extends SiteController
         
         $comments = $this->getComments(config('settings.recent_comments'));
 
-        
+      //  dd($comments);
         $this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments' => $comments]);
 		
         
@@ -72,10 +72,10 @@ class ArticlesController extends SiteController
 			$where = ['category_id',$id];
 		}
 		
-		$articles = $this->a_rep->get(['id','title','alias','created_at','img','desc','user_id','category_id','keywords','meta_desc'],FALSE,TRUE,$where);
+		$articles = $this->a_rep->get(['id','title','alias','created_at','category_id','keywords','meta_desc'],FALSE,TRUE,$where);
 		
 		if($articles) {
-			$articles->load('user','category','comments');
+			$articles->load('category','comments');
 		}
 		
 		return $articles;

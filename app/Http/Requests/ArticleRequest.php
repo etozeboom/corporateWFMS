@@ -22,18 +22,18 @@ class ArticleRequest extends Request
     	
     	
     	
-    	$validator->sometimes('alias','unique:articles|max:255', function($input) {
+    	// $validator->sometimes('alias','unique:articles|max:255', function($input) {
         	
+        // 	//dd($this->route());
+        // 	if($this->route()->hasParameter('skazki')) {
+		// 		$model = $this->route()->parameter('skazki');
+		// 		dd($model);
+		// 		return ($model->alias !== $input->alias)  && !empty($input->alias);
+		// 	}
         	
-        	if($this->route()->hasParameter('articles')) {
-				$model = $this->route()->parameter('articles');
-				
-				return ($model->alias !== $input->alias)  && !empty($input->alias);
-			}
+        // 	return !empty($input->alias);
         	
-        	return !empty($input->alias);
-        	
-        });
+        //});
         
         return $validator;
     	

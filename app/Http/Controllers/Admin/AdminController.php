@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\UserRequest;
 use Auth;
 
 use Menu;
@@ -31,7 +31,8 @@ class AdminController extends \App\Http\Controllers\Controller
     protected $vars;
     
     public function __construct() {
-		Auth::loginUsingId(1,true);
+		//dd(Auth::user());
+		//Auth::loginUsingId(1,true);
 		$this->user = Auth::user();
 	//	dd(Auth::user());
 
@@ -42,7 +43,7 @@ class AdminController extends \App\Http\Controllers\Controller
 	
 	public function renderOutput() {
 		$this->vars = array_add($this->vars,'title',$this->title);
-		
+		//dd($this->vars);
 		$menu = $this->getMenu();
 		
 		$navigation = view(config('settings.theme').'.admin.navigation')->with('menu',$menu)->render();
@@ -54,7 +55,7 @@ class AdminController extends \App\Http\Controllers\Controller
 		
 		$footer = view(config('settings.theme').'.admin.footer')->render();
 		$this->vars = array_add($this->vars,'footer',$footer);
-		
+		//dd($this->vars);
 		return view($this->template)->with($this->vars);
 		
 		
@@ -67,7 +68,7 @@ class AdminController extends \App\Http\Controllers\Controller
 			
 			
 			if(Gate::allows('VIEW_ADMIN_ARTICLES')) {
-				$menu->add('Статьи',array('route' => 'admin.articles.index'));
+				$menu->add('Сказки',array('route' => 'admin.skazki.index'));
 			
 			}
 			

@@ -35,15 +35,15 @@ class MenusRepository extends Repository {
 			
 				if($request->input('category_alias')) {
 					if($request->input('category_alias') == 'parent') {
-						$data['path'] = route('articles.index');
+						$data['path'] = route('skazki.index');
 					}
 					else {
-						$data['path'] = route('articlesCat',['cat_alias'=>$request->input('category_alias')]);
+						$data['path'] = route('skazkiCat',['cat_alias'=>$request->input('category_alias')]);
 					}
 				}
 				
 				else if($request->input('article_alias')) {
-					$data['path'] = route('articles.show',['alias' => $request->input('article_alias')]);
+					$data['path'] = route('skazki.show',['alias' => $request->input('article_alias')]);
 				}
 			
 			break;
@@ -84,15 +84,15 @@ class MenusRepository extends Repository {
 			
 				if($request->input('category_alias')) {
 					if($request->input('category_alias') == 'parent') {
-						$data['path'] = route('articles.index');
+						$data['path'] = route('skazki.index');
 					}
 					else {
-						$data['path'] = route('articlesCat',['cat_alias'=>$request->input('category_alias')]);
+						$data['path'] = route('skazkiCat',['cat_alias'=>$request->input('category_alias')]);
 					}
 				}
 				
 				else if($request->input('article_alias')) {
-					$data['path'] = route('articles.show',['alias' => $request->input('article_alias')]);
+					$data['path'] = route('skazki.show',['alias' => $request->input('article_alias')]);
 				}
 			
 			break;

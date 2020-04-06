@@ -275,7 +275,7 @@ img.comment-avatar {
 	-webkit-border-radius: 15px;
 }
 .blog-big .thumbnail .date {
-	position: absolute;
+	/* position: absolute; */
 	bottom: 0;
 	left: 0;
 	width: 82px;

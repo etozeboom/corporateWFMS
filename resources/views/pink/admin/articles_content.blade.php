@@ -9,7 +9,6 @@
 				                                <th class="align-left">ID</th>
 				                                <th>Заголовок</th>
 				                                <th>Текст</th>
-				                                <th>Изображение</th>
 				                                <th>Категория</th>
 				                                <th>Псевдоним</th>
 				                                <th>Дествие</th>
@@ -20,17 +19,13 @@
 											@foreach($articles as $article)
 											<tr>
 				                                <td class="align-left">{{$article->id}}</td>
-				                                <td class="align-left">{!! Html::link(route('admin.articles.edit',['articles'=>$article->alias]),$article->title) !!}</td>
+				                                <td class="align-left">{!! Html::link(route('admin.skazki.edit',['id' => $article->id,'articles'=>$article->alias]),$article->title) !!}</td>
+				                                <!-- <td class="align-left"><a href="{{route('admin.skazki.edit', ['id' => $article->id, 'article' => $article->alias])}}">{{$article->title}}</a></td> -->
 				                                <td class="align-left">{{str_limit($article->text,200)}}</td>
-				                                <td>
-													@if(isset($article->img->mini))
-													{!! Html::image(asset(config('settings.theme')).'/images/articles/'.$article->img->mini) !!}
-													@endif
-												</td>
 				                                <td>{{$article->category->title}}</td>
 				                                <td>{{$article->alias}}</td>
 				                                <td>
-												{!! Form::open(['url' => route('admin.articles.destroy',['articles'=>$article->alias]),'class'=>'form-horizontal','method'=>'POST']) !!}
+												{!! Form::open(['url' => route('admin.skazki.destroy',['id' => $article->id, 'articles'=>$article->alias]),'class'=>'form-horizontal','method'=>'POST']) !!}
 												    {{ method_field('DELETE') }}
 												    {!! Form::button('Удалить', ['class' => 'btn btn-french-5','type'=>'submit']) !!}
 												{!! Form::close() !!}
@@ -42,7 +37,7 @@
 				                    </table>
 				                </div>
 								
-								{!! HTML::link(route('admin.articles.create'),'Добавить  материал',['class' => 'btn btn-the-salmon-dance-3']) !!}
+								{!! HTML::link(route('admin.skazki.create'),'Добавить  материал',['class' => 'btn btn-the-salmon-dance-3']) !!}
                                 
 				                
 				            </div>

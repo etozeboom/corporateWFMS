@@ -16,6 +16,7 @@ class ArticlesRepository extends Repository {
 	}
 	
 	public function one($alias,$attr = array()) {
+		dump($alias);
 		$article = parent::one($alias,$attr);
 		
 		if($article && !empty($attr)) {
@@ -49,53 +50,23 @@ class ArticlesRepository extends Repository {
 			return ['error' => 'Данный псевдоним уже успользуется'];
 		}
 		
-		if($request->hasFile('image')) {
-			$image = $request->file('image');
-			
-			if($image->isValid()) {
+		$this->model->fill($data); 
 				
-				$str = str_random(8);
-				
-				$obj = new \stdClass;
-				
-				$obj->mini = $str.'_mini.jpg';
-				$obj->max = $str.'_max.jpg';
-				$obj->path = $str.'.jpg';
-				
-				$img = Image::make($image);
-				
-				$img->fit(Config::get('settings.image')['width'],
-						Config::get('settings.image')['height'])->save(public_path().'/'.config('settings.theme').'/images/articles/'.$obj->path); 
-				
-				$img->fit(Config::get('settings.articles_img')['max']['width'],
-						Config::get('settings.articles_img')['max']['height'])->save(public_path().'/'.config('settings.theme').'/images/articles/'.$obj->max); 
-				
-				$img->fit(Config::get('settings.articles_img')['mini']['width'],
-						Config::get('settings.articles_img')['mini']['height'])->save(public_path().'/'.config('settings.theme').'/images/articles/'.$obj->mini); 
-						
-				
-				$data['img'] = json_encode($obj);  
-				
-				$this->model->fill($data); 
-				
-				if($request->user()->articles()->save($this->model)) {
-					return ['status' => 'Материал добавлен'];
-				}                          
-				
-			}
-			
-		}
+		if($this->model->fill($data)->save()) {
+			return ['status' => 'Материал добавлен'];
+		}   
 		
 	}
 	
 	public function updateArticle($request, $article) {
 
+		//dump($request);
 		if(Gate::denies('edit', $this->model)) {
 			abort(403);
 		}
 		
-		$data = $request->except('_token','image','_method');
-		
+		$data = $request->except('_token','_method');
+		//dd($data);
 		if(empty($data)) {
 			return array('error' => 'Нет данных');
 		}
@@ -112,44 +83,11 @@ class ArticlesRepository extends Repository {
 			
 			return ['error' => 'Данный псевдоним уже успользуется'];
 		}
-		
-		if($request->hasFile('image')) {
-			$image = $request->file('image');
-			
-			if($image->isValid()) {
-				
-				$str = str_random(8);
-				
-				$obj = new \stdClass;
-				
-				$obj->mini = $str.'_mini.jpg';
-				$obj->max = $str.'_max.jpg';
-				$obj->path = $str.'.jpg';
-				
-				$img = Image::make($image);
-				
-				$img->fit(Config::get('settings.image')['width'],
-						Config::get('settings.image')['height'])->save(public_path().'/'.config('settings.theme').'/images/articles/'.$obj->path); 
-				
-				$img->fit(Config::get('settings.articles_img')['max']['width'],
-						Config::get('settings.articles_img')['max']['height'])->save(public_path().'/'.config('settings.theme').'/images/articles/'.$obj->max); 
-				
-				$img->fit(Config::get('settings.articles_img')['mini']['width'],
-						Config::get('settings.articles_img')['mini']['height'])->save(public_path().'/'.config('settings.theme').'/images/articles/'.$obj->mini); 
-						
-				
-				$data['img'] = json_encode($obj);  
-				
-				                         
-				
-			}
-			
-			
-			
-		}
-		
+
+		dump("22222222222222222222");
 		$article->fill($data); 
-				
+		//dd($article->id);
+		//dd($article->update());
 		if($article->update()) {
 			return ['status' => 'Материал обновлен'];
 		} 
@@ -158,10 +96,10 @@ class ArticlesRepository extends Repository {
 	
 	
 	public function deleteArticle($article) {
-		
-		if(Gate::denies('destroy', $article)) {
-			abort(403);
-		}
+		// dd($article);
+		// if(Gate::denies('destroy', $article)) {
+		// 	abort(403);
+		// }
 		
 		$article->comments()->delete();
 		

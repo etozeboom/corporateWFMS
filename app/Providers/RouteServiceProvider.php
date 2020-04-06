@@ -29,7 +29,7 @@ class RouteServiceProvider extends ServiceProvider
 		
         parent::boot();
         
-        Route::bind('articles', function ($value) {
+        Route::bind('skazki', function ($value) {
         	return \App\Article::where('alias',$value)->first();
         });
         

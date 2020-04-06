@@ -3,7 +3,7 @@
 				            <div class="widget-first widget recent-posts">
 				           
 				            
-				            @if(!$comments->isEmpty())
+				            @if($comments)
 				            <div class="widget-last widget recent-comments">
 				                <h3>{{ Lang::get('ru.latest_comments') }}</h3>
 				            	<div class="recent-post recent-comments group">
@@ -16,9 +16,9 @@
 				                            <img alt="" src="https://www.gravatar.com/avatar/{{$hash}}?d=mm&s=55" class="avatar" />   
 				                        </div>
 				                        <span class="author"><strong><a href="#">{{ isset($comment->user) ? $comment->user->name : $comment->name}}</a></strong> in</span> 
-				                        <a class="title" href="{{ route('articles.show',['alias' => $comment->article->alias]) }}">{{ $comment->article->title }}</a>
+				                        <a class="title" href="{{ route('skazki.show',['alias' => $comment->article->alias]) }}">{{ $comment->article->title }}</a>
 				                        <p class="comment">
-                                            {{ $comment->text }} <a class="goto" href="{{ route('articles.show',['alias' => $comment->article->alias]) }}">&#187;</a>
+                                            {{ $comment->text }} <a class="goto" href="{{ route('skazki.show',['alias' => $comment->article->alias]) }}">&#187;</a>
                                         </p>
 				                    </div> 
 				            	
