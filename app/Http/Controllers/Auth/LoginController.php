@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
@@ -47,4 +47,17 @@ class LoginController extends Controller
                   //$sql = User::create(['name' => 'test','email' => 'test@test.test','password' => $pas, 'login' => 'test']);
         $this->middleware('guest')->except('logout');
     }
+    public function authenticate(Request $request)
+    {
+        //dd("dsfsdf");
+        $password = $request->input('password');
+        $email = $request->input('email');
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            //dd(Auth::user());
+            return redirect()->intended('/');
+        } else {
+            dd("hui");
+        }
+    }
+
 }

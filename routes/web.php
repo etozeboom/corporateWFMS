@@ -35,6 +35,10 @@ Route::resource('comment','CommentController',['only'=>['store']]);
 
 Route::match(['get','post'],'/contacts',['uses'=>'ContactsController@index','as'=>'contacts']);
 
+// Route::get('greeting', function () {
+//     return view('login');
+// });
+// Route::post('greetingp','VerificationController@log');
 Auth::routes();
 //Route::get('login', 'Auth\LoginController@showLoginForm');
 //php artisan make:auth
@@ -44,6 +48,10 @@ Route::post('login','Auth\AuthController@login');
 
 Route::get('logout','Auth\AuthController@logout');*/
 
+
+// Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+// Route::post('login', 'Auth\LoginController@authenticate');
+// Route::post('logout', 'Auth\LoginController@logout');
 
 //admin
 Route::group(['as' => 'admin.','prefix' => 'admin','middleware'=> 'auth'],function() {

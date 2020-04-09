@@ -31,7 +31,7 @@ class AdminController extends \App\Http\Controllers\Controller
     protected $vars;
     
     public function __construct() {
-		//dd(Auth::user());
+		dd(Auth::user());
 		//Auth::loginUsingId(1,true);
 		$this->user = Auth::user();
 	//	dd(Auth::user());
