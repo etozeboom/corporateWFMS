@@ -27,7 +27,7 @@ Route::resource('skazki','ArticlesController',[
 												
 												]
 												
-												]);	
+												])->middleware('auth');	
 Route::get('skazki/{cat_alias?}',['uses'=>'ArticlesController@index','as'=>'skazkiCat'])->where('cat_alias','[\w-]+');   
 
 
@@ -39,7 +39,7 @@ Route::match(['get','post'],'/contacts',['uses'=>'ContactsController@index','as'
 //     return view('login');
 // });
 // Route::post('greetingp','VerificationController@log');
-Auth::routes();
+//Auth::routes();
 //Route::get('login', 'Auth\LoginController@showLoginForm');
 //php artisan make:auth
 /*Route::get('login','Auth\AuthController@showLoginForm');
@@ -49,12 +49,13 @@ Route::post('login','Auth\AuthController@login');
 Route::get('logout','Auth\AuthController@logout');*/
 
 
-// Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-// Route::post('login', 'Auth\LoginController@authenticate');
-// Route::post('logout', 'Auth\LoginController@logout');
+ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+ //Route::post('login', 'Auth\LoginController@authenticate');
+ Route::post('login', 'Auth\LoginController@login');
+ Route::post('logout', 'Auth\LoginController@logout');
 
 //admin
-Route::group(['as' => 'admin.','prefix' => 'admin','middleware'=> 'auth'],function() {
+Route::group(['as' => 'admin.','prefix' => 'admin','middleware'=> ['auth']],function() {
 	
 	//admin
 	Route::get('/',['uses' => 'Admin\IndexController@index','as' => 'adminIndex']);
@@ -71,6 +72,6 @@ Route::group(['as' => 'admin.','prefix' => 'admin','middleware'=> 'auth'],functi
 	
 });
 
-
-
+// Route::get('admin',['uses' => 'Admin\IndexController@index','as' => 'adminIndex'])->middleware('auth');
+// Route::resource('admin/skazki','Admin\ArticlesController')->middleware('auth');
 																						

@@ -30,16 +30,16 @@ class AdminController extends \App\Http\Controllers\Controller
     
     protected $vars;
     
-    public function __construct() {
-		dd(Auth::user());
-		//Auth::loginUsingId(1,true);
-		$this->user = Auth::user();
-	//	dd(Auth::user());
+    // public function __construct() {
+	// 	dd(Auth::user());
+	// 	//Auth::loginUsingId(1,true);
+	// 	$this->user = Auth::user();
+	// //	dd(Auth::user());
 
-		if(!$this->user) {
-			abort(403);
-		}
-	}
+	// 	if(!$this->user) {
+	// 		abort(403);
+	// 	}
+	// }
 	
 	public function renderOutput() {
 		$this->vars = array_add($this->vars,'title',$this->title);

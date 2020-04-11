@@ -21,11 +21,10 @@ class ArticlesController extends AdminController
     
      public function __construct(ArticlesRepository $a_rep) {
 		
-		parent::__construct();
-		
-		if(Gate::denies('VIEW_ADMIN_ARTICLES')) {
-			abort(403);
-		}
+		//parent::__construct();
+    // if(Gate::denies('VIEW_ADMIN_ARTICLES')) {
+		// 	abort(403);
+		// }
 		
 		$this->a_rep = $a_rep;
 		
@@ -71,9 +70,6 @@ class ArticlesController extends AdminController
      */
     public function create()
     {
-		if(Gate::denies('save', new \App\Article)) {
-			abort(403);
-		}
 		
 		$this->title = "Добавить новый материал";
 		
@@ -140,10 +136,6 @@ class ArticlesController extends AdminController
       //  $articles = $this->getArticles();
         $article = Article::where('id', $id)->first();
        // dd($article);
-        if(Gate::denies('edit', new Article)) {
-			abort(403);
-		}
-		
 		
 		
 		$categories = Category::select(['title','alias','parent_id','id'])->get();

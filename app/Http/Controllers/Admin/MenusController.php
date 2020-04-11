@@ -23,11 +23,8 @@ class MenusController extends AdminController
     
     public function __construct(MenusRepository $m_rep, ArticlesRepository $a_rep)
     {
-        parent::__construct();
+       // parent::__construct();
         
-        if(Gate::denies('VIEW_ADMIN_MENU')) {
-			abort(403);	
-		} 
         
         $this->m_rep = $m_rep;
         $this->a_rep = $a_rep;

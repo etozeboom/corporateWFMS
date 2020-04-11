@@ -22,11 +22,11 @@ class UsersController extends AdminController
 
 
     public function __construct(RolesRepository $rol_rep, UsersRepository $us_rep) {
-        parent::__construct();
+        // parent::__construct();
         
-        if (Gate::denies('EDIT_USERS')) {
-            abort(403);
-        }
+        // if (Gate::denies('EDIT_USERS')) {
+        //     abort(403);
+        // }
 
         $this->us_rep = $us_rep;
         $this->rol_rep = $rol_rep;

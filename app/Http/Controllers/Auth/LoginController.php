@@ -34,6 +34,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        Auth::logout();
                 //Auth::logout();
               //  Auth::loginUsingId(1,true);
                 //  dump($user = User::All());
@@ -47,7 +48,7 @@ class LoginController extends Controller
                   //$sql = User::create(['name' => 'test','email' => 'test@test.test','password' => $pas, 'login' => 'test']);
         $this->middleware('guest')->except('logout');
     }
-    public function authenticate(Request $request)
+   /* public function authenticate(Request $request)
     {
         //dd("dsfsdf");
         $password = $request->input('password');
@@ -57,6 +58,17 @@ class LoginController extends Controller
             return redirect()->intended('/');
         } else {
             dd("hui");
+        }
+    }*/
+    public function authenticate(Request $request)
+    {
+      //dd($request);
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            //dd(Auth::user());
+            //Auth::loginUsingId(1,true);
+            return redirect()->intended('/admin');
         }
     }
 

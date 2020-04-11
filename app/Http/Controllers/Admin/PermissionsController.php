@@ -20,11 +20,11 @@ class PermissionsController extends AdminController
     
     public function __construct(PermissionsRepository $per_rep, RolesRepository $rol_rep)
     {
-        parent::__construct();
+        // parent::__construct();
         
-        if(Gate::denies('EDIT_USERS')) {
-			abort(403);
-		}
+        // if(Gate::denies('EDIT_USERS')) {
+		// 	abort(403);
+		// }
         
         $this->per_rep = $per_rep;
         $this->rol_rep = $rol_rep;
