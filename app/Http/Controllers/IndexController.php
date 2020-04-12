@@ -47,7 +47,7 @@ class IndexController extends SiteController
         $this->contentRightBar = view(config('settings.theme').'.indexBar')->with('articles',$articles)->render();
         
         //Auth::logout();
-        dump(Auth::user());
+       // dump(Auth::user());
         //dump($request->user());
         
 
