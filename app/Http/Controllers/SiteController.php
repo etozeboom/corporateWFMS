@@ -86,11 +86,11 @@ class SiteController extends Controller
 				if($item->parent == 0) {
 					$m->add($item->title,$item->path)->id($item->id);
 				}
-				else {
-					if($m->find($item->parent)) {
-						$m->find($item->parent)->add($item->title,$item->path)->id($item->id);
-					}
-				}
+				// else {
+				// 	if($m->find($item->parent)) {
+				// 		$m->find($item->parent)->add($item->title,$item->path)->id($item->id);
+				// 	}
+				// }
 			}
 			
 		});

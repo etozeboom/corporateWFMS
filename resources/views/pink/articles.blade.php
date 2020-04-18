@@ -10,9 +10,9 @@
 @endsection
 
 
-<!-- @section('bar')
-	{!! $rightBar  !!}
-@endsection -->
+@section('bar')
+	{!! $leftBar  !!}
+@endsection
 
 @section('footer')
 	{!! $footer !!}

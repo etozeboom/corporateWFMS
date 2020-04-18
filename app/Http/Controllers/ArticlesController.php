@@ -21,7 +21,7 @@ class ArticlesController extends SiteController
     	$this->a_rep = $a_rep;
     	$this->c_rep = $c_rep;
     	
-    	$this->bar = 'right';
+    	$this->bar = 'left';
     	
     	$this->template = config('settings.theme').'.articles';
 		
@@ -30,7 +30,7 @@ class ArticlesController extends SiteController
 	public function index($cat_alias = FALSE)
     {
         //
-        
+        //dd($cat_alias);
         $this->title = 'Блог';
 		$this->keywords = 'String';
 		$this->meta_desc = 'String';
@@ -40,25 +40,25 @@ class ArticlesController extends SiteController
         $content = view(config('settings.theme').'.articles_content')->with('articles',$articles)->render();
         $this->vars = array_add($this->vars,'content',$content);
         
-        $comments = $this->getComments(config('settings.recent_comments'));
-
-      //  dd($comments);
-        $this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments' => $comments]);
+       // $comments = $this->getComments(config('settings.recent_comments'));
+		$categorys = Category::where('id', '<>', 1)->get();
+        //dd($categorys);
+        $this->contentLeftBar = view(config('settings.theme').'.articlesBar')->with(['categorys' => $categorys]);
 		
         
         return $this->renderOutput();
     }
     
-    public function getComments($take) {
+    // public function getComments($take) {
 		
-		$comments = $this->c_rep->get(['text','name','email','site','article_id','user_id'],$take);
+	// 	$comments = $this->c_rep->get(['text','name','email','site','article_id','user_id'],$take);
 		
-		if($comments) {
-			$comments->load('article','user');
-		}
+	// 	if($comments) {
+	// 		$comments->load('article','user');
+	// 	}
 		
-		return $comments;
-	}
+	// 	return $comments;
+	// }
 
     
     public function getArticles($alias = FALSE) {
@@ -84,11 +84,15 @@ class ArticlesController extends SiteController
 	
 	public function show($alias = FALSE) {
 		
-		$article = $this->a_rep->one($alias,['comments' => TRUE]);
-		
-		if($article) {
-			$article->img = json_decode($article->img);
+		$cat = Category::select('alias')->where('alias',$alias)->first();
+		if ($cat) {
+			return $this->index($cat->alias);
 		}
+		$article = $this->a_rep->one($alias);
+		
+		// if($article) {
+		// 	$article->img = json_decode($article->img);
+		// }
 		
 		//dd($article->comments->groupBy('parent_id'));
 		
@@ -103,10 +107,10 @@ class ArticlesController extends SiteController
 		$this->vars = array_add($this->vars,'content',$content);
 		
 		
-		$comments = $this->getComments(config('settings.recent_comments'));
-
+		//$comments = $this->getComments(config('settings.recent_comments'));
+		$categorys = Category::all();
         
-        $this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments' => $comments]);
+        $this->contentLeftBar = view(config('settings.theme').'.articlesBar')->with(['categorys' => $categorys]);
 		
 		
 		return $this->renderOutput();

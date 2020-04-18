@@ -28,15 +28,6 @@ input, button {
 div.anythingSlider .back { padding-left: 2%; }
 div.anythingSlider .forward { padding-right: 2%; }
 
-.slider.thumbnails .showcase { max-width: 100%; }
-.slider.thumbnails .showcase-content { max-width: 100%; }
-.slider.thumbnails .showcase-content img { max-width: 97% !important; height: auto !important; width: auto; }
-.slider.thumbnails .showcase-thumbnail-button-forward { right: 7px; }
-
-.stretched .slider.thumbnails .showcase-thumbnail { margin-right: 18px; }
-
-.boxed .slider.thumbnails .showcase-thumbnail-restriction { margin-left: 18px; max-width:95%; }            
-
 .ls-layer .inner { 
     width:100%; 
 }

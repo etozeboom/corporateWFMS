@@ -25,20 +25,6 @@
     .call-to-action .number-phone { line-height: 1.41em; margin-left:20px; margin-bottom:20px; }
 }
 
-/* === SLIDER */
-.mobile-slider { display:block !important; }
-.slider.no-responsive { display:none !important; }
-.slider.fixed-image.inner {
-    max-width: 100%;
-    padding: 0;
-}
-
-/* === SECTIONS */
-
-/* === SECTION PORTFOLIO */
-.sidebar-right .section.portfolio .work-description, .sidebar-left .section.portfolio .work-description { width: 100%; }
-.section .work-thumbnail { margin-bottom: 20px; }
-
 /* === SECTION BLOG */
 .section.blog .sticky .the-content { clear: both; }
 .section.blog .post {
@@ -47,16 +33,6 @@
     width: 100%;
 }
 
-/* === TESTIMONIAL */
-.testimonial.two-fourth {
-    float: none;
-    width: 100%;
-}
-
-.testimonial .testimonial-name {
-    height: 20px;
-    margin-top: -20px;
-}
 
 /* === CONTACT */
 .sidebar-left .contact-form li.submit-button input.alignright, .sidebar-right .contact-form li.submit-button input.alignright { margin-right: -1.5%; }

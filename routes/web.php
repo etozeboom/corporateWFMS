@@ -27,10 +27,10 @@ Route::resource('skazki','ArticlesController',[
 												
 												]
 												
-												])->middleware('auth');	
-Route::get('skazki/{cat_alias?}',['uses'=>'ArticlesController@index','as'=>'skazkiCat'])->where('cat_alias','[\w-]+');   
+												]);	
+//Route::get('skazki/{cat_alias?}',['uses'=>'ArticlesController@index','as'=>'skazkiCat'])->where('cat_alias','[\w-]+');   
 
-
+Route::get('skazki/{cat_alias}',['uses'=>'ArticlesController@index','as'=>'skazkiCat']);   
 Route::resource('comment','CommentController',['only'=>['store']]);
 
 Route::match(['get','post'],'/contacts',['uses'=>'ContactsController@index','as'=>'contacts']);
