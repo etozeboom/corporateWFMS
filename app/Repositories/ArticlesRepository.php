@@ -16,7 +16,7 @@ class ArticlesRepository extends Repository {
 	}
 	
 	public function one($alias,$attr = array()) {
-		dump($alias);
+		//dump($alias);
 		$article = parent::one($alias,$attr);
 		
 		if($article && !empty($attr)) {
@@ -84,7 +84,7 @@ class ArticlesRepository extends Repository {
 			return ['error' => 'Данный псевдоним уже успользуется'];
 		}
 
-		dump("22222222222222222222");
+		//dump("22222222222222222222");
 		$article->fill($data); 
 		//dd($article->id);
 		//dd($article->update());

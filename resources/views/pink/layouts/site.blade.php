@@ -60,6 +60,7 @@
         <link rel="stylesheet" id="buttons" href="{{ asset(config('settings.theme')) }}/css/buttons.css" type="text/css" media="all" />
         <link rel="stylesheet" id="cache-custom-css" href="{{ asset(config('settings.theme')) }}/css/cache-custom.css" type="text/css" media="all" />
         <link rel="stylesheet" id="custom-css" href="{{ asset(config('settings.theme')) }}/css/custom.css" type="text/css" media="all" />
+        <link rel="stylesheet" id="custom-css" href="{{ asset(config('settings.theme')) }}/js/datatables.min.css" type="text/css" media="all" />
 	    
         <!-- FONTs -->
         <link rel="stylesheet" id="google-fonts-css" href="http://fonts.googleapis.com/css?family=Oswald%7CDroid+Sans%7CPlayfair+Display%7COpen+Sans+Condensed%3A300%7CRokkitt%7CShadows+Into+Light%7CAbel%7CDamion%7CMontez&amp;ver=3.4.2" type="text/css" media="all" />
@@ -67,19 +68,9 @@
         
         <!-- JAVASCRIPTs -->
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.js"></script>
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/comment-reply.js"></script>
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.quicksand.js"></script>
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.tipsy.js"></script>
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.prettyPhoto.js"></script>
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.cycle.min.js"></script>
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.eislideshow.js"></script>
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.easing.js"></script>
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.aw-showcase.js"></script>
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/shortcodes.js"></script>
-		<script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.colorbox-min.js"></script> <!-- nav -->
-		<script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.tweetable.js"></script>
-		
-		<script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/myscripts.js"></script>
+        
+        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/datatables.min.js"></script>
+        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/myscripts.js"></script>
 
     </head>
     <!-- END HEAD -->

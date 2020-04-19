@@ -4,7 +4,7 @@
 		'home_port_count' => 5,
 		'theme' => env('THEME','default'),
 		'home_articles_count' => 3,
-		'paginate' => 4,
+		'paginate' => 40,
 		'recent_comments' => 3,
 		'articles_img' => [
 						'max' => ['width'=>816,'height'=>282],

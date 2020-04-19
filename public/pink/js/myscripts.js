@@ -73,5 +73,5 @@ jQuery(document).ready(function($) {
 					});
 		
 	});
-	
+	$('#tableSkazki').DataTable();
 });

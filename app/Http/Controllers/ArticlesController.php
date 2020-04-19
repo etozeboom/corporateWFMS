@@ -10,7 +10,7 @@ use App\Repositories\CommentsRepository;
 use App\Http\Requests;
 
 use App\Category;
-
+use Illuminate\Support\Facades\DB;
 class ArticlesController extends SiteController
 {
     
@@ -64,19 +64,32 @@ class ArticlesController extends SiteController
     public function getArticles($alias = FALSE) {
     	
     	$where = FALSE;
-    	
     	if($alias) {
     		// WHERE `alias` = $alias
 			$id = Category::select('id')->where('alias',$alias)->first()->id;
 			//WHERE `category_id` = $id
 			$where = ['category_id',$id];
 		}
-		
-		$articles = $this->a_rep->get(['id','title','alias','created_at','category_id','keywords','meta_desc'],FALSE,TRUE,$where);
-		
-		if($articles) {
-			$articles->load('category','comments');
+		//$articles = $this->a_rep->get(['id','title','alias','created_at','category_id','keywords','meta_desc','author','reading_time'],FALSE,TRUE,$where);
+		//dd($articles);
+		if ($alias) {
+			$articles = DB::table('articles')
+			->join('categories', 'articles.category_id', '=', 'categories.id')
+			->select('articles.id','articles.title','articles.alias','articles.category_id','articles.keywords','articles.meta_desc','articles.author','articles.reading_time', 'categories.title as cat')
+			->where('articles.category_id', '=', $id)
+			->get();
+		} else {
+			$articles = DB::table('articles')
+			->join('categories', 'articles.category_id', '=', 'categories.id')
+			->select('articles.id','articles.title','articles.alias','articles.category_id','articles.keywords','articles.meta_desc','articles.author','articles.reading_time', 'categories.title as cat')
+			->get();
 		}
+		
+			
+		//dd($aaa);
+		// if($articles) {
+		// 	$articles->load('category','comments');
+		// }
 		
 		return $articles;
 		
