@@ -4,7 +4,6 @@
 				           
 				            @if($categorys)
 				            <div class="widget-last widget recent-comments">
-				                <h3>{{ Lang::get('ru.latest_comments') }}</h3>
 				            	<div class="recent-post recent-comments group">
 				            	
 				            	@foreach($categorys as $category)

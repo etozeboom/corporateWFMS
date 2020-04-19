@@ -47,6 +47,28 @@
 			{!! Form::text('alias', isset($article->alias) ? $article->alias  : old('alias'), ['placeholder'=>'Введите псевдоним страницы']) !!}
 			 </div>
 		 </li>
+
+		 <li class="text-field">
+			<label for="name-contact-us">
+				<span class="label">Автор:</span>
+				<br />
+				<span class="sublabel">введите автора</span><br />
+			</label>
+			<div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span>
+			{!! Form::text('author', isset($article->author) ? $article->author  : old('author'), ['placeholder'=>'Введите автора']) !!}
+			 </div>
+		 </li>
+
+		 <li class="text-field">
+			<label for="name-contact-us">
+				<span class="label">Время чтения:</span>
+				<br />
+				<span class="sublabel">введите время чтения</span><br />
+			</label>
+			<div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span>
+			{!! Form::text('reading_time', isset($article->reading_time) ? $article->reading_time  : old('reading_time'), ['placeholder'=>'Введите время чтения']) !!}
+			 </div>
+		 </li>
 		 
 		 <!-- <li class="textarea-field">
 			<label for="message-contact-us">

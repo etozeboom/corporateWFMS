@@ -57,7 +57,6 @@
         
         <!-- CSSs Plugin -->
         <link rel="stylesheet" id="thickbox-css" href="{{ asset(config('settings.theme')) }}/css/thickbox.css" type="text/css" media="all" />
-        <link rel="stylesheet" id="styles-minified-css" href="{{ asset(config('settings.theme')) }}/css/style-minifield.css" type="text/css" media="all" />
         <link rel="stylesheet" id="buttons" href="{{ asset(config('settings.theme')) }}/css/buttons.css" type="text/css" media="all" />
         <link rel="stylesheet" id="cache-custom-css" href="{{ asset(config('settings.theme')) }}/css/cache-custom.css" type="text/css" media="all" />
         <link rel="stylesheet" id="custom-css" href="{{ asset(config('settings.theme')) }}/css/custom.css" type="text/css" media="all" />
@@ -101,7 +100,7 @@
                         
                         <!-- START LOGO -->
                         <div id="logo" class="group">
-                            <a href="index.html" title="Pink Rio"><img src="{{ asset(config('settings.theme')) }}/images/logo.png" title="Pink Rio" alt="Pink Rio" /></a>
+                            <a href="/" title="Pink Rio"><img src="{{ asset(config('settings.theme')) }}/images/logo.png" title="Pink Rio" alt="Pink Rio" /></a>
                         </div>
                         <!-- END LOGO -->
                         

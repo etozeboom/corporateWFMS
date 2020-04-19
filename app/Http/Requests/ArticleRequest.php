@@ -50,9 +50,13 @@ class ArticleRequest extends Request
         
         return [
             //
-            'title' => 'required|max:255',
+            'title' => 'required',
             'text' => 'required',
-            'category_id' => 'required|integer'
+            'category_id' => 'required|integer',
+            'keywords' => 'required|max:255',
+            'meta_desc' => 'required',
+            'reading_time' => 'required|max:25',
+            'alias' => 'required|max:255'
         ];
     }
 }

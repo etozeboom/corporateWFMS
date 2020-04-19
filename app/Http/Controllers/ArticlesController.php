@@ -36,7 +36,7 @@ class ArticlesController extends SiteController
 		$this->meta_desc = 'String';
         
         $articles = $this->getArticles($cat_alias);
-        
+        //dd($articles);
         $content = view(config('settings.theme').'.articles_content')->with('articles',$articles)->render();
         $this->vars = array_add($this->vars,'content',$content);
         

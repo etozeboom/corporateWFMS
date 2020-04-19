@@ -8,22 +8,7 @@
 					                <div class="thumbnail">
 					                    <!-- post title -->
 					                    <h2 class="post-title"><a href="{{ route('skazki.show',['alias'=>$article->alias]) }}">{{ $article->title }}</a></h2>
-					                    <!-- post featured -->
-					                    <p class="date">
-					                        <span class="month">{{ $article->created_at->format('M') }}</span>
-					                        <span class="day">{{ $article->created_at->format('d') }}</span>
-					                    </p>
 					                </div>
-					                <!-- post meta -->
-					                <div class="meta group">
-					                    <p class="categories"><span>In: <a href="{{ route('skazkiCat',['cat_alias' => $article->category->alias]) }}" title="View all posts in {{ $article->category->title }}" rel="category tag">{{ $article->category->title }}</a></span></p>
-					                </div>
-					                <!-- post content -->
-					                <div class="the-content group">
-					                    {!! $article->desc !!}
-					                    <p><a href="{{ route('skazki.show',['alias' => $article->alias]) }}" class="btn   btn-beetle-bus-goes-jamba-juice-4 btn-more-link">> {{ Lang::get('ru.read_more') }}</a></p>
-					                </div>
-					                <div class="clear"></div>
 					            </div>
 				            
 				            @endforeach
@@ -35,7 +20,7 @@
 				            	@if($articles->lastPage() > 1) 
 				            		
 				            		@if($articles->currentPage() !== 1)
-				            			<a href="{{ $articles->url(($articles->currentPage() - 1)) }}">{{ Lang::get('pagination.previous') }}</a>
+				            			<a href="{{ $articles->url(($articles->currentPage() - 1)) }}">«</a>
 				            		@endif
 				            		
 				            		@for($i = 1; $i <= $articles->lastPage(); $i++)
@@ -47,7 +32,7 @@
 				            		@endfor
 				            		
 				            		@if($articles->currentPage() !== $articles->lastPage())
-				            			<a href="{{ $articles->url(($articles->currentPage() + 1)) }}">{{ Lang::get('pagination.next') }}</a>
+				            			<a href="{{ $articles->url(($articles->currentPage() + 1)) }}">»</a>
 				            		@endif
 				            		
 				            	
