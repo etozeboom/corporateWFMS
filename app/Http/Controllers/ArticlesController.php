@@ -51,10 +51,12 @@ class ArticlesController extends SiteController
         $content = view(config('settings.theme').'.articles_content')->with(['cat' => $cat[0], 'articles' => $articles])->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		
-        $categorys = Category::where('id', '<>', 1)->get();
-       // $comments = $this->getComments(config('settings.recent_comments'));
+        $categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', 5)->where('parent_id', '<>', 5)->get();
+	   // $comments = $this->getComments(config('settings.recent_comments'));
+		$zar = Category::where('parent_id', '=', 5)->get();
+		$rus = Category::where('parent_id', '=', 8)->get();
         //dd($categorys);
-        $this->contentLeftBar = view(config('settings.theme').'.articlesBar')->with(['categorys' => $categorys]);
+        $this->contentLeftBar = view(config('settings.theme').'.articlesBar')->with(['categorys' => $categorys,'zar' => $zar,'rus' => $rus]);
 		
         
         return $this->renderOutput();

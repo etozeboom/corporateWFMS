@@ -1,9 +1,9 @@
 @if($categories)
 	<div id="content-page" class="content group">
 				            <div class="hentry group">
-								<h2>Добавленные статьи</h2>
+								<h2>изменение раздела</h2>
 
-								{!! Html::link(route('admin.catskazki.create'),'Добавить  материал',['class' => 'btn btn-the-salmon-dance-3']) !!}
+								<!-- {!! Html::link(route('admin.catskazki.create'),'Добавить  материал',['class' => 'btn btn-the-salmon-dance-3']) !!} -->
 
 				                <div class="short-table white">
 				                    <table style="width: 100%" cellspacing="0" cellpadding="0">
