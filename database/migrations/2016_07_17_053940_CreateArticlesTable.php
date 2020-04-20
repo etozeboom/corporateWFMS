@@ -17,7 +17,7 @@ class CreateArticlesTable extends Migration
             $table->string('title',255);
             $table->string('author',255)->nullable();
             $table->string('reading_time',25);
-            $table->text('text');
+            $table->longtext('text');
             $table->string('alias',150)->unique();
             $table->timestamps();
             $table->string('keywords');

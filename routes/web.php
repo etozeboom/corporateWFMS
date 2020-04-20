@@ -62,6 +62,8 @@ Route::group(['as' => 'admin.','prefix' => 'admin','middleware'=> ['auth']],func
 	
 	// articles
 	Route::resource('/skazki','Admin\ArticlesController');
+
+	Route::resource('/catskazki','Admin\CatSkazkiController');
 	
 	Route::resource('/permissions','Admin\PermissionsController');
 	

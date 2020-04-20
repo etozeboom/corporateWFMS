@@ -18,7 +18,11 @@ class CreateCategoriesTable extends Migration
             $table->string('title');
 			$table->integer('parent_id')->default(0);
 			$table->string('alias')->unique();
-            
+            $table->text('text1');
+            $table->text('text2');
+            $table->string('keywords');
+            $table->string('meta_desc');
+            $table->string('meta_title');
             $table->timestamps();
         });
     }
