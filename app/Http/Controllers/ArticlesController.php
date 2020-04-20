@@ -34,14 +34,25 @@ class ArticlesController extends SiteController
         $this->title = 'Блог';
 		$this->keywords = 'String';
 		$this->meta_desc = 'String';
-        
+		
+		if ($cat_alias) {
+			$cat = Category::where('alias', '=', $cat_alias)->get();
+		} else {
+			$cat = Category::where('id', '=', 1)->get();
+		}
+
         $articles = $this->getArticles($cat_alias);
         //dd($articles);
-        $content = view(config('settings.theme').'.articles_content')->with('articles',$articles)->render();
-        $this->vars = array_add($this->vars,'content',$content);
-        
+		//dd($cat);
+		//dd($cat[0]->meta_desc);
+		$this->meta_desc = $cat[0]->meta_desc;
+		$this->keywords = $cat[0]->keywords;
+		$this->title = $cat[0]->meta_title;
+        $content = view(config('settings.theme').'.articles_content')->with(['cat' => $cat[0], 'articles' => $articles])->render();
+		$this->vars = array_add($this->vars,'content',$content);
+		
+        $categorys = Category::where('id', '<>', 1)->get();
        // $comments = $this->getComments(config('settings.recent_comments'));
-		$categorys = Category::where('id', '<>', 1)->get();
         //dd($categorys);
         $this->contentLeftBar = view(config('settings.theme').'.articlesBar')->with(['categorys' => $categorys]);
 		

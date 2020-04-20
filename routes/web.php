@@ -77,3 +77,4 @@ Route::group(['as' => 'admin.','prefix' => 'admin','middleware'=> ['auth']],func
 // Route::get('admin',['uses' => 'Admin\IndexController@index','as' => 'adminIndex'])->middleware('auth');
 // Route::resource('admin/skazki','Admin\ArticlesController')->middleware('auth');
 																						
+Route::get('sitemap.xml', 'IndexController@sitemap');

@@ -1,4 +1,11 @@
 <div id="content-blog" class="content group">
+@if($cat)
+	<div class="">
+	@if(isset($cat->text1))
+		{!! $cat->text1 !!}
+	@endif
+	</div>
+@endif
 				            @if($articles)
 				            	            
 
@@ -31,5 +38,13 @@
 			
 				{!! Lang::get('ru.articles_no') !!}
 			
-			@endif	            
+			@endif	 
+			
+			@if($cat)
+	<div class="">
+	@if(isset($cat->text2))
+		{!! $cat->text2 !!}
+	@endif
+	</div>
+@endif
 				        </div>

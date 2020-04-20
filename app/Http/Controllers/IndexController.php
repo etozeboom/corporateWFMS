@@ -10,7 +10,8 @@ use App\Repositories\ArticlesRepository;
 use Illuminate\Support\Facades\Auth;
 
 use Config;
-
+use App\Category;
+use App\Article;
 class IndexController extends SiteController
 {
     
@@ -126,5 +127,13 @@ class IndexController extends SiteController
     public function destroy($id)
     {
         //
+    }
+
+    public function sitemap() {
+        $articles = Article::get();
+        $categories = Category::get();
+        //dd( $articles );
+        //return view(config('settings.theme').'.sitemap')->with(compact('articles'));
+        return view(config('settings.theme').'.sitemap')->with(['categories' => $categories, 'articles' => $articles]);
     }
 }

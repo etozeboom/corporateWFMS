@@ -31,8 +31,8 @@
 		
 		<meta name="csrf-token" content="{{ csrf_token() }}">
         
-        <title>{{ $title or 'Pink' }}</title>
-        
+        <title>{{ (isset($title)) ? $title : 'title'}}</title>
+        <link href='{{ url('sitemap.xml') }}' rel='alternate' title='Sitemap' type='application/rss+xml'/>
         <!-- [favicon] begin -->
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset(config('settings.theme')) }}/images/favicon.ico" />
         <link rel="icon" type="image/x-icon" href="{{ asset(config('settings.theme')) }}/images/favicon.ico" />
