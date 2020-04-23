@@ -76,15 +76,18 @@ class CatSkazkiController extends AdminController
 		
 		$lists = array();
 		
-		foreach($categories as $category) {
+		/*foreach($categories as $category) {
 			if($category->parent_id == 0) {
 				$lists[$category->title] = array();
 			}
 			else {
 				$lists[$categories->where('id',$category->parent_id)->first()->title][$category->id] = $category->title;    
 			}
-		}
-		
+		}*/
+    //dd( $lists);
+    $lists[1]="Сказки";
+    $lists[5]="Зарубежные авторы";
+    $lists[8]="Русские авторы";
 		$this->content = view(config('settings.theme').'.admin.categories_create_content')->with('categories', $lists)->render();
 		
 		return $this->renderOutput();
@@ -141,18 +144,21 @@ class CatSkazkiController extends AdminController
 		
 		$lists = array();
 		
-		foreach($categories as $category) {
-			if($category->parent_id == 0) {
-				$lists[$category->title] = array();
-			}
-			else {
-				$lists[$categories->where('id',$category->parent_id)->first()->title][$category->id] = $category->title;    
-			}
-		}
-		
+		// foreach($categories as $category) {
+		// 	if($category->parent_id == 0) {
+		// 		$lists[$category->title] = array();
+		// 	}
+		// 	else {
+		// 		$lists[$categories->where('id',$category->parent_id)->first()->title][$category->id] = $category->title;    
+		// 	}
+		// }
+    $lists[1]="Сказки";
+    $lists[5]="Зарубежные авторы";
+    $lists[8]="Русские авторы";
+
 		$this->title = 'Реадактирование материала - '. $categoryy->title;
 		
-		//dd($category);
+	//	dd($lists);
 		$this->content = view(config('settings.theme').'.admin.categories_create_content')->with(['categories' =>$lists, 'category' => $categoryy])->render();
 		
 		return $this->renderOutput();
@@ -171,7 +177,8 @@ class CatSkazkiController extends AdminController
      //   categories -> Category  
     public function update(int $id, CatSkazkiRequest $request, Category $category)
     {
-        dump("11111");
+      //dd($request);
+        //dump("11111");
        // dd($id);
         $category = Category::where('id', $id)->first();
         //

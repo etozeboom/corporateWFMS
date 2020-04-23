@@ -79,8 +79,20 @@
 			</div>
 			<div class="msg-error"></div>
 		</li>
- 
 		
+		@if(!isset($category->id) || (isset($category->id) && $category->id != 5 && $category->id != 8 && $category->id != 1))
+		<li class="text-field">
+			<label for="name-contact-us">
+				<span class="label">Категория:</span>
+				<br />
+				<span class="sublabel">Категория материала</span><br />
+			</label>
+			<div class="input-prepend">
+				{!! Form::select('parent_id', $categories,isset($category->parent_id) ? $category->parent_id  : '') !!}
+			 </div>
+			 
+		</li>	
+		@endif
 		@if(isset($category->id))
 			<input type="hidden" name="_method" value="PUT">		
 		

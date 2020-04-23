@@ -134,9 +134,12 @@ class ArticlesController extends SiteController
 		
 		
 		//$comments = $this->getComments(config('settings.recent_comments'));
-		$categorys = Category::all();
-        
-        $this->contentLeftBar = view(config('settings.theme').'.articlesBar')->with(['categorys' => $categorys]);
+		$categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', 5)->where('parent_id', '<>', 5)->get();
+		// $comments = $this->getComments(config('settings.recent_comments'));
+		 $zar = Category::where('parent_id', '=', 5)->get();
+		 $rus = Category::where('parent_id', '=', 8)->get();
+		 //dd($categorys);
+		 $this->contentLeftBar = view(config('settings.theme').'.articlesBar')->with(['categorys' => $categorys,'zar' => $zar,'rus' => $rus]);
 		
 		
 		return $this->renderOutput();

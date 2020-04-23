@@ -69,7 +69,7 @@ class CatSkazkiRepository extends Repository {
 			
 			return ['error' => 'Данный псевдоним уже успользуется'];
 		}
-
+	//dd($data);
 		//dump("22222222222222222222");
 		$category->fill($data); 
 		//dd($category->id);

@@ -22,7 +22,7 @@
 				                <div class="the-content single group">
 				                    <p>{!! $article->text !!}</p>
 				                </div>
-				                <p class="tags">Tags: <a href="#" rel="tag">book</a>, <a href="#" rel="tag">css</a>, <a href="#" rel="tag">design</a>, <a href="#" rel="tag">inspiration</a></p>
+				                <!-- <p class="tags">Tags: <a href="#" rel="tag">book</a>, <a href="#" rel="tag">css</a>, <a href="#" rel="tag">design</a>, <a href="#" rel="tag">inspiration</a></p> -->
 				                <div class="clear"></div>
 				            </div>
 				           			            
