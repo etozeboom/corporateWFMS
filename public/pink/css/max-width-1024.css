@@ -18,7 +18,7 @@ input, button {
 #header .inner { max-width: 100%; padding:0; }
 #header hr { width: 100%; }
 #logo { margin-left: 20px !important; }
-#sidebar-header { margin-right: 20px !important; }
+#sidebar_header { margin-right: 20px !important; }
 
 /* === SIDEBAR */
 /*.sidebar ul, .sidebar ol, .sidebar ul li, .sidebar ol li { max-width: 100%; }*/
@@ -51,13 +51,13 @@ div.anythingSlider .forward { padding-right: 2%; }
 .section .related_project {  }
 
 /* === SECTION BLOG */
-.sidebar-no .section.blog .post:not( .sticky ) { width: 30% !important; }
+.sidebar_no .section.blog .post:not( .sticky ) { width: 30% !important; }
 
 /* === SECTION PORTFOLIO */
-.sidebar-right .section.portfolio .work-description, .sidebar-left .section.portfolio .work-description { width: 36%; }
+.sidebar_right .section.portfolio .work-description, .sidebar_left .section.portfolio .work-description { width: 36%; }
 
 /* === CONTACT */
-.sidebar-left .contact-form li.submit-button input.alignright, .sidebar-right .contact-form li.submit-button input.alignright { margin-right: -0.4%; }
+.sidebar_left .contact_form li.submit_button input.alignright, .sidebar_right .contact_form li.submit_button input.alignright { margin-right: -0.4%; }
 
 /* === RESPOND */
 #respond p.form-submit { width: 100.8% !important; }
@@ -74,7 +74,7 @@ div.anythingSlider .forward { padding-right: 2%; }
 .featured-projects-widget ul li h4 { clear:both; }
 .featured-projects-widget img { max-width: 95%; width: 100%; min-height: 131px; height: auto; }
 
-.sidebar-nav a, .sidebar-nav li { min-height: 40px; }
+.sidebar_nav a, .sidebar_nav li { min-height: 40px; }
 
 .contact-info ul li { height: auto; min-height: 26px; }
 

@@ -39,10 +39,10 @@
     
     <!-- START BODY -->
     
-    <body class="no_js responsive {{ (Route::currentRouteName() == 'home') ? 'page-template-home-php' : ''}} stretched">
+    <body class="no_js responsive {{ (Route::currentRouteName() == 'home') ? 'page_template_home_php' : ''}} stretched">
         
         <!-- START BG SHADOW -->
-        <div class="bg-shadow">
+        <div class="bg_shadow">
             
             <!-- START WRAPPER -->
             <div id="wrapper" class="group">
@@ -57,7 +57,7 @@
 							@yield('navigation')
                         <!-- END MAIN NAVIGATION -->
                        
-                        <div id="menu-shadow"></div>
+                        <div id="menu_shadow"></div>
                     </div>
                     
                 </div>
@@ -86,7 +86,7 @@
 				    </div>
 				@endif
 				
-				<div id="primary" class="sidebar-{{ isset($bar) ? $bar : 'no' }}">
+				<div id="primary" class="sidebar_{{ isset($bar) ? $bar : 'no' }}">
 				    <div class="inner group">
 				        <!-- START CONTENT -->
 						

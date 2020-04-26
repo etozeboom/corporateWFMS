@@ -1,15 +1,15 @@
 @if($categories)
-	<div id="content-page" class="content group">
+	<div id="content_page" class="content group">
 				            <div class="hentry group">
 								<h2>изменение раздела</h2>
 
-								{!! Html::link(route('admin.catskazki.create'),'Добавить  материал',['class' => 'btn btn-the-salmon-dance-3']) !!}
+								{!! Html::link(route('admin.catskazki.create'),'Добавить  материал',['class' => 'btn btn_the_salmon_dance_3']) !!}
 
-				                <div class="short-table white">
+				                <div class="short_table white">
 				                    <table style="width: 100%" cellspacing="0" cellpadding="0">
 				                        <thead>
 				                            <tr>
-				                                <th class="align-left">ID</th>
+				                                <th class="align_left">ID</th>
 				                                <th>Заголовок</th>
 				                                <th>Псевдоним</th>
 				                            </tr>
@@ -18,8 +18,8 @@
 				                            
 											@foreach($categories as $category)
 											<tr>
-				                                <td class="align-left">{{$category->id}}</td>
-				                                <td class="align-left">{!! Html::link(route('admin.catskazki.edit',['id' => $category->id,'categories'=>$category->alias]),$category->title) !!}</td>
+				                                <td class="align_left">{{$category->id}}</td>
+				                                <td class="align_left">{!! Html::link(route('admin.catskazki.edit',['id' => $category->id,'categories'=>$category->alias]),$category->title) !!}</td>
 				                                <td>{{$category->alias}}</td>
 				                             
 											 </tr>	

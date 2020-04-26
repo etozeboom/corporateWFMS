@@ -1,4 +1,4 @@
-<div id="content-page" class="content group">
+<div id="content_page" class="content group">
 	<div class="hentry group">
 	
 	<h3 class="title_page">Привилегии</h3>
@@ -6,7 +6,7 @@
 	<form action="{{ route('admin.permissions.store') }}" method="POST">
 		{{ csrf_field() }}
 		
-		<div class="short-table white">
+		<div class="short_table white">
 		
 			<table style="width:100%">
 				
@@ -52,7 +52,7 @@
 			
 		</div>
 		
-		<input class="btn btn-the-salmon-dance-3" type="submit" value="Обновить" />
+		<input class="btn btn_the_salmon_dance_3" type="submit" value="Обновить" />
 
 		
 	</form>

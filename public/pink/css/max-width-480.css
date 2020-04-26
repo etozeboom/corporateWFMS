@@ -6,26 +6,26 @@ body{
     max-width:91.5%;
 }
 
-.sidebar-left .sidebar, 
-.sidebar-right .content, 
-.sidebar-no .content, 
-.sidebar-right .sidebar, 
-.sidebar-left .content, 
-.sidebar-no .sidebar {
+.sidebar_left .sidebar, 
+.sidebar_right .content, 
+.sidebar_no .content, 
+.sidebar_right .sidebar, 
+.sidebar_left .content, 
+.sidebar_no .sidebar {
     width:100%;
     float:none;
 }
 
 /* blog */
-.hentry-post.blog-small { margin-top:40px; }
-.hentry-post.blog-small:nth-of-type(1) { margin-top:0; }     
+.hentry_post.blog-small { margin-top:40px; }
+.hentry_post.blog-small:nth-of-type(1) { margin-top:0; }     
 #respond p { float:none; width:auto; margin-right:0; }
-.sidebar-no #respond textarea { width:96.5%; }
-.blog-small .the-content { clear:both; }
+.sidebar_no #respond textarea { width:96.5%; }
+.blog-small .the_content { clear:both; }
 
 /* shortcodes */
 .box-sections, .one-fourth, .two-third, .three-fourth, .one-third { width:100%; margin-right:0; }
-.short-table table th, .short-table table td { padding:8px 10px; }
+.short_table table th, .short_table table td { padding:8px 10px; }
 .call-to-action-two .call-btn, .call-to-action-two .incipit { display:block; vertical-align:baseline; width:100%; text-align:left; }
 .call-to-action-two .call-btn { margin-top:10px; }
 .call-to-action-two p, .call-to-action-two h1, .call-to-action-two h2, .call-to-action-two h3, .call-to-action-two h4, .call-to-action-two h5, .call-to-action-two h6 { width:auto; font-size:1.5em; margin-bottom:10px; }

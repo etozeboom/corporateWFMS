@@ -1187,7 +1187,7 @@ a.ui-button:active,
 .ui-icon-flag { background-position: -16px -112px; }
 .ui-icon-calendar { background-position: -32px -112px; }
 .ui-icon-cart { background-position: -48px -112px; }
-.ui-icon-pencil { background-position: -64px -112px; }
+.ui-icon_pencil { background-position: -64px -112px; }
 .ui-icon-clock { background-position: -80px -112px; }
 .ui-icon-disk { background-position: -96px -112px; }
 .ui-icon-calculator { background-position: -112px -112px; }

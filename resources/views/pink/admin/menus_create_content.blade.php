@@ -1,29 +1,29 @@
-<div id="content-page" class="content group">
+<div id="content_page" class="content group">
 				            <div class="hentry group">
 
-{!! Form::open(['url' => (isset($menu->id)) ? route('admin.menus.update',['menus'=>$menu->id]) : route('admin.menus.store'),'class'=>'contact-form','method'=>'POST','enctype'=>'multipart/form-data']) !!}
+{!! Form::open(['url' => (isset($menu->id)) ? route('admin.menus.update',['menus'=>$menu->id]) : route('admin.menus.store'),'class'=>'contact_form','method'=>'POST','enctype'=>'multipart/form-data']) !!}
     
 	<ul>
 		
-		<li class="text-field">
-			<label for="name-contact-us">
+		<li class="text_field">
+			<label for="name_contact_us">
 				<span class="label">Заголовок:</span>
 				<br />
 				<span class="sublabel">Заголовок пункта</span><br />
 			</label>
-			<div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span>
+			<div class="input_prepend"><span class="add_on"><i class="icon_user"></i></span>
 			{!! Form::text('title',isset($menu->title) ? $menu->title  : old('title'), ['placeholder'=>'Введите название страницы']) !!}
 			 </div>
 		 </li>
 		
 		
-		<li class="text-field">
-			<label for="name-contact-us">
+		<li class="text_field">
+			<label for="name_contact_us">
 				<span class="label">Родительский пункт меню:</span>
 				<br />
 				<span class="sublabel">Родитель:</span><br />
 			</label>
-			<div class="input-prepend">
+			<div class="input_prepend">
 				{!! Form::select('parent', $menus, isset($menu->parent) ? $menu->parent : null) !!}
 			 </div>
 			 
@@ -39,13 +39,13 @@
 			
 			<ul>
 			
-				<li class="text-field">
-					<label for="name-contact-us">
+				<li class="text_field">
+					<label for="name_contact_us">
 						<span class="label">Путь для ссылки:</span>
 						<br />
 						<span class="sublabel">Путь для ссылки</span><br />
 					</label>
-					<div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span>
+					<div class="input_prepend"><span class="add_on"><i class="icon_user"></i></span>
 					{!! Form::text('custom_link',(isset($menu->path) && $type=='customLink') ? $menu->path  : old('custom_link'), ['placeholder'=>'Введите название страницы']) !!}
 					 </div>
 				</li>
@@ -58,13 +58,13 @@
 			
 			<ul>
 			
-				<li class="text-field">
-					<label for="name-contact-us">
+				<li class="text_field">
+					<label for="name_contact_us">
 						<span class="label">Ссылка на категорию блога:</span>
 						<br />
 						<span class="sublabel">Ссылка на категорию блога</span><br />
 					</label>
-					<div class="input-prepend">
+					<div class="input_prepend">
 						
 						@if($categories)
 						{!! Form::select('category_alias',$categories,(isset($option) && $option) ? $option :FALSE) !!}
@@ -73,13 +73,13 @@
 				</li>
 			
 				
-				<li class="text-field">
-					<label for="name-contact-us">
+				<li class="text_field">
+					<label for="name_contact_us">
 						<span class="label">Ссылка на материал блога:</span>
 						<br />
 						<span class="sublabel">Ссылка на материал блога</span><br />
 					</label>
-					<div class="input-prepend">
+					<div class="input_prepend">
 					{!! Form::select('article_alias', $articles, (isset($option) && $option) ? $option :FALSE, ['placeholder' => 'Не используется']) !!}
 			
 					</div>
@@ -100,8 +100,8 @@
 		
 		@endif
 		<ul>
-			<li class="submit-button"> 
-						{!! Form::button('Сохранить', ['class' => 'btn btn-the-salmon-dance-3','type'=>'submit']) !!}			
+			<li class="submit_button"> 
+						{!! Form::button('Сохранить', ['class' => 'btn btn_the_salmon_dance_3','type'=>'submit']) !!}			
 			</li>	
 		</ul>
 		 

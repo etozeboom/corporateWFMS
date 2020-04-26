@@ -76,10 +76,10 @@
     <!-- END HEAD -->
     
     <!-- START BODY -->
-    <body class="no_js responsive {{ (Route::currentRouteName() ==  'home')  ? 'page-template-home-php' : ''}} stretched">
+    <body class="no_js responsive {{ (Route::currentRouteName() ==  'home')  ? 'page_template_home_php' : ''}} stretched">
         
         <!-- START BG SHADOW -->
-        <div class="bg-shadow">
+        <div class="bg_shadow">
             
             <!-- START WRAPPER -->
             <div id="wrapper" class="group">
@@ -95,10 +95,10 @@
                         </div>
                         <!-- END LOGO -->
                         
-                        <div id="sidebar-header" class="group">
-                            <div class="widget-first widget yit_text_quote">
-                                <blockquote class="text-quote-quote">&#8220;The caterpillar does all the work but the butterfly gets all the publicity.&#8221;</blockquote>
-                                <cite class="text-quote-author">George Carlin</cite>
+                        <div id="sidebar_header" class="group">
+                            <div class="widget_first widget yit_text_quote">
+                                <blockquote class="text_quote_quote">&#8220;The caterpillar does all the work but the butterfly gets all the publicity.&#8221;</blockquote>
+                                <cite class="text_quote_author">George Carlin</cite>
                             </div>
                         </div>
                         <div class="clearer"></div>
@@ -108,8 +108,8 @@
                         <!-- START MAIN NAVIGATION -->
                         @yield('navigation')
                         <!-- END MAIN NAVIGATION -->
-                        <div id="header-shadow"></div>
-                        <div id="menu-shadow"></div>
+                        <div id="header_shadow"></div>
+                        <div id="menu_shadow"></div>
                     </div>
                     
                 </div>
@@ -121,7 +121,7 @@
 					
 					@if(Route::currentRouteName() == 'contacts')
 					<!-- START PAGE META -->
-						<div id="page-meta">
+						<div id="page_meta">
 						    <div class="inner group">
 						        <h3>...Say Hello! :)</h3>
 						        <h4>Get in touch with Pink Rio team</h4>
@@ -132,7 +132,7 @@
 					
 				
 				<!-- START PRIMARY -->
-				<div id="primary" class="sidebar-{{ isset($bar) ? $bar : 'no'}}">
+				<div id="primary" class="sidebar_{{ isset($bar) ? $bar : 'no'}}">
 				    <div class="inner group">
 				        <!-- START CONTENT -->
 				        	@yield('content')

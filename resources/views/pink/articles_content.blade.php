@@ -1,4 +1,4 @@
-<div id="content-blog" class="content group">
+<div id="content_blog" class="content group">
 @if($cat)
 	<div class="">
 	@if(isset($cat->text1))
@@ -9,7 +9,7 @@
 				            @if($articles)
 				            	            
 
-				            <div class="short-table white">
+				            <div class="short_table white">
 				                    <table id="tableSkazki" class="display" style="width: 100%" cellspacing="0" cellpadding="0">
 				                        <thead>
 				                            <tr>
@@ -23,8 +23,8 @@
 
 											@foreach($articles as $article)
 											<tr>
-				                                <td class="align-left"><a href="{{ route('skazki.show',['alias'=>$article->alias]) }}">{{ $article->title }}</a></td>
-				                                <td class="align-left"> {{isset($article->author) ? $article->author  : $article->cat}}</td>
+				                                <td class="align_left"><a href="{{ route('skazki.show',['alias'=>$article->alias]) }}">{{ $article->title }}</a></td>
+				                                <td class="align_left"> {{isset($article->author) ? $article->author  : $article->cat}}</td>
 				                                <td>{{$article->reading_time}}</td>
 											 </tr>	
 											@endforeach	

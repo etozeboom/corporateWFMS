@@ -15,8 +15,8 @@
 @media screen and (max-width: 750px) {
     .style-picker { display:none; }
     #logo { margin-left:0 !important; width:100%; text-align:center; }
-    #sidebar-header { margin-right:0 !important; width:100% !important; }
-    #sidebar-header p, #sidebar-header blockquote, #sidebar-header cite, #sidebar-header li { line-height: 1.41em; margin: 0 auto !important; width:94%; text-align:center; display:block; }
+    #sidebar_header { margin-right:0 !important; width:100% !important; }
+    #sidebar_header p, #sidebar_header blockquote, #sidebar_header cite, #sidebar_header li { line-height: 1.41em; margin: 0 auto !important; width:94%; text-align:center; display:block; }
     #header .menu, #header hr { display:none; } 
     #header .menu-select { display:block; }   
     
@@ -26,7 +26,7 @@
 }
 
 /* === SECTION BLOG */
-.section.blog .sticky .the-content { clear: both; }
+.section.blog .sticky .the_content { clear: both; }
 .section.blog .post {
     float: none;
     margin-right: 0%;
@@ -35,10 +35,10 @@
 
 
 /* === CONTACT */
-.sidebar-left .contact-form li.submit-button input.alignright, .sidebar-right .contact-form li.submit-button input.alignright { margin-right: -1.5%; }
+.sidebar_left .contact_form li.submit_button input.alignright, .sidebar_right .contact_form li.submit_button input.alignright { margin-right: -1.5%; }
 
 /* === BLOG */
-.blog-big .thumbnail .image-wrap img { width: auto; height: auto; max-width: 100%; }
+.blog_big .thumbnail .image-wrap img { width: auto; height: auto; max-width: 100%; }
 
 /* === RESPOND */
 #respond p.form-submit {

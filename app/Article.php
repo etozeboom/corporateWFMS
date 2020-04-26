@@ -8,7 +8,7 @@ class Article extends Model
 {
     //
     
-    protected $fillable = ['title','alias','text','keywords','meta_desc','category_id','author','reading_time'];
+    protected $fillable = ['title','alias','text','keywords','meta_desc','description','category_id','author','reading_time'];
 	
 	
 	public function category() {

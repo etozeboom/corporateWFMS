@@ -1,6 +1,6 @@
 
 				            
-				            <div class="widget-first widget recent-posts">
+				            <div class="widget_first widget recent_posts">
 				           
 				            @if($categorys)
 				            <div class="left_menu">		

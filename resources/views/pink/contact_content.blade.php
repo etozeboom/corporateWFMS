@@ -15,36 +15,36 @@
 				    </div>
 				@endif
 
-<div id="content-page" class="content group">
+<div id="content_page" class="content group">
 				            <div class="hentry group">
-				                <form id="contact-form-contact-us" class="contact-form" method="post" action="{{ route('contacts') }}" enctype="multipart/form-data">
+				                <form id="contact_form_contact_us" class="contact_form" method="post" action="{{ route('contacts') }}" enctype="multipart/form-data">
 				                    <div class="usermessagea"></div>
 				                    <fieldset>
 				                        <ul>
-				                            <li class="text-field">
-				                                <label for="name-contact-us">
+				                            <li class="text_field">
+				                                <label for="name_contact_us">
 				                                <span class="label">Name</span>
 				                                <br />					<span class="sublabel">This is the name</span><br />
 				                                </label>
-				                                <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input type="text" name="name" id="name-contact-us" class="required" value="" /></div>
-				                                <div class="msg-error"></div>
+				                                <div class="input_prepend"><span class="add_on"><i class="icon_user"></i></span><input type="text" name="name" id="name_contact_us" class="required" value="" /></div>
+				                                <div class="msg_error"></div>
 				                            </li>
-				                            <li class="text-field">
+				                            <li class="text_field">
 				                                <label for="email-contact-us">
 				                                <span class="label">Email</span>
 				                                <br />					<span class="sublabel">This is a field email</span><br />
 				                                </label>
-				                                <div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span><input type="text" name="email" id="email-contact-us" class="required email-validate" value="" /></div>
-				                                <div class="msg-error"></div>
+				                                <div class="input_prepend"><span class="add_on"><i class="icon-envelope"></i></span><input type="text" name="email" id="email-contact-us" class="required email-validate" value="" /></div>
+				                                <div class="msg_error"></div>
 				                            </li>
-				                            <li class="textarea-field">
-				                                <label for="message-contact-us">
+				                            <li class="textarea_field">
+				                                <label for="message_contact_us">
 				                                <span class="label">Message</span>
 				                                </label>
-				                                <div class="input-prepend"><span class="add-on"><i class="icon-pencil"></i></span><textarea name="text" id="message-contact-us" rows="8" cols="30" class="required"></textarea></div>
-				                                <div class="msg-error"></div>
+				                                <div class="input_prepend"><span class="add_on"><i class="icon_pencil"></i></span><textarea name="text" id="message_contact_us" rows="8" cols="30" class="required"></textarea></div>
+				                                <div class="msg_error"></div>
 				                            </li>
-				                            <li class="submit-button">
+				                            <li class="submit_button">
 				                            {{ csrf_field() }}
 				                                <input type="text" name="yit_bot" id="yit_bot" />
 				                              

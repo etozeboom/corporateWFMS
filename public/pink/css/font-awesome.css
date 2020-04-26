@@ -82,7 +82,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 .icon-heart:before                { content: "\f004"; }
 .icon-star:before                 { content: "\f005"; }
 .icon-star-empty:before           { content: "\f006"; }
-.icon-user:before                 { content: "\f007"; }
+.icon_user:before                 { content: "\f007"; }
 .icon-film:before                 { content: "\f008"; }
 .icon-th-large:before             { content: "\f009"; }
 .icon-th:before                   { content: "\f00a"; }
@@ -130,7 +130,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 .icon-italic:before               { content: "\f033"; }
 .icon-text-height:before          { content: "\f034"; }
 .icon-text-width:before           { content: "\f035"; }
-.icon-align-left:before           { content: "\f036"; }
+.icon-align_left:before           { content: "\f036"; }
 .icon-align-center:before         { content: "\f037"; }
 .icon-align-right:before          { content: "\f038"; }
 .icon-align-justify:before        { content: "\f039"; }
@@ -140,7 +140,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 .icon-facetime-video:before       { content: "\f03d"; }
 .icon-picture:before              { content: "\f03e"; }
 
-.icon-pencil:before               { content: "\f040"; }
+.icon_pencil:before               { content: "\f040"; }
 .icon-map-marker:before           { content: "\f041"; }
 .icon-adjust:before               { content: "\f042"; }
 .icon-tint:before                 { content: "\f043"; }
@@ -300,4 +300,4 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 .icon-umbrella:before             { content: "\f0e9"; }
 .icon-paste:before                { content: "\f0ea"; }
 
-.icon-user-md:before              { content: "\f200"; }
+.icon_user-md:before              { content: "\f200"; }

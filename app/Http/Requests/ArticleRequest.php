@@ -55,7 +55,8 @@ class ArticleRequest extends Request
             'category_id' => 'required|integer',
             'keywords' => 'required|max:255',
             'meta_desc' => 'required',
-            'reading_time' => 'required|max:25',
+            'description' => 'required',
+            'reading_time' => 'required|date_format:"H:i:s"',
             'alias' => 'required|max:255'
         ];
     }

@@ -7,14 +7,14 @@
 
 /* blog */
 .section.blog .sticky .meta { padding-left:9px; padding-top:0; padding-bottom:0; }  
-.blog-big .thumbnail .date { display:none; }
-.blog-big .thumbnail h1, .blog-big .thumbnail h2 { position:static; padding-left:0;width:auto; }
-.blog-big .meta p { float:none; width:auto; }
+.blog_big .thumbnail .date { display:none; }
+.blog_big .thumbnail h1, .blog_big .thumbnail h2 { position:static; padding-left:0;width:auto; }
+.blog_big .meta p { float:none; width:auto; }
 
 
 /* contact forms */
-.content .contact-form li { width:95%; float:none; }
+.content .contact_form li { width:95%; float:none; }
 
 /* shortcodes */
 .content blockquote { background-position: top left; padding:0; }  
-.short-table table th, .short-table table td { padding:4px 2px; }
+.short_table table th, .short_table table td { padding:4px 2px; }
