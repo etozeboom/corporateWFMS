@@ -51,7 +51,7 @@ class ArticlesController extends SiteController
         $content = view(config('settings.theme').'.articles_content')->with(['cat' => $cat[0], 'articles' => $articles])->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		
-        $categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', 5)->where('parent_id', '<>', 5)->get();
+        $categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', 5)->where('parent_id', '<>', 8)->get();
 	   // $comments = $this->getComments(config('settings.recent_comments'));
 		$zar = Category::where('parent_id', '=', 5)->get();
 		$rus = Category::where('parent_id', '=', 8)->get();
@@ -134,7 +134,7 @@ class ArticlesController extends SiteController
 		
 		
 		//$comments = $this->getComments(config('settings.recent_comments'));
-		$categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', 5)->where('parent_id', '<>', 5)->get();
+		$categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', 5)->where('parent_id', '<>', 8)->get();
 		// $comments = $this->getComments(config('settings.recent_comments'));
 		 $zar = Category::where('parent_id', '=', 5)->get();
 		 $rus = Category::where('parent_id', '=', 8)->get();

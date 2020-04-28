@@ -1,4 +1,13 @@
 User-agent: *
-Disallow: /login
-Disallow: /admin
-Sitemap: http://stat.loc/sitemap.xml
+Disllow: /pink/
+Disllow: /css/
+Disllow: /fonts/
+Disllow: /js/
+Disllow: /svg/
+Disallow: /404/
+Disallow: /holders/
+Disallow: /policy/
+Disallow: /obratnaja-svjaz/
+
+Host: kotbaun.com
+Sitemap: https://kotbaun.com/sitemap.xml

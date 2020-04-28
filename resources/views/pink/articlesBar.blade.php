@@ -6,8 +6,8 @@
 				            <div class="left_menu">		
 								<ul class="menul">
 									@foreach($categorys as $category)
-									
-									<li class="p_menu"><a href="{{ route('skazkiCat',['cat_alias' => $category->alias]) }}">{{ $category->title }} </a>
+									 
+									<li class="p_menu {{ ($category->id == 5 || $category->id == 8) ? 'sub' : ''}}"><a href="{{ route('skazkiCat',['cat_alias' => $category->alias]) }}">{{ $category->title }} </a>
 										@if($category->id == 5)
 											<ul class="v_menu">
 											@foreach($zar as $z)

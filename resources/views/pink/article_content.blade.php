@@ -9,15 +9,15 @@
 				                    <h1 class="post_title"><a href="#">{{ $article->title }}</a></h1>
 				                    <!-- post featured -->
 
-				                    <p class="date">
+				                    <!-- <p class="date">
 				                        <span class="month">{{ $article->created_at->format('M') }}</span>
 				                        <span class="day">{{ $article->created_at->format('d') }}</span>
-				                    </p>
+				                    </p> -->
 				                </div>
 				                <!-- post meta -->
-				                <div class="meta group">
+				                <!-- <div class="meta group">
 				                    <p class="categories"><span>In: <a href="{{ route('skazkiCat',['cat_alias'=>$article->category->alias]) }}" title="View all posts in {{ $article->category->title }}" rel="category tag">{{ $article->category->title }}</a></p>
-				                </div>
+				                </div> -->
 				                <!-- post content -->
 				                <div class="the_content single group">
 				                    <p>{!! $article->text !!}</p>

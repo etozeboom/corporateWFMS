@@ -89,7 +89,19 @@
 			</div>
 			<div class="msg_error"></div>
 		</li>
-
+		
+		<li class="text_field">
+			<label for="name_contact_us">
+				<span class="label">Изображение:</span>
+		<img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg" />
+				<br />
+				<span class="sublabel">Изображение материала</span><br />
+			</label>
+			<div class="input_prepend">
+				{!! Form::file('image', ['class' => 'filestyle','data-buttonText'=>'Выберите изображение','data-buttonName'=>"btn-primary",'data-placeholder'=>"Файл"]) !!}
+			 </div>
+			 
+		</li>
 		
 		<li class="text_field">
 			<label for="name_contact_us">

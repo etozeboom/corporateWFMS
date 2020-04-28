@@ -22,7 +22,7 @@ class CreateArticlesTable extends Migration
             $table->string('alias',150)->unique();
             $table->timestamps();
             $table->string('keywords');
-        	$table->string('meta_desc');
+            $table->string('meta_desc');
         });
     }
 

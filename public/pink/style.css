@@ -672,7 +672,7 @@ td img {
 	top: 0;
 }
 
-.left_menu .p_menu::after{
+.left_menu .p_menu.sub::after{
 	content: "";
 	position: absolute;
 	border:5px solid;
@@ -681,6 +681,6 @@ td img {
 	right: 0.7em;
 	transition: 0.5s;
 }
-.left_menu .p_menu:hover::after{
+.left_menu .p_menu.sub:hover::after{
 	transform: scaleX(-1);
 }
