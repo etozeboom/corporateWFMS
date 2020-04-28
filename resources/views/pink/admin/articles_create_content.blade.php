@@ -93,8 +93,10 @@
 		<li class="text_field">
 			<label for="name_contact_us">
 				<span class="label">Изображение:</span>
-		<img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg" />
+
+				@if(isset($article->id))	<img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg" />@endif
 				<br />
+
 				<span class="sublabel">Изображение материала</span><br />
 			</label>
 			<div class="input_prepend">
