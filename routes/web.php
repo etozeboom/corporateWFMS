@@ -33,7 +33,9 @@ Route::resource('skazki','ArticlesController',[
 Route::get('skazki/{cat_alias}',['uses'=>'ArticlesController@index','as'=>'skazkiCat']);   
 Route::resource('comment','CommentController',['only'=>['store']]);
 
-Route::match(['get','post'],'/contacts',['uses'=>'ContactsController@index','as'=>'contacts']);
+Route::get('obratnaja-svjaz',['uses'=>'PagesController@index','as'=>'obratnajaSvjaz']);
+Route::get('holders',['uses'=>'PagesController@index','as'=>'holders']);
+Route::get('policy',['uses'=>'PagesController@index','as'=>'policy']);
 
 // Route::get('greeting', function () {
 //     return view('login');
