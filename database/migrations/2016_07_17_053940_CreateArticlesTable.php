@@ -23,6 +23,7 @@ class CreateArticlesTable extends Migration
             $table->timestamps();
             $table->string('keywords');
             $table->string('meta_desc');
+            $table->integer('view_count')->default(0);
         });
     }
 

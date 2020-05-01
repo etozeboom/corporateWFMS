@@ -36,19 +36,29 @@ class ArticlesController extends SiteController
 		$this->meta_desc = 'String';
 		
 		if ($cat_alias) {
-			$cat = Category::where('alias', '=', $cat_alias)->get();
+			$cat = Category::where('alias', '=', $cat_alias)->first();
 		} else {
-			$cat = Category::where('id', '=', 1)->get();
+			$cat = Category::where('id', '=', 1)->first();
 		}
-
+		//dd($cat->id);
         $articles = $this->getArticles($cat_alias);
         //dd($articles);
 		//dd($cat);
 		//dd($cat[0]->meta_desc);
-		$this->meta_desc = $cat[0]->meta_desc;
-		$this->keywords = $cat[0]->keywords;
-		$this->title = $cat[0]->meta_title;
-        $content = view(config('settings.theme').'.articles_content')->with(['cat' => $cat[0], 'articles' => $articles])->render();
+		$this->meta_desc = $cat->meta_desc;
+		$this->keywords = $cat->keywords;
+		$this->title = $cat->meta_title;
+		// SELECT categories.*, count(articles.id) FROM `categories` LEFT JOIN `articles` ON categories.id=articles.category_id WHERE categories.parent_id = 5 GROUP BY categories.id
+		//DB::raw('categories.title, categories.alias , count(articles.id)')
+		if ($cat->id == 5 || $cat->id == 8) {
+			//$authors = Category::where('parent_id', '=', $cat->id)->select('title','alias')->get();
+			$authors = Category::where('parent_id', '=', $cat->id)->leftJoin('articles', 'categories.id', '=', 'articles.category_id')->select(DB::raw('categories.title, categories.alias , count(articles.id) as articles_count'))->where('categories.parent_id', '=', $cat->id)->groupBy('categories.id')->get();
+			//dd($authors);
+			$content = view(config('settings.theme').'.authors_content')->with(['cat' => $cat, 'authors' => $authors])->render();
+		} else {
+			$content = view(config('settings.theme').'.articles_content')->with(['cat' => $cat, 'articles' => $articles])->render();
+		}	
+
 		$this->vars = array_add($this->vars,'content',$content);
 		
         $categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', 5)->where('parent_id', '<>', 8)->get();
@@ -116,6 +126,7 @@ class ArticlesController extends SiteController
 		}
 		$article = $this->a_rep->one($alias);
 		
+		event('articleHasViewed', $article);
 		// if($article) {
 		// 	$article->img = json_decode($article->img);
 		// }
