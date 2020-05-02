@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Repositories\ArticlesRepository;
-use App\Repositories\CommentsRepository;
 
 use App\Http\Requests;
 
@@ -14,12 +13,11 @@ use Illuminate\Support\Facades\DB;
 class ArticlesController extends SiteController
 {
     
-     public function __construct(ArticlesRepository $a_rep, CommentsRepository $c_rep) {
+     public function __construct(ArticlesRepository $a_rep) {
     	
     	parent::__construct(new \App\Repositories\MenusRepository(new \App\Menu));
 
     	$this->a_rep = $a_rep;
-    	$this->c_rep = $c_rep;
     	
     	$this->bar = 'left';
     	
@@ -48,9 +46,11 @@ class ArticlesController extends SiteController
 		$this->meta_desc = $cat->meta_desc;
 		$this->keywords = $cat->keywords;
 		$this->title = $cat->meta_title;
+		//dd(config('settings.zaid'));
+		//dd(config('settings.raid'));
 		// SELECT categories.*, count(articles.id) FROM `categories` LEFT JOIN `articles` ON categories.id=articles.category_id WHERE categories.parent_id = 5 GROUP BY categories.id
 		//DB::raw('categories.title, categories.alias , count(articles.id)')
-		if ($cat->id == 5 || $cat->id == 8) {
+		if ($cat->id == config('settings.zaid') || $cat->id == config('settings.raid')) {
 			//$authors = Category::where('parent_id', '=', $cat->id)->select('title','alias')->get();
 			$authors = Category::where('parent_id', '=', $cat->id)->leftJoin('articles', 'categories.id', '=', 'articles.category_id')->select(DB::raw('categories.title, categories.alias , count(articles.id) as articles_count'))->where('categories.parent_id', '=', $cat->id)->groupBy('categories.id')->get();
 			//dd($authors);
@@ -61,10 +61,10 @@ class ArticlesController extends SiteController
 
 		$this->vars = array_add($this->vars,'content',$content);
 		
-        $categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', 5)->where('parent_id', '<>', 8)->get();
+        $categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', config('settings.zaid'))->where('parent_id', '<>', config('settings.raid'))->get();
 	   // $comments = $this->getComments(config('settings.recent_comments'));
-		$zar = Category::where('parent_id', '=', 5)->get();
-		$rus = Category::where('parent_id', '=', 8)->get();
+		$zar = Category::where('parent_id', '=', config('settings.zaid'))->get();
+		$rus = Category::where('parent_id', '=', config('settings.raid'))->get();
         //dd($categorys);
         $this->contentLeftBar = view(config('settings.theme').'.articlesBar')->with(['categorys' => $categorys,'zar' => $zar,'rus' => $rus]);
 		
@@ -127,10 +127,10 @@ class ArticlesController extends SiteController
 		
 		
 		//$comments = $this->getComments(config('settings.recent_comments'));
-		$categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', 5)->where('parent_id', '<>', 8)->get();
+		$categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', config('settings.zaid'))->where('parent_id', '<>', config('settings.raid'))->get();
 		// $comments = $this->getComments(config('settings.recent_comments'));
-		 $zar = Category::where('parent_id', '=', 5)->get();
-		 $rus = Category::where('parent_id', '=', 8)->get();
+		 $zar = Category::where('parent_id', '=', config('settings.zaid'))->get();
+		 $rus = Category::where('parent_id', '=', config('settings.raid'))->get();
 		 //dd($categorys);
 		 $this->contentLeftBar = view(config('settings.theme').'.articlesBar')->with(['categorys' => $categorys,'zar' => $zar,'rus' => $rus]);
 		

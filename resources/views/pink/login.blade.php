@@ -10,7 +10,7 @@
 				            
 				            
 				            
-				            <form id="contact_form_contact_us" class="contact_form" method="POST" action="{{ url('/login') }}">
+				            <form id="contact_form_contact_us" class="artcl_form" method="POST" action="{{ url('/login') }}">
 				                    
 				                    {{ csrf_field() }}
 				                    <fieldset>

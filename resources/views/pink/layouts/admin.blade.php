@@ -15,7 +15,6 @@
         <!-- CSSs -->
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/reset.css" /> <!-- RESET STYLESHEET -->
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/style.css" /> <!-- MAIN THEME STYLESHEET -->
-        <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/style-minifield.css" /> <!-- MAIN THEME STYLESHEET -->
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/buttons.css" /> <!-- MAIN THEME STYLESHEET -->
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/cache-custom.css" /> <!-- MAIN THEME STYLESHEET -->
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/jquery-ui.css" /> <!-- MAIN THEME STYLESHEET -->
@@ -26,7 +25,7 @@
         <link rel='stylesheet' href='{{ asset(config('settings.theme')) }}/css/font-awesome.css' type='text/css' media='all' />
         
         <!-- JAVASCRIPTs -->
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.js"></script>
+        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery-3.5.0.min.js"></script>
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery-ui.js"></script>
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/ckeditor/ckeditor.js"></script>
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/bootstrap-filestyle.min.js"></script>

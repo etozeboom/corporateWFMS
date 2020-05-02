@@ -57,7 +57,7 @@ div.anythingSlider .forward { padding-right: 2%; }
 .sidebar_right .section.portfolio .work-description, .sidebar_left .section.portfolio .work-description { width: 36%; }
 
 /* === CONTACT */
-.sidebar_left .contact_form li.submit_button input.alignright, .sidebar_right .contact_form li.submit_button input.alignright { margin-right: -0.4%; }
+.sidebar_left .artcl_form li.submit_button input.alignright, .sidebar_right .artcl_form li.submit_button input.alignright { margin-right: -0.4%; }
 
 /* === RESPOND */
 #respond p.form-submit { width: 100.8% !important; }

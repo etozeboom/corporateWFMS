@@ -14,6 +14,7 @@
 				                                <th>Текст</th>
 				                                <th>Категория</th>
 				                                <th>Псевдоним</th>
+				                                <th>Превью</th>
 				                                <th>Дествие</th>
 				                            </tr>
 				                        </thead>
@@ -27,6 +28,7 @@
 				                                <td class="align_left">{{str_limit($article->text,200)}}</td>
 				                                <td>{{$article->category->title}}</td>
 				                                <td>{{$article->alias}}</td>
+				                                <td><img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg" style="max-width: 80px;" /></td>
 				                                <td>
 												{!! Form::open(['url' => route('admin.skazki.destroy',['id' => $article->id, 'articles'=>$article->alias]),'class'=>'form-horizontal','method'=>'POST']) !!}
 												    {{ method_field('DELETE') }}

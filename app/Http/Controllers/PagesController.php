@@ -29,7 +29,7 @@ class PagesController extends SiteController
 		 
 		$page = Page::where('alias',$request->path())->first();
 		//dd($page);
-	 	$this->title = 'Контакты';
+	 	$this->title = $page->title;
 	 	
 	 	$content = view(config('settings.theme').'.page_content')->with('page',$page)->render();
 		$this->vars = array_add($this->vars,'content',$content);

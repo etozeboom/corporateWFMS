@@ -67,7 +67,7 @@
         <link rel='stylesheet' href='{{ asset(config('settings.theme')) }}/css/font-awesome.css' type='text/css' media='all' />
         
         <!-- JAVASCRIPTs -->
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.js"></script>
+        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery-3.5.0.min.js"></script>
         
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/datatables.min.js"></script>
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/myscripts.js"></script>
@@ -156,8 +156,7 @@
         </div>
         <!-- END BG SHADOW -->
         
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.custom.js"></script>
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/contact.js"></script>
+        <!-- <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.custom.js"></script> -->
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.mobilemenu.js"></script> 
         
     </body>

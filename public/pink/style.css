@@ -398,15 +398,6 @@ body.no_js .classic #nav ul li ul.submenu li:hover > ul, body.no_js .classic #na
 .error-404-text input#searchsubmit { width: auto; }
 .safari .error-404-text input#searchsubmit { position:relative; top:-1px; }
 
-/* ===== PAGINATION ===== */
-.general-pagination { height:29px; margin: 20px auto; text-align:center; clear:both; }
-.general-pagination span { display:none; }
-.general-pagination a { display:inline-block; font-weight:bold; margin-right:5px; line-height:28px; width:29px; height:29px; text-align:center; background:url('images/bg-pagination.png') top repeat-x; font-family:Arial, Helvetica, sans-serif; color:#999999; font-size:11px; text-align:center; }
-.general-pagination a.selected { background-position:0 -58px; color:#ffffff; }
-.general-pagination a:hover { background-position:0 -29px; color:#999999; text-decoration:none; }
-.general-pagination a, .general-pagination span { border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; }
-
-
 /* === QUOTE */
 .yit_text_quote { text-align: right; }
 
@@ -429,41 +420,10 @@ body.no_js .classic #nav ul li ul.submenu li:hover > ul, body.no_js .classic #na
 /* === RECENT POSTS */
 .recent_post .hentry_post:last-child { margin-bottom: 0px; }
 
-/* === SEARCH FORM */
-#searchform { margin:10px 0 30px 0 }
-#searchform .screen-reader-text { display:none }
-#searchform input {border:1px solid #CFCFCF;color:#666;}
-input#searchsubmit {cursor:pointer;width:22%;padding:4px 8px;height:28px;font-family:'Droid Sans', 'Verdana', 'Arial', sans-serif;}
-.gecko input#searchsubmit{vertical-align: bottom;}
-.chrome input#searchsubmit{vertical-align: top;}
-input#searchsubmit:hover {background:#ddd;}
-input#s { width:73%; padding:5px; }
-
 /* === ICON TEXT */
 .sidebar .widget-icon-text {clear:both;margin-left:60px;}
 .sidebar .widget-icon-text img, .sidebar .widget-icon-text [class^=icon] {margin-left:-60px;float:left;padding-top:2px;font-size:48px;color:#000;}
 .sidebar .widget-icon-text h3, .sidebar .widget-icon-text p {margin:0;} 
-
-/* === FLICKR RSS */
-.footer-columns-4 .widget_flickrRSS img { width: 45px; height: 45px; }
-.widget_flickrRSS img {border: 1px solid #CFCFCF; margin: 3px 5px 3px 0; padding: 2px; }
-.widget_flickrRSS h3 { margin-bottom: 17px; }
-
-/* === CONTACT INFO */
-.contact-info .sidebar_nav { margin-top: 11px; }
-
-.contact-info .sidebar_nav ul { margin-bottom: 0px; }
-
-.contact-info ul li {
-    line-height: 26px;
-    height: 25px;
-}
-
-.contact-info ul li i {
-    vertical-align: middle;
-}
-
-.almost-all-categories ul li a, .portfolio-categories ul li a { color: #6d6a6a; }
 
 .widget_nav_menu ul li a:hover, .widget_pages ul li a:hover, .widget_categories ul li a:hover, .sidebar .portfolio-categories ul li:hover, .widget_archive ul li a:hover, .almost-all-categories ul li:hover, .widget_links ul li a:hover,
 .widget_nav_menu ul li.current_page_item > a, .widget_pages ul li.current_page_item > a, .widget_categories ul li.current_page_item > a, .almost-all-categories ul li.current-cat {
@@ -481,32 +441,32 @@ input#s { width:73%; padding:5px; }
 .text_image img{ max-width: 100%; }
 
 /* ===== CONTACT FORM ===== */                
-.content .contact_form { margin-top:30px; width:104%; }   
-.content .contact_form fieldset {padding:0;}          
-.content .contact_form ul { margin:0; list-style:none; }  
-.content .contact_form li { width: 44.2%; float: left; margin: 0 5% 2% 0; }
-.content .contact_form li.on-left { float:left; }
-.content .contact_form li.on-right { float:right; }
-.content .contact_form li.full { clear:both; float: none; width: 95%; }
-.content .contact_form li.full label { display: block }  
-.content .contact_form li.textarea_field { clear:both; width:auto; float:none; }
-.content .contact_form label span.label { font-size:13px; }
-.content .contact_form label span.sublabel { font-family: 'Calibri', 'Droid Sans', Verdana, Arial, sans-serif; font-size: 11px; color: #9C9B9B }  
-.content .contact_form li.text_field input, .content .contact_form li.checkbox-field input, .content .contact_form li.file-field input, .content .contact_form li select, .content .contact_form li textarea { margin-top:10px; padding:10px; }
-.content .contact_form li.text_field input, .content .contact_form li select { font-size: 12px; width:97.5%; }
-.content .contact_form li select { padding:10px; }
-.content .contact_form li textarea {  width:97%; height:150px; background-color:#fff; } 
-.content .contact_form li.icon input, .content .contact_form li.icon textarea, .content .contact_form li input.icon, .content .contact_form li textarea.icon { background-repeat:no-repeat; } 
-.content .contact_form li.icon input, .content .contact_form li input.icon { background-position:98% center; }
-.content .contact_form li.icon textarea, .content .contact_form li textarea.icon { background-position: 98% 15px; }
-.content .contact_form li.error input, .content .contact_form li.error textarea, .content .contact_form li.error select,
-.content .contact_form li input.error, .content .contact_form li textarea.error, .content .contact_form li select.error { background-image:url('images/icons/error.png'); border:1px solid #cf0606; } 
-.content .contact_form li.success input, .content .contact_form li.success textarea, .content .contact_form li.success select,
-.content .contact_form li input.success, .content .contact_form li textarea.success, .content .contact_form li select.success { background-image:url('images/icons/success.png'); }                     
-.content .contact_form li div.msg_error { font-style:normal; font-size:11px; color:#cf0606; height:14px; }    
-.content .contact_form li.submit_button {clear:both; width:auto; float:none;}      
-.content .contact_form li.checkbox-field label, .content .contact_form li.radio-field label { display: block; }
-.content .contact_form li.submit_button input {
+.content .artcl_form { margin-top:30px; width:104%; }   
+.content .artcl_form fieldset {padding:0;}          
+.content .artcl_form ul { margin:0; list-style:none; }  
+.content .artcl_form li { width: 44.2%; float: left; margin: 0 5% 2% 0; }
+.content .artcl_form li.on-left { float:left; }
+.content .artcl_form li.on-right { float:right; }
+.content .artcl_form li.full { clear:both; float: none; width: 95%; }
+.content .artcl_form li.full label { display: block }  
+.content .artcl_form li.textarea_field { clear:both; width:auto; float:none; }
+.content .artcl_form label span.label { font-size:13px; }
+.content .artcl_form label span.sublabel { font-family: 'Calibri', 'Droid Sans', Verdana, Arial, sans-serif; font-size: 11px; color: #9C9B9B }  
+.content .artcl_form li.text_field input, .content .artcl_form li.checkbox-field input, .content .artcl_form li.file-field input, .content .artcl_form li select, .content .artcl_form li textarea { margin-top:10px; padding:10px; }
+.content .artcl_form li.text_field input, .content .artcl_form li select { font-size: 12px; width:97.5%; }
+.content .artcl_form li select { padding:10px; }
+.content .artcl_form li textarea {  width:97%; height:150px; background-color:#fff; } 
+.content .artcl_form li.icon input, .content .artcl_form li.icon textarea, .content .artcl_form li input.icon, .content .artcl_form li textarea.icon { background-repeat:no-repeat; } 
+.content .artcl_form li.icon input, .content .artcl_form li input.icon { background-position:98% center; }
+.content .artcl_form li.icon textarea, .content .artcl_form li textarea.icon { background-position: 98% 15px; }
+.content .artcl_form li.error input, .content .artcl_form li.error textarea, .content .artcl_form li.error select,
+.content .artcl_form li input.error, .content .artcl_form li textarea.error, .content .artcl_form li select.error { background-image:url('images/icons/error.png'); border:1px solid #cf0606; } 
+.content .artcl_form li.success input, .content .artcl_form li.success textarea, .content .artcl_form li.success select,
+.content .artcl_form li input.success, .content .artcl_form li textarea.success, .content .artcl_form li select.success { background-image:url('images/icons/success.png'); }                     
+.content .artcl_form li div.msg_error { font-style:normal; font-size:11px; color:#cf0606; height:14px; }    
+.content .artcl_form li.submit_button {clear:both; width:auto; float:none;}      
+.content .artcl_form li.checkbox-field label, .content .artcl_form li.radio-field label { display: block; }
+.content .artcl_form li.submit_button input {
     background: url("images/input_pattern.png") repeat-x scroll 0 0 #F3F0F0;
     border: 1px solid #CFCFCF;
     cursor: pointer;
@@ -519,31 +479,31 @@ input#s { width:73%; padding:5px; }
     margin:0;
     
 }
-.content .contact_form li.submit_button input:hover { background: url("images/input_pattern_hover.png") repeat-x scroll 0 0 #fff; }
-.content .contact_form li.submit_button input[disabled] { color:#ddd; }
-.content .contact_form label, .content .contact_form input, .content .contact_form textarea { color:#4c4c4c; width:auto; }
-.content .contact_form p.success, .content .contact_form p.error { padding:10px 15px 10px 55px; border:1px solid; margin:0 auto 30px; background:no-repeat 15px center; width:400px; }
-.content .contact_form p.success { background-color:#effea9; border-color:#d7ee6e; color:#839607; background-image:url('images/icons/tick_contact.png'); }
-.content .contact_form p.error   { background-color:#fedccd; border-color:#fa8c83; color:#c82c1f; background-image:url('images/icons/error.png'); }
+.content .artcl_form li.submit_button input:hover { background: url("images/input_pattern_hover.png") repeat-x scroll 0 0 #fff; }
+.content .artcl_form li.submit_button input[disabled] { color:#ddd; }
+.content .artcl_form label, .content .artcl_form input, .content .artcl_form textarea { color:#4c4c4c; width:auto; }
+.content .artcl_form p.success, .content .artcl_form p.error { padding:10px 15px 10px 55px; border:1px solid; margin:0 auto 30px; background:no-repeat 15px center; width:400px; }
+.content .artcl_form p.success { background-color:#effea9; border-color:#d7ee6e; color:#839607; background-image:url('images/icons/tick_contact.png'); }
+.content .artcl_form p.error   { background-color:#fedccd; border-color:#fa8c83; color:#c82c1f; background-image:url('images/icons/error.png'); }
 #yit_bot {display:none !important;}
 
 .input_prepend{ position: relative; }
 .input_prepend .add_on{ position: absolute; top: 40%; right: 0px; }
-.content .contact_form li.full .input_prepend .add_on { right: 5px; }
+.content .artcl_form li.full .input_prepend .add_on { right: 5px; }
 .textarea_field .input_prepend .add_on{ position: absolute; top: 20px; right: 10px; }
 .sidebar_no .textarea_field .input_prepend .add_on{ right: 15px; }
 .ie .textarea_field .input_prepend .add_on{ right: 25px; }
 .input_prepend input.error, .input_prepend textarea.error{ background-image: none !important; }
 
 /* submit alignment */
-.contact_form li.submit_button input.alignleft { float:left; }
-.contact_form li.submit_button input.alignright { float:right; margin-right: 1%; }
-.sidebar_left .contact_form li.submit_button input.alignright,
-.sidebar_right .contact_form li.submit_button input.alignright { float:right; margin-right: 0.5%; }
-.contact_form li.submit_button input.aligncenter { margin:0 auto; }
+.artcl_form li.submit_button input.alignleft { float:left; }
+.artcl_form li.submit_button input.alignright { float:right; margin-right: 1%; }
+.sidebar_left .artcl_form li.submit_button input.alignright,
+.sidebar_right .artcl_form li.submit_button input.alignright { float:right; margin-right: 0.5%; }
+.artcl_form li.submit_button input.aligncenter { margin:0 auto; }
 
 /*border-radius*/
-.content .contact_form p.success, .content .contact_form p.error { border-radius:8px; -moz-border-radius:8px; -webkit-border-radius:8px; } 
+.content .artcl_form p.success, .content .artcl_form p.error { border-radius:8px; -moz-border-radius:8px; -webkit-border-radius:8px; } 
 
 
 /* ===== SHADOWS ===== */

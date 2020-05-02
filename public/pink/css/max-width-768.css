@@ -35,7 +35,7 @@
 
 
 /* === CONTACT */
-.sidebar_left .contact_form li.submit_button input.alignright, .sidebar_right .contact_form li.submit_button input.alignright { margin-right: -1.5%; }
+.sidebar_left .artcl_form li.submit_button input.alignright, .sidebar_right .artcl_form li.submit_button input.alignright { margin-right: -1.5%; }
 
 /* === BLOG */
 .blog_big .thumbnail .image-wrap img { width: auto; height: auto; max-width: 100%; }
