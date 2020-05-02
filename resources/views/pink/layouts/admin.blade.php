@@ -18,7 +18,7 @@
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/buttons.css" /> <!-- MAIN THEME STYLESHEET -->
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/cache-custom.css" /> <!-- MAIN THEME STYLESHEET -->
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/jquery-ui.css" /> <!-- MAIN THEME STYLESHEET -->
-        <link rel="stylesheet" id="custom-css" href="{{ asset(config('settings.theme')) }}/js/datatables.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" id="custom-css" href="{{ asset(config('settings.theme')) }}/css/datatables.min.css" type="text/css" media="all" />
 		
         <!-- FONTs -->
         <link rel="stylesheet" id="google-fonts-css" href="http://fonts.googleapis.com/css?family=Oswald%7CDroid+Sans%7CPlayfair+Display%7COpen+Sans+Condensed%3A300%7CRokkitt%7CShadows+Into+Light%7CAbel%7CDamion%7CMontez&amp;ver=3.4.2" type="text/css" media="all" />
