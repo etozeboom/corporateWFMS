@@ -6,7 +6,7 @@
 								{!! Html::link(route('admin.skazki.create'),'Добавить  материал',['class' => 'btn btn_the_salmon_dance_3']) !!}
 
 				                <div class="short_table white">
-				                    <table style="width: 100%" cellspacing="0" cellpadding="0">
+				                    <table id="tableSkazki" style="width: 100%" cellspacing="0" cellpadding="0">
 				                        <thead>
 				                            <tr>
 				                                <th class="align_left">ID</th>

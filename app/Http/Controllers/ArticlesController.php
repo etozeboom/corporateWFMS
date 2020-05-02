@@ -72,17 +72,6 @@ class ArticlesController extends SiteController
         return $this->renderOutput();
     }
     
-    // public function getComments($take) {
-		
-	// 	$comments = $this->c_rep->get(['text','name','email','site','article_id','user_id'],$take);
-		
-	// 	if($comments) {
-	// 		$comments->load('article','user');
-	// 	}
-		
-	// 	return $comments;
-	// }
-
     
     public function getArticles($alias = FALSE) {
     	
@@ -108,12 +97,6 @@ class ArticlesController extends SiteController
 			->get();
 		}
 		
-			
-		//dd($aaa);
-		// if($articles) {
-		// 	$articles->load('category','comments');
-		// }
-		
 		return $articles;
 		
 	}
@@ -131,7 +114,6 @@ class ArticlesController extends SiteController
 		// 	$article->img = json_decode($article->img);
 		// }
 		
-		//dd($article->comments->groupBy('parent_id'));
 		
 		if(isset($article->id)) {
 			$this->title = $article->title;
