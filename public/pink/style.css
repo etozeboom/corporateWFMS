@@ -23,12 +23,12 @@ it will automatically override the style in this file.
 ---------------------------------------------------------------------------------------------- */
 
 /* === FONTS
-Serif:      'Rokkitt', 'Georgia', 'Times New Roman', serif
-Sans-serif: 'Droid Sans', 'Verdana', 'Arial', sans-serif
+Serif:      'MontserratRegular', 'Georgia', 'Times New Roman', serif
+Sans-serif: 'MontserratRegular', 'Verdana', 'Arial', sans-serif
 
-Text size: 12px;
-Menu size: 15px;
-Sub-menu size: 11px;
+Text size: 0.75rem;
+Menu size: 0.93rem;
+Sub-menu size: 0.69rem;
 ----------------------------------------------------------- */
 
 /* === COLORS
@@ -42,24 +42,26 @@ Orange:     #ac670c
     font-style: normal; 
     font-weight: normal;
 }
-
+html{
+    font-size: 16px;
+}
 /* ===== TYPOGRAPHY ===== */
 p, li, address, dd, blockquote, td, th { font-size:1em; line-height:1.71em }
 body, p, li, address, dd, blockquote {  } 
 h1, h2, h3, h4, h5, h6, p, dl { margin:0.8em 0 0.3em; }          
 a, a:hover { text-decoration:none }
 h1, h2, h3, h4, h5, h6 {  }
-h1, h1 a, h1 span { font-size:26px; line-height: 26px; }
-h2, h2 a, h2 span { font-size:22px; line-height: 22px; }
-h3, h3 a, h3 span { font-size:20px; line-height: 20px; }
-h4, h4 a, h4 span { font-size:18px; line-height: 18px; }
-h5, h5 a, h5 span { font-size:15px; line-height: 15px; }
-h6, h6 a, h6 span { font-size:12px; line-height: 12px; }
-.content ul { margin-left:20px; list-style:square }
-.content ol { margin-left:40px; }
+h1, h1 a, h1 span { font-size:1.62rem; line-height: 1.62rem; }
+h2, h2 a, h2 span { font-size:1.375rem; line-height: 1.375rem; }
+h3, h3 a, h3 span { font-size:1.25rem; line-height: 1.25rem; }
+h4, h4 a, h4 span { font-size:1.125rem; line-height: 1.125rem; }
+h5, h5 a, h5 span { font-size:0.93rem; line-height: 0.93rem; }
+h6, h6 a, h6 span { font-size:0.75rem; line-height: 0.75rem; }
+.content ul { margin-left:1.25rem; list-style:square }
+.content ol { margin-left:2.5rem; }
 i, em { font-style:italic; }
 strong { font-weight:bold; }
-.content blockquote { background:url('images/cite.png') no-repeat 45px 25px; padding:35px; }
+.content blockquote { background:url('images/cite.png') no-repeat 45px 1.56rem; padding:2.18rem; }
 .content blockquote p { padding-left: 45px; }        
 .border-line { height:1px; background:#CFCFCF; width:100%; clear:both; margin:1.2em 0; }
 dt { font-weight:bold; }
@@ -73,7 +75,7 @@ a:hover, .sidebar a {
 }
 
 .line { border-top:1px solid #CFCFCF }
-.space { height:30px }
+.space { height:1.87rem }
 body .last, body .widget_last { margin-right:0; padding-right:0 !important; border-right:0; }
 body .last-row { margin-bottom:0; }        
 .sidebar .widget_last { margin-bottom:0; }
@@ -83,26 +85,32 @@ body .last-row { margin-bottom:0; }
 p, li, address, dd, blockquote, td, th, a,
 body, h1, h2, h3, h4, h5, h6, p, dl, ul, ol {
     color: #585555;
-    font-family: 'Droid Sans', 'Verdana', 'Arial', sans-serif;
-    font-size: 12px;
+    font-family: 'MontserratRegular', 'Verdana', 'Arial', sans-serif;
+    font-size: 0.75rem;
     font-weight: normal;
 }
-code, pre { background-color: #E8EBEC; border: 1px dotted #CFCFCF; color: #333333; font: 13px/18px Consolas,"Courier New",Courier,monospace; padding: 0 5px; }
-pre { margin-bottom: 10px; margin-top: 10px; }
+code, pre { background-color: #E8EBEC; border: 1px dotted #CFCFCF; color: #333333; font: 0.81rem/1.125rem Consolas,"Courier New",Courier,monospace; padding: 0 5px; }
+pre { margin-bottom: 0.625rem; margin-top: 0.625rem; }
 
 /* ===== HEADINGS ===== */
 h1, h2, h3, h4, h5, h6,
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-	font-family: 'MontserratRegular', 'Droid Sans', 'Verdana', 'Arial', sans-serif;
-	font-size: 12px;
+	font-family: 'MontserratRegular', 'MontserratRegular', 'Verdana', 'Arial', sans-serif;
+	font-size: 0.75rem;
 }
 h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { color: #A05F02; }
 
-.the_content p {
-    font-family: 'MontserratRegular', 'Droid Sans', 'Verdana', 'Arial', sans-serif;
-    font-size: 16px;
+.post_title, .post_title a{
+    font-family: 'MontserratRegular', 'MontserratRegular', 'Verdana', 'Arial', sans-serif;
+    font-size: 1.875rem;
     color: #000000;
 }
+.the_content p {
+    font-family: 'MontserratRegular', 'MontserratRegular', 'Verdana', 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #000000;
+}
+
 /* ===== MAIN LAYOUT ===== */
 html { min-height:100% }
 
@@ -118,7 +126,7 @@ html { min-height:100% }
     max-width: 1200px;
     margin: 0 auto;
     width: 1200px;
-    padding: 0 20px;
+    padding: 0 1.25rem;
 }
 
 .boxed .bg_shadow {
@@ -165,9 +173,13 @@ html, body {
 
 /* ===== HEADER ===== */
 #header {
-    margin-bottom: 20px;
-    padding-top: 15px;
+    margin-bottom: 1.25rem;
+    padding-top: 0.93rem;
     position: relative;
+}
+
+a, a.text-color:hover {
+    color: #b77a2b;
 }
 
 .page_template_home_php #header, .home #header { margin-bottom: 0px; }
@@ -176,7 +188,7 @@ html, body {
     /* background: url(images/shadows/shadow-938.png) no-repeat center bottom; */
     margin-top: 5px;
     width: 100%;
-    height: 10px;
+    height: 0.625rem;
 }
 
 .page_template_home_php #header_shadow, .home #header_shadow { display: none; }
@@ -185,7 +197,7 @@ html, body {
 /* === LOGO */
 #logo {
     /* float: left; */
-    padding-bottom: 22px;
+    padding-bottom: 1.375rem;
     max-width: 100px;
 }
 #logo img{
@@ -206,8 +218,8 @@ html, body {
 }
 
 #header .menu {
-    height: 28px;
-    padding: 24px 0 0;
+    height: 1.75rem;
+    padding: 1.5rem 0 0;
     position: relative;
 }
 
@@ -218,15 +230,15 @@ html, body {
 
 #header .menu ul li {
     position: relative;
-    padding: 0 34px;
+    padding: 0 2.125rem;
 }
 
 #header .menu.classic ul li {
-    padding-bottom:10px;
+    padding-bottom:0.625rem;
 }
 
 #ie8 #header .menu ul li {
-    padding: 0 29px;
+    padding: 0 1.81rem;
 }
 
 #header .menu > ul > li:first-child { padding-left: 0px; }
@@ -236,8 +248,8 @@ html, body {
 #header .menu ul li a {
     color: #939191;
     display: block;
-    font-family: 'Rokkitt', 'Georgia', 'Times New Roman', serif;
-    font-size: 11px;
+    font-family: 'MontserratRegular', 'Georgia', 'Times New Roman', serif;
+    font-size: 0.94rem;
     text-align: left;
 }
 
@@ -274,10 +286,10 @@ body.no_js .classic #nav ul li ul.submenu li:hover > ul, body.no_js .classic #na
 .extra-content { clear:both; }
 
 /* ===== PAGE META ===== */
-#page_meta { margin: 0 0 20px }
+#page_meta { margin: 0 0 1.25rem }
 
-#page_meta h3, #page_meta h4 { font-size: 28px; font-family: 'Rokkitt', 'Georgia', 'Times New Roman', serif; color: #030303; text-align: center; margin:0; line-height: 1em; }
-#page_meta h4 { color: #c86f06; font-size: 24px; }
+#page_meta h3, #page_meta h4 { font-size: 1.75rem; font-family: 'MontserratRegular', 'Georgia', 'Times New Roman', serif; color: #030303; text-align: center; margin:0; line-height: 1em; }
+#page_meta h4 { color: #c86f06; font-size: 1.5rem; }
 
 #yit-breadcrumb, #yit-breadcrumb a{ color:#838383; }
 #yit-breadcrumb a:hover{color:#535353}
@@ -296,9 +308,9 @@ body.no_js .classic #nav ul li ul.submenu li:hover > ul, body.no_js .classic #na
     height: auto;
 }
 .error-404-text p, .error-404-text p a {
-    font-size: 18px;
-    font-family: 'Rokkitt', 'Georgia', 'Times New Roman', serif;
-    line-height: 22px;
+    font-size: 1.125rem;
+    font-family: 'MontserratRegular', 'Georgia', 'Times New Roman', serif;
+    line-height: 1.375rem;
     text-align: center;    
 }
 
@@ -317,8 +329,8 @@ body.no_js .classic #nav ul li ul.submenu li:hover > ul, body.no_js .classic #na
 .text_quote_quote, .text_quote_author {
     background: none;
     color: #939191;
-    font-family: Rokkitt, Georgia, 'Times New Roman', serif;
-    font-size: 18px;
+    font-family: MontserratRegular, Georgia, 'Times New Roman', serif;
+    font-size: 1.125rem;
     font-style: normal;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -326,7 +338,7 @@ body.no_js .classic #nav ul li ul.submenu li:hover > ul, body.no_js .classic #na
 }
 .text_quote_author {
     color: #1a1919;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-style: normal;
 }
 
@@ -347,14 +359,14 @@ body.no_js .classic #nav ul li ul.submenu li:hover > ul, body.no_js .classic #na
 .almost-all-categories ul li:hover a, .almost-all-categories ul li.current-cat a, .portfolio-categories ul li:hover a { color: #0f0f0f; }
 
 .widget_nav_menu ul li .sub-menu, .widget_pages ul li .children, .widget_categories ul li .children, .portfolio-categories ul li .children {
-    margin-left: 20px;
+    margin-left: 1.25rem;
 }
 
 /* === TEXT IMAGE */
 .text_image img{ max-width: 100%; }
 
 /* ===== CONTACT FORM ===== */                
-.content .artcl_form { margin-top:30px; width:104%; }   
+.content .artcl_form { margin-top:1.87rem; width:104%; }   
 .content .artcl_form fieldset {padding:0;}          
 .content .artcl_form ul { margin:0; list-style:none; }  
 .content .artcl_form li { width: 44.2%; float: left; margin: 0 5% 2% 0; }
@@ -363,20 +375,20 @@ body.no_js .classic #nav ul li ul.submenu li:hover > ul, body.no_js .classic #na
 .content .artcl_form li.full { clear:both; float: none; width: 95%; }
 .content .artcl_form li.full label { display: block }  
 .content .artcl_form li.textarea_field { clear:both; width:auto; float:none; }
-.content .artcl_form label span.label { font-size:13px; }
-.content .artcl_form label span.sublabel { font-family: 'Calibri', 'Droid Sans', Verdana, Arial, sans-serif; font-size: 11px; color: #9C9B9B }  
-.content .artcl_form li.text_field input, .content .artcl_form li.checkbox-field input, .content .artcl_form li.file-field input, .content .artcl_form li select, .content .artcl_form li textarea { margin-top:10px; padding:10px; }
-.content .artcl_form li.text_field input, .content .artcl_form li select { font-size: 12px; width:97.5%; }
-.content .artcl_form li select { padding:10px; }
+.content .artcl_form label span.label { font-size:0.81rem; }
+.content .artcl_form label span.sublabel { font-family: 'Calibri', 'MontserratRegular', Verdana, Arial, sans-serif; font-size: 0.69rem; color: #9C9B9B }  
+.content .artcl_form li.text_field input, .content .artcl_form li.checkbox-field input, .content .artcl_form li.file-field input, .content .artcl_form li select, .content .artcl_form li textarea { margin-top:0.625rem; padding:0.625rem; }
+.content .artcl_form li.text_field input, .content .artcl_form li select { font-size: 0.75rem; width:97.5%; }
+.content .artcl_form li select { padding:0.625rem; }
 .content .artcl_form li textarea {  width:97%; height:150px; background-color:#fff; } 
 .content .artcl_form li.icon input, .content .artcl_form li.icon textarea, .content .artcl_form li input.icon, .content .artcl_form li textarea.icon { background-repeat:no-repeat; } 
 .content .artcl_form li.icon input, .content .artcl_form li input.icon { background-position:98% center; }
-.content .artcl_form li.icon textarea, .content .artcl_form li textarea.icon { background-position: 98% 15px; }
+.content .artcl_form li.icon textarea, .content .artcl_form li textarea.icon { background-position: 98% 0.93rem; }
 .content .artcl_form li.error input, .content .artcl_form li.error textarea, .content .artcl_form li.error select,
 .content .artcl_form li input.error, .content .artcl_form li textarea.error, .content .artcl_form li select.error { background-image:url('images/icons/error.png'); border:1px solid #cf0606; } 
 .content .artcl_form li.success input, .content .artcl_form li.success textarea, .content .artcl_form li.success select,
 .content .artcl_form li input.success, .content .artcl_form li textarea.success, .content .artcl_form li select.success { background-image:url('images/icons/success.png'); }                     
-.content .artcl_form li div.msg_error { font-style:normal; font-size:11px; color:#cf0606; height:14px; }    
+.content .artcl_form li div.msg_error { font-style:normal; font-size:0.69rem; color:#cf0606; height:0.87rem; }    
 .content .artcl_form li.submit_button {clear:both; width:auto; float:none;}      
 .content .artcl_form li.checkbox-field label, .content .artcl_form li.radio-field label { display: block; }
 .content .artcl_form li.submit_button input {
@@ -384,8 +396,8 @@ body.no_js .classic #nav ul li ul.submenu li:hover > ul, body.no_js .classic #na
     border: 1px solid #CFCFCF;
     cursor: pointer;
     display: block;
-    font-size: 9px;
-    height: 30px;
+    font-size: 0.56rem;
+    height: 1.87rem;
     letter-spacing: 1px;
     padding: 0 4px;
     text-transform: uppercase;
@@ -395,7 +407,7 @@ body.no_js .classic #nav ul li ul.submenu li:hover > ul, body.no_js .classic #na
 .content .artcl_form li.submit_button input:hover { background: url("images/input_pattern_hover.png") repeat-x scroll 0 0 #fff; }
 .content .artcl_form li.submit_button input[disabled] { color:#ddd; }
 .content .artcl_form label, .content .artcl_form input, .content .artcl_form textarea { color:#4c4c4c; width:auto; }
-.content .artcl_form p.success, .content .artcl_form p.error { padding:10px 15px 10px 55px; border:1px solid; margin:0 auto 30px; background:no-repeat 15px center; width:400px; }
+.content .artcl_form p.success, .content .artcl_form p.error { padding:0.625rem 0.93rem 0.625rem 55px; border:1px solid; margin:0 auto 1.87rem; background:no-repeat 0.93rem center; width:400px; }
 .content .artcl_form p.success { background-color:#effea9; border-color:#d7ee6e; color:#839607; background-image:url('images/icons/tick_contact.png'); }
 .content .artcl_form p.error   { background-color:#fedccd; border-color:#fa8c83; color:#c82c1f; background-image:url('images/icons/error.png'); }
 #yit_bot {display:none !important;}
@@ -403,9 +415,9 @@ body.no_js .classic #nav ul li ul.submenu li:hover > ul, body.no_js .classic #na
 .input_prepend{ position: relative; }
 .input_prepend .add_on{ position: absolute; top: 40%; right: 0px; }
 .content .artcl_form li.full .input_prepend .add_on { right: 5px; }
-.textarea_field .input_prepend .add_on{ position: absolute; top: 20px; right: 10px; }
-.sidebar_no .textarea_field .input_prepend .add_on{ right: 15px; }
-.ie .textarea_field .input_prepend .add_on{ right: 25px; }
+.textarea_field .input_prepend .add_on{ position: absolute; top: 1.25rem; right: 0.625rem; }
+.sidebar_no .textarea_field .input_prepend .add_on{ right: 0.93rem; }
+.ie .textarea_field .input_prepend .add_on{ right: 1.56rem; }
 .input_prepend input.error, .input_prepend textarea.error{ background-image: none !important; }
 
 /* submit alignment */
@@ -431,16 +443,16 @@ form input[type="text"], form textarea { border: 1px solid #CFCFCF; -webkit-tran
 .short_table table {
 	border: 1px solid #d3d3d3;
 	border-radius: 5px;
-	margin: 1em 0 30px;
+	margin: 1em 0 1.87rem;
 }
 .short_table table th {
-	padding: 20px 30px;
+	padding: 1.25rem 1.87rem;
 	border: none;
 	border-bottom: none;
 	border-left: none;
 }
 .short_table table td {
-	padding: 20px 30px;
+	padding: 1.25rem 1.87rem;
 	border: 1px solid #e0e0e0;
 	border-bottom: none;
 	border-left: none;
@@ -506,18 +518,18 @@ td img {
 .left_menu .menul a{
 	background:#3d3d3d;
 	color: #fff;
-	padding: 10px;
+	padding: 0.625rem;
 	display: block;
 	border-bottom: 1px solid #666;
 	transition: 0.5s all;
 }
 .left_menu{
 	/* width: 200px; */
-	margin: 20px 0;
+	margin: 1.25rem 0;
 }
 .left_menu .menul a:hover{
 	background: #666;
-	padding: 10px 0 10px 20px;
+	padding: 0.625rem 0 0.625rem 1.25rem;
 }
 .left_menu .menul li:first-child a, .left_menu .menul li .v_menu li:first-child a{
 	border-radius: 3px 3px 0 0;
@@ -537,7 +549,7 @@ td img {
 	left: 100%;
 	top: -9999px;
 	opacity: 0;
-	border-left: 10px solid transparent;
+	border-left: 0.625rem solid transparent;
 	transition: 0.5s opacity;
 }
 .left_menu .p_menu:hover .v_menu{
