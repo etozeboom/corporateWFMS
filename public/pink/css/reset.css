@@ -32,7 +32,7 @@ a img {border:none;}
 .center {text-align:center;}              
 
 /* self-clear floats */
-.group:after { content:"."; display:block; height:0; clear:both; visibility:hidden; overflow: hidden; } 
+/* .group:after { content:"."; display:block; height:0; clear:both; visibility:hidden; overflow: hidden; }  */
 
 /* ie.css, damn ie! */
 * html .group { /* IE6 */

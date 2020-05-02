@@ -78,83 +78,62 @@
     <!-- START BODY -->
     <body class="no_js responsive {{ (Route::currentRouteName() ==  'home')  ? 'page_template_home_php' : ''}} stretched">
         
-        <!-- START BG SHADOW -->
-        <div class="bg_shadow">
+
             
-            <!-- START WRAPPER -->
-            <div id="wrapper" class="group">
+        <!-- START WRAPPER -->
+        <div id="wrapper" class="group">
+            
+            <!-- START HEADER -->
+            <div id="header" class="group">
                 
-                <!-- START HEADER -->
-                <div id="header" class="group">
+                <div class="group inner">
                     
-                    <div class="group inner">
-                        
-                        <!-- START LOGO -->
+                    <div class="flexWrap">
                         <div id="logo" class="group">
-                            <a href="/" title="Pink Rio"><img src="{{ asset(config('settings.theme')) }}/images/logo.png" title="Pink Rio" alt="Pink Rio" /></a>
+                            <a href="/" title="kotbaun"><img src="{{ asset(config('settings.theme')) }}/images/logo.png" title="kotbaun" alt="kotbaun" /></a>
                         </div>
-                        <!-- END LOGO -->
-                        
                         <div id="sidebar_header" class="group">
                             <div class="widget_first widget yit_text_quote">
                                 <blockquote class="text_quote_quote">&#8220;The caterpillar does all the work but the butterfly gets all the publicity.&#8221;</blockquote>
                                 <cite class="text_quote_author">George Carlin</cite>
                             </div>
                         </div>
-                        <div class="clearer"></div>
-                        
-                        <hr />
-                        
-                        <!-- START MAIN NAVIGATION -->
-                        @yield('navigation')
-                        <!-- END MAIN NAVIGATION -->
-                        <div id="header_shadow"></div>
-                        <div id="menu_shadow"></div>
                     </div>
                     
+                    <hr />
+                    
+                    <!-- START MAIN NAVIGATION -->
+                    @yield('navigation')
+                    <!-- END MAIN NAVIGATION -->
+                    <div id="header_shadow"></div>
+                    <div id="menu_shadow"></div>
                 </div>
-                <!-- END HEADER -->
                 
-					
-					<div class="wrap_result"></div>
-					
-					
-					@if(Route::currentRouteName() == 'contacts')
-					<!-- START PAGE META -->
-						<div id="page_meta">
-						    <div class="inner group">
-						        <h3>...Say Hello! :)</h3>
-						        <h4>Get in touch with Pink Rio team</h4>
-						    </div>
-						</div>
-						<!-- END PAGE META -->
-					@endif
-					
-				
-				<!-- START PRIMARY -->
-				<div id="primary" class="sidebar_{{ isset($bar) ? $bar : 'no'}}">
-				    <div class="inner group">
-				        <!-- START CONTENT -->
-				        	@yield('content')
-				        <!-- END CONTENT -->
-				        <!-- START SIDEBAR -->
-				        	@yield('bar')
-				        <!-- END SIDEBAR -->
-				        <!-- START EXTRA CONTENT -->
-				        <!-- END EXTRA CONTENT -->
-				    </div>
-				</div>
-				<!-- END PRIMARY -->
-				
-				<!-- START COPYRIGHT -->
-                
-                @yield('footer')
-                
-                <!-- END COPYRIGHT -->
             </div>
-            <!-- END WRAPPER -->
+            <!-- END HEADER -->
+            
+            <!-- START PRIMARY -->
+            <div id="primary" class="sidebar_{{ isset($bar) ? $bar : 'no'}}">
+                <div class="inner group">
+                    <!-- START CONTENT -->
+                        @yield('content')
+                    <!-- END CONTENT -->
+                    <!-- START SIDEBAR -->
+                        @yield('bar')
+                    <!-- END SIDEBAR -->
+                    <!-- START EXTRA CONTENT -->
+                    <!-- END EXTRA CONTENT -->
+                </div>
+            </div>
+            <!-- END PRIMARY -->
+            
+            <!-- START COPYRIGHT -->
+            
+            @yield('footer')
+            
+            <!-- END COPYRIGHT -->
         </div>
-        <!-- END BG SHADOW -->
+        <!-- END WRAPPER -->
         
         <!-- <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.custom.js"></script> -->
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.mobilemenu.js"></script> 
