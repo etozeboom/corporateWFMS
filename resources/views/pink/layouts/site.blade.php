@@ -60,7 +60,7 @@
         <link rel="stylesheet" id="buttons" href="{{ asset(config('settings.theme')) }}/css/buttons.css" type="text/css" media="all" />
         <link rel="stylesheet" id="cache-custom-css" href="{{ asset(config('settings.theme')) }}/css/cache-custom.css" type="text/css" media="all" />
         <link rel="stylesheet" id="custom-css" href="{{ asset(config('settings.theme')) }}/css/custom.css" type="text/css" media="all" />
-        <link rel="stylesheet" id="custom-css" href="{{ asset(config('settings.theme')) }}/js/datatables.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" id="custom-css" href="{{ asset(config('settings.theme')) }}/js/datatables.css" type="text/css" media="all" />
 	    
         <!-- FONTs -->
         <link rel="stylesheet" id="google-fonts-css" href="http://fonts.googleapis.com/css?family=Oswald%7CDroid+Sans%7CPlayfair+Display%7COpen+Sans+Condensed%3A300%7CRokkitt%7CShadows+Into+Light%7CAbel%7CDamion%7CMontez&amp;ver=3.4.2" type="text/css" media="all" />
@@ -69,7 +69,7 @@
         <!-- JAVASCRIPTs -->
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery-3.5.0.min.js"></script>
         
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/datatables.js"></script>
+        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/datatables.min.js"></script>
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/myscripts.js"></script>
 
     </head>
