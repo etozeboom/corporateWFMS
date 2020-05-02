@@ -69,7 +69,7 @@
         <!-- JAVASCRIPTs -->
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery-3.5.0.min.js"></script>
         
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/datatables.min.js"></script>
+        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/datatables.js"></script>
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/myscripts.js"></script>
 
     </head>
