@@ -4,11 +4,8 @@
 	{!! $navigation !!}
 @endsection
 
-
-
-
-@section('bar')
-	{!! $rightBar !!}
+@section('content')
+	{!! $content !!}
 @endsection
 
 @section('footer')

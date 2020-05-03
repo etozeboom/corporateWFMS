@@ -1,4 +1,4 @@
-<div id="content_blog" class="content group">
+<div id="content_blog" class="content group content_skazki">
 @if($cat)
 	<div class="">
 	@if(isset($cat->text1))

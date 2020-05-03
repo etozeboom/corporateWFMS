@@ -22,6 +22,10 @@ class CatSkazkiRepository extends Repository {
 		return $category;
 	}
 	
+	public function getCat() {
+		$categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', config('settings.zaid'))->where('parent_id', '<>', config('settings.raid'))->get();
+		return $categorys;
+	}
 	public function addCategory($request) {
 		
 		$data = $request->except('_token','image');

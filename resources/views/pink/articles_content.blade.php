@@ -1,4 +1,4 @@
-<div id="content_blog" class="content group">
+<div id="content_blog" class="content group content_skazki">
 @if($cat)
 	<div class="">
 	@if(isset($cat->text1))
@@ -13,9 +13,9 @@
 				                    <table id="tableSkazki" class="display" style="width: 100%" cellspacing="0" cellpadding="0">
 				                        <thead>
 				                            <tr>
-				                                <th>Название</th>
-				                                <th>Автор</th>
-				                                <th>Время</th>
+				                                <th><div class="plahka">Название</div></th>
+				                                <th><div class="plahka">Автор</div></th>
+				                                <th><div class="plahka">Время</div></th>
 				                            </tr>
 				                        </thead>
 				                        <tbody>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Repositories\ArticlesRepository;
+use App\Repositories\CatSkazkiRepository;
 use Illuminate\Support\Facades\Auth;
 
 use Config;
@@ -15,13 +16,14 @@ use App\Article;
 class IndexController extends SiteController
 {
     
-    public function __construct(ArticlesRepository $a_rep) {
+    public function __construct(ArticlesRepository $a_rep, CatSkazkiRepository $c_rep) {
     	
     	parent::__construct(new \App\Repositories\MenusRepository(new \App\Menu));
     	
     	$this->a_rep = $a_rep;
+    	$this->c_rep = $c_rep;
     	
-    	$this->bar = 'right';
+    	$this->bar = 'home';
     	
     	$this->template = config('settings.theme').'.index';
 		
@@ -41,26 +43,24 @@ class IndexController extends SiteController
 		$this->title = 'Home Page';
 		
         
-        $articles = $this->getArticles();
+        //$articles = $this->getArticles();
+        $categorys = $this->c_rep->getCat();
+        //dd($categorys);
         
-       // dd($articles);
+       // $this->contentRightBar = view(config('settings.theme').'.indexBar')->with('articles',$articles)->render();
         
-        $this->contentRightBar = view(config('settings.theme').'.indexBar')->with('articles',$articles)->render();
-        
-        //Auth::logout();
-       // dump(Auth::user());
-        //dump($request->user());
-        
+        $content = view(config('settings.theme').'.indexContent')->with('categorys',$categorys)->render();
+		$this->vars = array_add($this->vars,'content',$content);
 
 
         return $this->renderOutput();
     }
     
-    protected function getArticles() {
-    	$articles = $this->a_rep->get(['title','created_at','alias'],Config::get('settings.home_articles_count'));
+    // protected function getArticles() {
+    // 	$articles = $this->a_rep->get(['title','created_at','alias'],Config::get('settings.home_articles_count'));
     	
-    	return $articles;
-    }	
+    // 	return $articles;
+    // }	
     
 
     /**

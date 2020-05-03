@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Repositories\ArticlesRepository;
+use App\Repositories\CatSkazkiRepository;
 
 use App\Http\Requests;
 
@@ -13,11 +14,12 @@ use Illuminate\Support\Facades\DB;
 class ArticlesController extends SiteController
 {
     
-     public function __construct(ArticlesRepository $a_rep) {
+     public function __construct(ArticlesRepository $a_rep, CatSkazkiRepository $c_rep) {
     	
     	parent::__construct(new \App\Repositories\MenusRepository(new \App\Menu));
 
     	$this->a_rep = $a_rep;
+    	$this->c_rep = $c_rep;
     	
     	$this->bar = 'left';
     	
@@ -61,7 +63,8 @@ class ArticlesController extends SiteController
 
 		$this->vars = array_add($this->vars,'content',$content);
 		
-        $categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', config('settings.zaid'))->where('parent_id', '<>', config('settings.raid'))->get();
+        //$categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', config('settings.zaid'))->where('parent_id', '<>', config('settings.raid'))->get();
+        $categorys = $this->c_rep->getCat();
 	   // $comments = $this->getComments(config('settings.recent_comments'));
 		$zar = Category::where('parent_id', '=', config('settings.zaid'))->get();
 		$rus = Category::where('parent_id', '=', config('settings.raid'))->get();
@@ -127,7 +130,8 @@ class ArticlesController extends SiteController
 		
 		
 		//$comments = $this->getComments(config('settings.recent_comments'));
-		$categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', config('settings.zaid'))->where('parent_id', '<>', config('settings.raid'))->get();
+		//$categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', config('settings.zaid'))->where('parent_id', '<>', config('settings.raid'))->get();
+		$categorys = $this->c_rep->getCat();
 		// $comments = $this->getComments(config('settings.recent_comments'));
 		 $zar = Category::where('parent_id', '=', config('settings.zaid'))->get();
 		 $rus = Category::where('parent_id', '=', config('settings.raid'))->get();
