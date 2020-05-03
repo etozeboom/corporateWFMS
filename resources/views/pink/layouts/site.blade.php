@@ -115,14 +115,10 @@
             <!-- START PRIMARY -->
             <div id="primary" class="sidebar_{{ isset($bar) ? $bar : 'no'}}">
                 <div class="inner group">
-                    <!-- START CONTENT -->
+                    
+                       @yield('bar')
+
                         @yield('content')
-                    <!-- END CONTENT -->
-                    <!-- START SIDEBAR -->
-                        @yield('bar')
-                    <!-- END SIDEBAR -->
-                    <!-- START EXTRA CONTENT -->
-                    <!-- END EXTRA CONTENT -->
                 </div>
             </div>
             <!-- END PRIMARY -->

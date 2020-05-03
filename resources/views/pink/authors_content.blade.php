@@ -1,6 +1,6 @@
 <div id="content_blog" class="content group content_skazki">
 @if($cat)
-	<div class="">
+	<div class="textCat">
 	@if(isset($cat->text1))
 		{!! $cat->text1 !!}
 	@endif
@@ -39,7 +39,7 @@
 			@endif	 
 			
 			@if($cat)
-	<div class="">
+	<div class="textCat">
 	@if(isset($cat->text2))
 		{!! $cat->text2 !!}
 	@endif
