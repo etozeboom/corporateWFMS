@@ -20,9 +20,6 @@
     #header .menu, #header hr { display:none; } 
     #header .menu-select { display:block; }   
     
-    /* shortcodes */
-    .call-to-action { height:auto; }
-    .call-to-action .number-phone { line-height: 1.41em; margin-left:20px; margin-bottom:20px; }
 }
 
 /* === SECTION BLOG */
@@ -33,27 +30,5 @@
     width: 100%;
 }
 
-
-/* === CONTACT */
-.sidebar_left .artcl_form li.submit_button input.alignright, .sidebar_right .artcl_form li.submit_button input.alignright { margin-right: -1.5%; }
-
 /* === BLOG */
 .blog_big .thumbnail .image-wrap img { width: auto; height: auto; max-width: 100%; }
-
-/* === RESPOND */
-#respond p.form-submit {
-    margin-right: 0;
-    width: 102% !important;
-}
-
-/* === WIDGET */
-.featured-projects-widget img { min-height: 77px; max-width: 94%; width: auto; height: auto;  }
-
-.contact-info ul li { height: auto; min-height: 25px; }
-
-/* === SHORTCODES */
-.image-styled .img_frame.img_size_fullwidth, .image-styled .img_frame.img_size_fullwidth img { max-width: 100%; margin-right: 0px; }
-
-.google-map-frame, .google-map-frame iframe { max-width: 100%; }
-.call-to-action .decoration-image { display: none; }   
-.call-to-action .number-phone, .call-to-action .number-phone a { font-size:28px; }

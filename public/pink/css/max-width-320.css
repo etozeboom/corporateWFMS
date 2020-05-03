@@ -14,7 +14,3 @@
 
 /* contact forms */
 .content .artcl_form li { width:95%; float:none; }
-
-/* shortcodes */
-.content blockquote { background-position: top left; padding:0; }  
-.short_table table th, .short_table table td { padding:4px 2px; }

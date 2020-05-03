@@ -33,7 +33,7 @@ div.anythingSlider .forward { padding-right: 2%; }
 }
 
 /* === MENU */
-#header .menu > ul {
+/* #header .menu > ul {
     padding: 0px 20px;
     width: 101%;
 }
@@ -43,9 +43,9 @@ div.anythingSlider .forward { padding-right: 2%; }
 #header .menu > ul > li:first-child, #header .menu > ul > li:first-child > ul li  { padding-left: 0px !important; }
 
 /* only for the live preview */
-#header .menu > ul > li#menu-item-93 { padding-right: 0px !important; }
+/*#header .menu > ul > li#menu-item-93 { padding-right: 0px !important; }
 
-#header .menu ul li.remove-under-1024 { display: none; }
+#header .menu ul li.remove-under-1024 { display: none; } */
 
 /* === ALL SECTIONS */
 .section .related_project {  }
@@ -53,32 +53,6 @@ div.anythingSlider .forward { padding-right: 2%; }
 /* === SECTION BLOG */
 .sidebar_no .section.blog .post:not( .sticky ) { width: 30% !important; }
 
-/* === SECTION PORTFOLIO */
-.sidebar_right .section.portfolio .work-description, .sidebar_left .section.portfolio .work-description { width: 36%; }
-
-/* === CONTACT */
-.sidebar_left .artcl_form li.submit_button input.alignright, .sidebar_right .artcl_form li.submit_button input.alignright { margin-right: -0.4%; }
 
 /* === RESPOND */
 #respond p.form-submit { width: 100.8% !important; }
-
-/* === PORTFOLIO */
-#portfolio.three-columns .overlay_a { max-width: 100%; }
-#portfolio.three-columns li img { width: auto; max-width: 100%; height: auto; margin-bottom: 0px; }
-
-.portfolio-full-description a.thumb { width: 100%; max-width: 97%; }
-.portfolio-full-description img { max-width: 100%; }
-.section .portfolio-full-description img { width: auto; }
-
-/* === WIDGETS */
-.featured-projects-widget ul li h4 { clear:both; }
-.featured-projects-widget img { max-width: 95%; width: 100%; min-height: 131px; height: auto; }
-
-.sidebar_nav a, .sidebar_nav li { min-height: 40px; }
-
-.contact-info ul li { height: auto; min-height: 26px; }
-
-.widget_flickrRSS img { margin-right: 2px; }
-                  
-/* === SHORTCODES */
-.call-to-action .number-phone, .call-to-action .number-phone a { font-size:34px; }

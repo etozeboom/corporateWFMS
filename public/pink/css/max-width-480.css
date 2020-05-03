@@ -23,14 +23,5 @@ body{
 .sidebar_no #respond textarea { width:96.5%; }
 .blog-small .the_content { clear:both; }
 
-/* shortcodes */
-.box-sections, .one-fourth, .two-third, .three-fourth, .one-third { width:100%; margin-right:0; }
-.short_table table th, .short_table table td { padding:8px 10px; }
-.call-to-action-two .call-btn, .call-to-action-two .incipit { display:block; vertical-align:baseline; width:100%; text-align:left; }
-.call-to-action-two .call-btn { margin-top:10px; }
-.call-to-action-two p, .call-to-action-two h1, .call-to-action-two h2, .call-to-action-two h3, .call-to-action-two h4, .call-to-action-two h5, .call-to-action-two h6 { width:auto; font-size:1.5em; margin-bottom:10px; }
-.pricing_box { width:100% !important; margin-top:17px !important; }
-
-
 /* 404 */
 .error-404-text input#s { width:60%; }

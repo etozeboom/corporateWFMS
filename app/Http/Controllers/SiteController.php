@@ -8,7 +8,6 @@ use App\Http\Requests;
 
 use App\Repositories\MenusRepository;
 
-use Menu;
 
 class SiteController extends Controller
 {
@@ -76,27 +75,16 @@ class SiteController extends Controller
 		
 		$menu = $this->m_rep->get();
 		
+		// dd($menu);
 		
-		
-		$mBuilder = Menu::make('MyNav', function($m) use ($menu) {
 			
-			foreach($menu as $item) {
-				
-				if($item->parent == 0) {
-					$m->add($item->title,$item->path)->id($item->id);
-				}
-				// else {
-				// 	if($m->find($item->parent)) {
-				// 		$m->find($item->parent)->add($item->title,$item->path)->id($item->id);
-				// 	}
-				// }
-			}
+		// foreach($menu as $item) {
 			
-		});
-		
+
+		// }
 		//dd($mBuilder);
 		
-		return $mBuilder;
+		return $menu;
 	}	
     
     
