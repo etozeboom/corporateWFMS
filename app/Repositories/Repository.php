@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use Config;
+use Illuminate\Support\Facades\DB;
 
 abstract class Repository {
 	
@@ -54,6 +55,14 @@ abstract class Repository {
 	public function one($alias,$attr = array()) {
 		$result = $this->model->where('alias',$alias)->first();
 		
+		return $result;
+	}
+
+	public function getRandom($count) {
+
+		$result = $this->model::orderByRaw("RAND()")->limit($count)->get();;
+		
+		//dd($result);
 		return $result;
 	}
 	

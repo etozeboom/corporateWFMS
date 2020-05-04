@@ -191,8 +191,6 @@ class ArticlesRepository extends Repository {
 		// 	abort(403);
 		// }
 		
-		$article->comments()->delete();
-		
 		if($article->delete()) {
 			return ['status' => 'Материал удален'];
 		}

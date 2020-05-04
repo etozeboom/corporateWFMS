@@ -1,6 +1,6 @@
 @if($articles)
 	<div id="content_page" class="content group">
-				            <div class="hentry group">
+				            <div class=" group">
 								<h2>Добавленные статьи</h2>
 
 								{!! Html::link(route('admin.skazki.create'),'Добавить  материал',['class' => 'btn btn_the_salmon_dance_3']) !!}

@@ -98,7 +98,8 @@ jQuery(document).ready(function($) {
 				"sortDescending": ": активировать для сортировки столбца по убыванию"
 				}
 			},
-			stateSave: true
+			stateSave: true,
+			dom: "frtilp"
 		}
 	);
 

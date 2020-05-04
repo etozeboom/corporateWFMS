@@ -6,7 +6,7 @@
 
 
 <div id="content_home" class="content group">
-				            <div class="hentry group">
+				            <div class=" group">
 				            
 				            
 				            

@@ -124,10 +124,10 @@ class ArticlesController extends SiteController
 			$this->meta_desc = $article->meta_desc;
 		}
 		
-		
-		$content = view(config('settings.theme').'.article_content')->with('article',$article)->render();
+		$randArticles = $this->a_rep->getRandom(3);
+		//dd($randArticles);
+		$content = view(config('settings.theme').'.article_content')->with(['article' => $article,'randArticles' => $randArticles])->render();
 		$this->vars = array_add($this->vars,'content',$content);
-		
 		
 		//$comments = $this->getComments(config('settings.recent_comments'));
 		//$categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', config('settings.zaid'))->where('parent_id', '<>', config('settings.raid'))->get();

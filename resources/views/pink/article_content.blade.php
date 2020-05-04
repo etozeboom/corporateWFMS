@@ -1,30 +1,31 @@
-<div id="content_single" class="content group">
-				            <div class="hentry hentry_post blog_big group ">
-				                <!-- post featured & title -->
-				                
-				                @if($article)
-				                
-				                <div class="thumbnail">
-				                    <!-- post title -->
-				                    <h1 class="post_title"><a href="#">{{ $article->title }}</a></h1>
-				                    <!-- post featured -->
+<div id="content_single" class="content">
+	@if($article)
+	
+		<div class="post_img">
+			<img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img.jpg" />
+		</div>
 
-				                    <!-- <p class="date">
-				                        <span class="month">{{ $article->created_at->format('M') }}</span>
-				                        <span class="day">{{ $article->created_at->format('d') }}</span>
-				                    </p> -->
-				                </div>
-				                <!-- post meta -->
-				                <!-- <div class="meta group">
-				                    <p class="categories"><span>In: <a href="{{ route('skazkiCat',['cat_alias'=>$article->category->alias]) }}" title="View all posts in {{ $article->category->title }}" rel="category tag">{{ $article->category->title }}</a></p>
-				                </div> -->
-				                <!-- post content -->
-				                <div class="the_content single group">
-				                    <p>{!! $article->text !!}</p>
-				                </div>
-				                <!-- <p class="tags">Tags: <a href="#" rel="tag">book</a>, <a href="#" rel="tag">css</a>, <a href="#" rel="tag">design</a>, <a href="#" rel="tag">inspiration</a></p> -->
-				                <div class="clear"></div>
-				            </div>
-				           			            
-				            @endif
-				        </div>
+		<div class="thumbnail">
+			<h1 class="post_title">{{ $article->title }}</h1>
+		</div>
+
+		<div class="the_content single">
+			<p>{!! $article->text !!}</p>
+		</div>
+			
+	@endif
+		
+	@if($randArticles)
+	
+		<div class="randSkazkiTitle">Читать ещё</div>
+		<div class="randSkazki">
+			@foreach($randArticles as $randArticle)
+				<div class="randSkazka" style="background: url({{route('home')}}/public/skaz/{{$randArticle->id}}/img_mini.jpg) no-repeat;">
+					<div class="plahka">
+						<a href="{{ route('skazki.show',['alias'=>$randArticle->alias]) }}">{{ $randArticle->title }}</a>
+					</div>
+				</div>
+			@endforeach	
+		</div>
+	@endif
+</div>

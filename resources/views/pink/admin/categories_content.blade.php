@@ -1,6 +1,6 @@
 @if($categories)
 	<div id="content_page" class="content group">
-				            <div class="hentry group">
+				            <div class=" group">
 								<h2>изменение раздела</h2>
 
 								{!! Html::link(route('admin.catskazki.create'),'Добавить  материал',['class' => 'btn btn_the_salmon_dance_3']) !!}

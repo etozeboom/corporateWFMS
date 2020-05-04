@@ -1,18 +1,7 @@
-<div id="content_single" class="content group">
-	<div class="hentry hentry_post blog_big group ">
-		<!-- post featured & title -->
-		
+<div id="content_single" class="content">
 		@if($page)
-		
-
-		<div class="the_content single group">
+		<div class="the_content single ">
 			<p>{!! $page->text !!}</p>
 		</div>
-
-
-		<div class="clear"></div>
-	
-		@endif
-	</div>
-					
+		@endif	
 </div>

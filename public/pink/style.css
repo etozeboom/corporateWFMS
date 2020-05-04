@@ -121,7 +121,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { color: #A05F02; }
     color: #000000;
     margin-bottom: 3rem;
     line-height: 1;
-
+    text-align: center;
 }
 .the_content p {
     font-family: 'MontserratRegular', 'MontserratRegular', 'Verdana', 'Arial', sans-serif;
@@ -360,30 +360,9 @@ body.no_js .classic #nav ul li ul.submenu li:hover > ul, body.no_js .classic #na
     font-style: normal;
 }
 
-/* === RECENT POSTS */
-.recent_post .hentry_post:last-child { margin-bottom: 0px; }
-
-/* === ICON TEXT */
-.sidebar .widget-icon-text {clear:both;margin-left:60px;}
-.sidebar .widget-icon-text img, .sidebar .widget-icon-text [class^=icon] {margin-left:-60px;float:left;padding-top:2px;font-size:48px;color:#000;}
-.sidebar .widget-icon-text h3, .sidebar .widget-icon-text p {margin:0;} 
-
-.widget_nav_menu ul li a:hover, .widget_pages ul li a:hover, .widget_categories ul li a:hover, .sidebar .portfolio-categories ul li:hover, .widget_archive ul li a:hover, .almost-all-categories ul li:hover, .widget_links ul li a:hover,
-.widget_nav_menu ul li.current_page_item > a, .widget_pages ul li.current_page_item > a, .widget_categories ul li.current_page_item > a, .almost-all-categories ul li.current-cat {
-    color: #0f0f0f;
-    border-color: #949292;   
-}
-
-.almost-all-categories ul li:hover a, .almost-all-categories ul li.current-cat a, .portfolio-categories ul li:hover a { color: #0f0f0f; }
-
-.widget_nav_menu ul li .sub-menu, .widget_pages ul li .children, .widget_categories ul li .children, .portfolio-categories ul li .children {
-    margin-left: 1.25rem;
-}
-
 /* === TEXT IMAGE */
 .text_image img{ max-width: 100%; }
-
-/* ===== CONTACT FORM ===== */                
+     
 .content .artcl_form { margin-top:1.87rem; width:104%; }   
 .content .artcl_form fieldset {padding:0;}          
 .content .artcl_form ul { margin:0; list-style:none; }  
@@ -459,6 +438,7 @@ form input[type="text"], form textarea { border: 1px solid #CFCFCF; -webkit-tran
 
 #tableSkazki {
     border: none;
+    margin-bottom: 1rem;
 }
 #tableSkazki .plahka {
     font-size: 1.2rem;
@@ -679,4 +659,33 @@ td img {
 .sidebar_home .homeText {
     text-align: center;
     margin-bottom: 2rem;
+}
+
+.post_img {
+    margin-bottom: 4rem;
+}
+
+.randSkazki {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.randSkazka {
+    padding: 8rem 0;
+    width: 31%;
+}
+
+.randSkazkiTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post_img {
+    max-width: 100%;
+}
+
+.randSkazka .plahka {
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.075);
 }

@@ -1,5 +1,5 @@
 <div id="content_page" class="content group">
-				            <div class="hentry group">
+				            <div class=" group">
 
 {!! Form::open(['url' => (isset($category->id)) ? route('admin.catskazki.update',['id' => $category->id]) : route('admin.catskazki.store'),'class'=>'artcl_form','method'=>'POST','enctype'=>'multipart/form-data']) !!}
   
@@ -10,7 +10,7 @@
 				<br />
 				<span class="sublabel">Заголовок материала</span><br />
 			</label>
-			<div class="input_prepend"><span class="add_on"><i class="icon_user"></i></span>
+			<div class="input_prepend">
 			{!! Form::text('title',isset($category->title) ? $category->title  : old('title'), ['placeholder'=>'Введите название страницы']) !!}
 			 </div>
 		 </li>
@@ -21,7 +21,7 @@
 				<br />
 				<span class="sublabel">Ключевые слова</span><br />
 			</label>
-			<div class="input_prepend"><span class="add_on"><i class="icon_user"></i></span>
+			<div class="input_prepend">
 			{!! Form::text('keywords', isset($category->keywords) ? $category->keywords  : old('keywords'), ['placeholder'=>'Введите название страницы']) !!}
 			 </div>
 		 </li>
@@ -32,7 +32,7 @@
 				<br />
 				<span class="sublabel">Мета описание</span><br />
 			</label>
-			<div class="input_prepend"><span class="add_on"><i class="icon_user"></i></span>
+			<div class="input_prepend">
 			{!! Form::text('meta_desc', isset($category->meta_desc) ? $category->meta_desc  : old('meta_desc'), ['placeholder'=>'Введите название страницы']) !!}
 			 </div>
 		 </li>
@@ -43,7 +43,7 @@
 				<br />
 				<span class="sublabel">введите псевдоним</span><br />
 			</label>
-			<div class="input_prepend"><span class="add_on"><i class="icon_user"></i></span>
+			<div class="input_prepend">
 			{!! Form::text('alias', isset($category->alias) ? $category->alias  : old('alias'), ['placeholder'=>'Введите псевдоним страницы']) !!}
 			 </div>
 		 </li>
@@ -54,7 +54,7 @@
 				<br />
 				<span class="sublabel">введите meta_title</span><br />
 			</label>
-			<div class="input_prepend"><span class="add_on"><i class="icon_user"></i></span>
+			<div class="input_prepend">
 			{!! Form::text('meta_title', isset($category->meta_title) ? $category->meta_title  : old('meta_title'), ['placeholder'=>'Введите meta_title']) !!}
 			 </div>
 		 </li>
@@ -64,7 +64,7 @@
 			<label for="message_contact_us">
 				 <span class="label">Описание1:</span>
 			</label>
-			<div class="input_prepend"><span class="add_on"><i class="icon_pencil"></i></span>
+			<div class="input_prepend">
 			{!! Form::textarea('text1', isset($category->text1) ? $category->text1  : old('text1'), ['id'=>'editor','class' => 'form-control','placeholder'=>'Введите текст страницы']) !!}
 			</div>
 			<div class="msg_error"></div>
@@ -74,7 +74,7 @@
 			<label for="message_contact_us">
 				 <span class="label">Описание2:</span>
 			</label>
-			<div class="input_prepend"><span class="add_on"><i class="icon_pencil"></i></span>
+			<div class="input_prepend">
 			{!! Form::textarea('text2', isset($category->text2) ? $category->text2  : old('text2'), ['id'=>'editor2','class' => 'form-control','placeholder'=>'Введите текст страницы']) !!}
 			</div>
 			<div class="msg_error"></div>
