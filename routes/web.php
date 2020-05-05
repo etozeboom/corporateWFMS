@@ -18,15 +18,10 @@ Route::resource('/','IndexController',[
 									]
 									]);								
 
-
-Route::resource('skazki','ArticlesController',[
-												
-												'parameters'=>[
-												
-													'articles' => 'alias'
-												
-												]
-												
+Route::resource('skazki','ArticlesController',[												
+												'parameters'=>[												
+													'articles' => 'alias',									
+												]														
 												]);	
 //Route::get('skazki/{cat_alias?}',['uses'=>'ArticlesController@index','as'=>'skazkiCat'])->where('cat_alias','[\w-]+');   
 

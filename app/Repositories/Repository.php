@@ -58,9 +58,9 @@ abstract class Repository {
 		return $result;
 	}
 
-	public function getRandom($count) {
+	public function getRandom($count, $current) {
 
-		$result = $this->model::orderByRaw("RAND()")->limit($count)->get();;
+		$result = $this->model::orderByRaw("RAND()")->where('id', '<>', $current)->limit($count)->get();;
 		
 		//dd($result);
 		return $result;

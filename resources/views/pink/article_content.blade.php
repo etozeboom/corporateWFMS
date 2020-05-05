@@ -1,15 +1,21 @@
-<div id="content_single" class="content">
+<div id="content_skazka" class="content content_skazka">
+	@if($article)
+		<div class="breadcrumb">
+			<a href="{{ route('skazki.index') }}">Сказки</a> -><a href="{{ route('skazki.show',['alias'=>$cat->alias]) }}">{{$cat->title}}</a>
+		</div>
+	@endif
+
 	@if($article)
 	
 		<div class="post_img">
 			<img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img.jpg" />
 		</div>
 
-		<div class="thumbnail">
+		<div class="">
 			<h1 class="post_title">{{ $article->title }}</h1>
 		</div>
 
-		<div class="the_content single">
+		<div class="the_content">
 			<p>{!! $article->text !!}</p>
 		</div>
 			

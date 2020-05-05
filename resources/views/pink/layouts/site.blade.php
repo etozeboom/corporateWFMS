@@ -56,7 +56,6 @@
         <link rel="stylesheet" id="max-width-320-css" href="{{ asset(config('settings.theme')) }}/css/max-width-320.css" type="text/css" media="screen and (max-width: 320px)" />
         
         <!-- CSSs Plugin -->
-        <link rel="stylesheet" id="thickbox-css" href="{{ asset(config('settings.theme')) }}/css/thickbox.css" type="text/css" media="all" />
         <link rel="stylesheet" id="buttons" href="{{ asset(config('settings.theme')) }}/css/buttons.css" type="text/css" media="all" />
         <!-- <link rel="stylesheet" id="cache-custom-css" href="{{ asset(config('settings.theme')) }}/css/cache-custom.css" type="text/css" media="all" /> -->
         <link rel="stylesheet" id="custom-css" href="{{ asset(config('settings.theme')) }}/css/custom.css" type="text/css" media="all" />
@@ -73,27 +72,20 @@
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/myscripts.js"></script>
 
     </head>
-    <!-- END HEAD -->
-    
-    <!-- START BODY -->
     <body class="no_js responsive {{ (Route::currentRouteName() ==  'home')  ? 'page_template_home_php' : ''}} stretched">
         
-
+        <div id="wrapper" class="">
             
-        <!-- START WRAPPER -->
-        <div id="wrapper" class="group">
-            
-            <!-- START HEADER -->
-            <div id="header" class="group">
+            <div id="header" class="">
                 
-                <div class="group inner">
+                <div class=" inner">
                     
                     <div class="flexWrap">
-                        <div id="logo" class="group">
+                        <div id="logo" class="">
                             <a href="/" title="kotbaun"><img src="{{ asset(config('settings.theme')) }}/images/logo.png" title="kotbaun" alt="kotbaun" /></a>
                         </div>
-                        <div id="sidebar_header" class="group">
-                            <div class="widget_first widget yit_text_quote">
+                        <div id="sidebar_header" class="">
+                            <div class="yit_text_quote">
                                 <blockquote class="text_quote_quote">&#8220;The caterpillar does all the work but the butterfly gets all the publicity.&#8221;</blockquote>
                                 <cite class="text_quote_author">George Carlin</cite>
                             </div>
@@ -101,39 +93,24 @@
                     </div>
                     
                     <hr />
-                    
-                    <!-- START MAIN NAVIGATION -->
-                    @yield('navigation')
-                    <!-- END MAIN NAVIGATION -->
+                     @yield('navigation')
                     <div id="header_shadow"></div>
                     <div id="menu_shadow"></div>
                 </div>
                 
             </div>
-            <!-- END HEADER -->
-            
-            <!-- START PRIMARY -->
             <div id="primary" class="sidebar_{{ isset($bar) ? $bar : 'no'}}">
-                <div class="inner group">
+                <div class="inner ">
                     
                        @yield('bar')
 
                         @yield('content')
                 </div>
             </div>
-            <!-- END PRIMARY -->
-            
-            <!-- START COPYRIGHT -->
             
             @yield('footer')
             
-            <!-- END COPYRIGHT -->
-        </div>
-        <!-- END WRAPPER -->
-        
-        <!-- <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.custom.js"></script> -->
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery.mobilemenu.js"></script> 
+        </div> 
         
     </body>
-    <!-- END BODY -->
 </html>

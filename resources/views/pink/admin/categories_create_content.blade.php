@@ -1,5 +1,5 @@
-<div id="content_page" class="content group">
-				            <div class=" group">
+<div id="content_page" class="content">
+				            <div class="">
 
 {!! Form::open(['url' => (isset($category->id)) ? route('admin.catskazki.update',['id' => $category->id]) : route('admin.catskazki.store'),'class'=>'artcl_form','method'=>'POST','enctype'=>'multipart/form-data']) !!}
   

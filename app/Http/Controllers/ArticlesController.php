@@ -107,6 +107,7 @@ class ArticlesController extends SiteController
 	public function show($alias = FALSE) {
 		
 		$cat = Category::select('alias')->where('alias',$alias)->first();
+		//dd($cat);
 		if ($cat) {
 			return $this->index($cat->alias);
 		}
@@ -123,10 +124,11 @@ class ArticlesController extends SiteController
 			$this->keywords = $article->keywords;
 			$this->meta_desc = $article->meta_desc;
 		}
-		
-		$randArticles = $this->a_rep->getRandom(3);
+		$cat = Category::select('title', 'alias')->where('id',$article->category_id)->first();
+		//dd($cat);
+		$randArticles = $this->a_rep->getRandom(3, $article->id);
 		//dd($randArticles);
-		$content = view(config('settings.theme').'.article_content')->with(['article' => $article,'randArticles' => $randArticles])->render();
+		$content = view(config('settings.theme').'.article_content')->with(['cat' => $cat,'article' => $article,'randArticles' => $randArticles])->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		
 		//$comments = $this->getComments(config('settings.recent_comments'));

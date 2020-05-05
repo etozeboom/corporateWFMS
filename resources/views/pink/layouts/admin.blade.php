@@ -16,8 +16,7 @@
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/reset.css" /> <!-- RESET STYLESHEET -->
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/style.css" /> <!-- MAIN THEME STYLESHEET -->
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/buttons.css" /> <!-- MAIN THEME STYLESHEET -->
-        <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/cache-custom.css" /> <!-- MAIN THEME STYLESHEET -->
-        <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/jquery-ui.css" /> <!-- MAIN THEME STYLESHEET -->
+        <!-- <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/jquery-ui.css" /> -->
         <link rel="stylesheet" id="custom-css" href="{{ asset(config('settings.theme')) }}/css/datatables.min.css" type="text/css" media="all" />
 		
         <!-- FONTs -->
@@ -26,41 +25,27 @@
         
         <!-- JAVASCRIPTs -->
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery-3.5.0.min.js"></script>
-        <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery-ui.js"></script>
+        <!-- <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/jquery-ui.js"></script> -->
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/ckeditor/ckeditor.js"></script>
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/bootstrap-filestyle.min.js"></script>
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/datatables.min.js"></script>
         <script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/myscriptsadmin.js"></script>
 
     </head>
-    <!-- END HEAD -->
-    
-    <!-- START BODY -->
     
     <body class="no_js responsive {{ (Route::currentRouteName() == 'home') ? 'page_template_home_php' : ''}} stretched">
         
-        <!-- START BG SHADOW -->
         <div class="bg_shadow">
-            
-            <!-- START WRAPPER -->
-            <div id="wrapper" class="group">
-                
-                <!-- START HEADER -->
-                <div id="header" class="group">
+            <div id="wrapper" class="">
+                <div id="header" class="">
                     
-                    <div class="group inner">
-                        
-                        
-                        <!-- START MAIN NAVIGATION -->
+                    <div class="inner">
+                                                
 							@yield('navigation')
-                        <!-- END MAIN NAVIGATION -->
-                       
                         <div id="menu_shadow"></div>
                     </div>
                     
                 </div>
-                <!-- END HEADER -->
-				<!-- START PRIMARY -->
 				
 				@if (count($errors) > 0)
 				    <div class="box error-box">
@@ -85,34 +70,17 @@
 				@endif
 				
 				<div id="primary" class="sidebar_{{ isset($bar) ? $bar : 'no' }}">
-				    <div class="inner group">
-				        <!-- START CONTENT -->
-						
-						
-						
+				    <div class="inner">
+												
 				        
 						@yield('content')
 						
-				        <!-- END CONTENT -->
-				        <!-- START SIDEBAR -->
-						
-						<!-- END SIDEBAR -->
-				        
-						<!-- START EXTRA CONTENT -->
-				        <!-- END EXTRA CONTENT -->
 				    </div>
 				</div>
-				<!-- END PRIMARY -->
-				
-				<!-- START COPYRIGHT -->
                 @yield('footer')
-                <!-- END COPYRIGHT -->
             </div>
-            <!-- END WRAPPER -->
         </div>
-        <!-- END BG SHADOW -->
         
         
     </body>
-    <!-- END BODY -->
 </html>

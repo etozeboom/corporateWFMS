@@ -1,3 +1,3 @@
-<div class="sidebar group">
+<div class="sidebar">
 	{!! $content_rightBar !!}
 </div>

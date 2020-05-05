@@ -1,11 +1,11 @@
 @if($articles)
-	<div id="content_page" class="content group">
-				            <div class=" group">
+	<div id="content_page" class="content">
+				            <div class=" ">
 								<h2>Добавленные статьи</h2>
 
 								{!! Html::link(route('admin.skazki.create'),'Добавить  материал',['class' => 'btn btn_the_salmon_dance_3']) !!}
 
-				                <div class="short_table white">
+				                <div class="short_table">
 				                    <table id="tableSkazki" style="width: 100%" cellspacing="0" cellpadding="0">
 				                        <thead>
 				                            <tr>
