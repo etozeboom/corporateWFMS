@@ -83,6 +83,7 @@
 		<li class="textarea_field">
 			<label for="message_contact_us">
 				 <span class="label">Текст:</span>
+				 ссылка для картинки: https://kotbaun.com/public/skaz/{{isset($article->id) ? $article->id  : 'id skazki'}}/имя.jpg
 			</label>
 			<div class="input_prepend">
 			{!! Form::textarea('text', isset($article->text) ? $article->text  : old('text'), ['id'=>'editor2','class' => 'form-control','placeholder'=>'Введите текст страницы']) !!}
@@ -94,7 +95,7 @@
 			<label for="name_contact_us">
 				<span class="label">Изображение:</span>
 
-				@if(isset($article->id))	<img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg" />@endif
+				@if(isset($article->id))	<img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg" style="max-width: 80px" />@endif
 				<br />
 
 				<span class="sublabel">Изображение материала</span><br />
