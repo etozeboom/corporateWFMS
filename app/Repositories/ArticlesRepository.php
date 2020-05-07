@@ -123,6 +123,7 @@ class ArticlesRepository extends Repository {
 		$dataArticle['reading_time'] = $data['reading_time'];
 		$dataArticle['description'] = $data['description'];
 		$dataArticle['text'] = $data['text'];
+		$dataArticle['image'] = $data['image'];
 
 		unset($data['title']);
 		unset($data['keywords']);
@@ -132,6 +133,7 @@ class ArticlesRepository extends Repository {
 		unset($data['description']);
 		unset($data['text']);
 		unset($data['alias']);
+		unset($data['image']);
 		//dd($data);
 
 		DB::table('category_article')->where('article_id', '=', $article->id)->delete();

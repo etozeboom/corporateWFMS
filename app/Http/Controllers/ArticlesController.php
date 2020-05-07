@@ -56,7 +56,7 @@ class ArticlesController extends SiteController
 		//dd(config('settings.raid'));
 		// SELECT categories.*, count(articles.id) FROM `categories` LEFT JOIN `articles` ON categories.id=articles.category_id WHERE categories.parent_id = 5 GROUP BY categories.id
 		//DB::raw('categories.title, categories.alias , count(articles.id)')
-		if ($cat->id == config('settings.zaid') || $cat->id == config('settings.raid')) {
+		if ($cat->id == config('settings.zaid') || $cat->id == config('settings.raid') || $cat->id == config('settings.zid')) {
 			//$authors = Category::where('parent_id', '=', $cat->id)->select('title','alias')->get();
 			$authors = Category::where('parent_id', '=', $cat->id)->leftJoin('articles', 'categories.id', '=', 'articles.category_id')->select(DB::raw('categories.title, categories.alias , count(articles.id) as articles_count'))->where('categories.parent_id', '=', $cat->id)->groupBy('categories.id')->get();
 			//dd($authors);

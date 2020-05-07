@@ -74,9 +74,9 @@ class ArticlesController extends AdminController
 		
 		$this->title = "Добавить новый материал";
 		
-		$categories = Category::select(['title','alias','parent_id','id'])->get();
+		//$categories = Category::select(['title','alias','parent_id','id'])->get();
 		
-		$lists = array();
+	/*	$lists = array();
 		
 		foreach($categories as $category) {
 			if($category->parent_id == 0) {
@@ -85,9 +85,13 @@ class ArticlesController extends AdminController
 			else {
 				$lists[$categories->where('id',$category->parent_id)->first()->title][$category->id] = $category->title;    
 			}
-		}
-		
-		$this->content = view(config('settings.theme').'.admin.articles_create_content')->with('categories', $lists)->render();
+    }*/
+    
+    
+    //$categories = Category::select(['title','alias','parent_id','id'])->where('id', '<>', config('settings.zaid'))->where('id', '<>', config('settings.zid'))->where('id', '<>', config('settings.vozrastid'))->where('id', '<>', 1)->where('id', '<>', config('settings.raid'))->get();
+		//dd($categories);
+		//$this->content = view(config('settings.theme').'.admin.articles_create_content')->with(['categories'=> $categories, 'listsCat' => $lists])->render();
+		$this->content = view(config('settings.theme').'.admin.articles_create_content')->render();
 		
 		return $this->renderOutput();
     }
@@ -139,7 +143,7 @@ class ArticlesController extends AdminController
        // dd($article);
 		
 		
-		$categories = Category::select(['title','alias','parent_id','id'])->where('id', '<>', config('settings.zaid'))->where('id', '<>', 1)->where('id', '<>', config('settings.raid'))->get();
+		$categories = Category::select(['title','alias','parent_id','id'])->where('id', '<>', config('settings.zaid'))->where('id', '<>', config('settings.zid'))->where('id', '<>', config('settings.vozrastid'))->where('id', '<>', 1)->where('id', '<>', config('settings.raid'))->get();
 		
 	/*	$lists = array();
 		

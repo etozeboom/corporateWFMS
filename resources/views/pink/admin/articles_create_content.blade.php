@@ -17,9 +17,20 @@
 		 
 		 <li class="text_field">
 			<label for="name_contact_us">
+				<span class="label">title:</span>
+				<br />
+				<span class="sublabel">title_meta</span><br />
+			</label>
+			<div class="input_prepend">
+			{!! Form::text('keywords', isset($article->title_meta) ? $article->title_meta  : old('title_meta'), ['placeholder'=>'Введите title']) !!}
+			 </div>
+		 </li>
+
+		 <li class="text_field">
+			<label for="name_contact_us">
 				<span class="label">Ключевые слова:</span>
 				<br />
-				<span class="sublabel">Заголовок материала</span><br />
+				<span class="sublabel">keywords</span><br />
 			</label>
 			<div class="input_prepend">
 			{!! Form::text('keywords', isset($article->keywords) ? $article->keywords  : old('keywords'), ['placeholder'=>'Введите название страницы']) !!}
@@ -30,7 +41,7 @@
 			<label for="name_contact_us">
 				<span class="label">Мета описание:</span>
 				<br />
-				<span class="sublabel">Заголовок материала</span><br />
+				<span class="sublabel">meta_desc</span><br />
 			</label>
 			<div class="input_prepend">
 			{!! Form::text('meta_desc', isset($article->meta_desc) ? $article->meta_desc  : old('meta_desc'), ['placeholder'=>'Введите название страницы']) !!}
@@ -90,12 +101,12 @@
 			</div>
 			<div class="msg_error"></div>
 		</li>
-		
+		@if(isset($article->id))
 		<li class="text_field">
 			<label for="name_contact_us">
 				<span class="label">Изображение:</span>
 
-				@if(isset($article->id))	<img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg" style="max-width: 80px" />@endif
+					<img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg" style="max-width: 80px" />
 				<br />
 
 				<span class="sublabel">Изображение материала</span><br />
@@ -105,7 +116,8 @@
 			 </div>
 			 
 		</li>
-		
+		@endif
+		@if(isset($categories))
 		<li class="text_field">
 			<label for="name_contact_us">
 				<span class="label">Категория:</span>
@@ -119,7 +131,8 @@
 			 </div>
 
 		</li>	 
-		
+		@endif
+
 		@if(isset($article->id))
 			<input type="hidden" name="_method" value="PUT">		
 		
