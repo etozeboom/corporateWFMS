@@ -5,6 +5,8 @@
 		'theme' => env('THEME','default'),
 		'zaid' => env('ZAID',5),
 		'raid' => env('RAID',8),
+		'zid' => env('ZID',11),
+		'vozrastid' => env('VOZRASTID',12),
 		'home_articles_count' => 3,
 		'paginate' => 40,
 		'recent_comments' => 3,

@@ -37,11 +37,15 @@ class ArticlesController extends SiteController
 		
 		if ($cat_alias) {
 			$cat = Category::where('alias', '=', $cat_alias)->first();
+			$articles = $cat->articles;
 		} else {
 			$cat = Category::where('id', '=', 1)->first();
+			
+			$articles = $this->getArticles($cat_alias);
 		}
 		//dd($cat->id);
-        $articles = $this->getArticles($cat_alias);
+		//dd($cat->articles);
+        //$articles = $this->getArticles($cat_alias);
         //dd($articles);
 		//dd($cat);
 		//dd($cat[0]->meta_desc);
@@ -63,13 +67,15 @@ class ArticlesController extends SiteController
 
 		$this->vars = array_add($this->vars,'content',$content);
 		
-        //$categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', config('settings.zaid'))->where('parent_id', '<>', config('settings.raid'))->get();
-        $categorys = $this->c_rep->getCat();
+        //$categories = Category::where('id', '<>', 1)->where('parent_id', '<>', config('settings.zaid'))->where('parent_id', '<>', config('settings.raid'))->get();
+        $categories = $this->c_rep->getCat();
 	   // $comments = $this->getComments(config('settings.recent_comments'));
 		$zar = Category::where('parent_id', '=', config('settings.zaid'))->get();
 		$rus = Category::where('parent_id', '=', config('settings.raid'))->get();
-        //dd($categorys);
-        $this->contentLeftBar = view(config('settings.theme').'.articlesBar')->with(['categorys' => $categorys,'zar' => $zar,'rus' => $rus]);
+		$ziv = Category::where('parent_id', '=', config('settings.zid'))->get();
+		$vozrast = Category::where('parent_id', '=', config('settings.vozrastid'))->get();
+        //dd($categories);
+        $this->contentLeftBar = view(config('settings.theme').'.articlesBar')->with(['categories' => $categories,'zar' => $zar,'rus' => $rus, 'ziv' => $ziv, 'vozrast' => $vozrast]);
 		
         
         return $this->renderOutput();
@@ -132,13 +138,15 @@ class ArticlesController extends SiteController
 		$this->vars = array_add($this->vars,'content',$content);
 		
 		//$comments = $this->getComments(config('settings.recent_comments'));
-		//$categorys = Category::where('id', '<>', 1)->where('parent_id', '<>', config('settings.zaid'))->where('parent_id', '<>', config('settings.raid'))->get();
-		$categorys = $this->c_rep->getCat();
+		//$categories = Category::where('id', '<>', 1)->where('parent_id', '<>', config('settings.zaid'))->where('parent_id', '<>', config('settings.raid'))->get();
+		$categories = $this->c_rep->getCat();
 		// $comments = $this->getComments(config('settings.recent_comments'));
-		 $zar = Category::where('parent_id', '=', config('settings.zaid'))->get();
-		 $rus = Category::where('parent_id', '=', config('settings.raid'))->get();
-		 //dd($categorys);
-		 $this->contentLeftBar = view(config('settings.theme').'.articlesBar')->with(['categorys' => $categorys,'zar' => $zar,'rus' => $rus]);
+		$zar = Category::where('parent_id', '=', config('settings.zaid'))->get();
+		$rus = Category::where('parent_id', '=', config('settings.raid'))->get();
+		$ziv = Category::where('parent_id', '=', config('settings.zid'))->get();
+		$vozrast = Category::where('parent_id', '=', config('settings.vozrastid'))->get();
+        //dd($categories);
+        $this->contentLeftBar = view(config('settings.theme').'.articlesBar')->with(['categories' => $categories,'zar' => $zar,'rus' => $rus, 'ziv' => $ziv, 'vozrast' => $vozrast]);
 		
 		
 		return $this->renderOutput();

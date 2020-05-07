@@ -52,7 +52,7 @@ class ArticleRequest extends Request
             //
             'title' => 'required',
             'text' => 'required',
-            'category_id' => 'required|integer',
+            //'category_id' => 'required|integer',
             'keywords' => 'required|max:255',
             'meta_desc' => 'required',
             'description' => 'required',

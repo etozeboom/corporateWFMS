@@ -80,7 +80,7 @@
 			<div class="msg_error"></div>
 		</li>
 		
-		@if(!isset($category->id) || (isset($category->id) && $category->id != 5 && $category->id != 8 && $category->id != 1))
+		@if(!isset($category->id) || (isset($category->id) && $category->id != 5 && $category->id != 8 && $category->id != 1 && $category->id != 11 && $category->id != 12))
 		<li class="text_field">
 			<label for="name_contact_us">
 				<span class="label">Категория:</span>

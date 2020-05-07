@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 use Image;
 use Config;
+use Illuminate\Support\Facades\DB;
 
 class ArticlesRepository extends Repository {
 	
@@ -107,18 +108,50 @@ class ArticlesRepository extends Repository {
 		
 		$data = $request->except('_token','_method');
 		//dd($data);
+		//dd($article->id);
+		//dd(count($data));
 		if(empty($data)) {
 			return array('error' => 'Нет данных');
 		}
 		
-		if(empty($data['alias'])) {
-			$data['alias'] = $this->transliterate($data['title']);
+		$dataArticle = array();
+		$dataArticle['title'] = $data['title'];
+		$dataArticle['alias'] = $data['alias'];
+		$dataArticle['keywords'] = $data['keywords'];
+		$dataArticle['meta_desc'] = $data['meta_desc'];
+		$dataArticle['author'] = $data['author'];
+		$dataArticle['reading_time'] = $data['reading_time'];
+		$dataArticle['description'] = $data['description'];
+		$dataArticle['text'] = $data['text'];
+
+		unset($data['title']);
+		unset($data['keywords']);
+		unset($data['meta_desc']);
+		unset($data['author']);
+		unset($data['reading_time']);
+		unset($data['description']);
+		unset($data['text']);
+		unset($data['alias']);
+		//dd($data);
+
+		DB::table('category_article')->where('article_id', '=', $article->id)->delete();
+
+		foreach($data as $d) {
+			// dump($d);
+			DB::table('category_article')->insert(
+				['article_id' => $article->id, 'category_id' => $d]
+			);
+		}
+
+		//dd($dataArticle);
+		if(empty($dataArticle['alias'])) {
+			$dataArticle['alias'] = $this->transliterate($dataArticle['title']);
 		}
 		
-		$result = $this->one($data['alias'],FALSE);
+		$result = $this->one($dataArticle['alias'],FALSE);
 		
 		if(isset($result->id) && ($result->id != $article->id)) {
-			$request->merge(array('alias' => $data['alias']));
+			$request->merge(array('alias' => $dataArticle['alias']));
 			$request->flash();
 			
 			return ['error' => 'Данный псевдоним уже успользуется'];
@@ -175,7 +208,7 @@ class ArticlesRepository extends Repository {
 		}
 
 		//dump("22222222222222222222");
-		$article->fill($data); 
+		$article->fill($dataArticle); 
 		//dd($article->id);
 		//dd($article->update());
 		if($article->update()) {

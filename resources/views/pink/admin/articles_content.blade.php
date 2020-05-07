@@ -26,7 +26,7 @@
 				                                <td class="align_left">{!! Html::link(route('admin.skazki.edit',['id' => $article->id,'articles'=>$article->alias]),$article->title) !!}</td>
 				                                <!-- <td class="align_left"><a href="{{route('admin.skazki.edit', ['id' => $article->id, 'article' => $article->alias])}}">{{$article->title}}</a></td> -->
 				                                <td class="align_left">{{str_limit($article->text,200)}}</td>
-				                                <td>{{$article->category->title}}</td>
+				                                <td> @foreach($article->categories as $category) {{$category->title}} <hr> @endforeach	</td>
 				                                <td>{{$article->alias}}</td>
 				                                <td><img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg" style="max-width: 80px;" /></td>
 				                                <td>

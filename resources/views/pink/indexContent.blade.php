@@ -5,10 +5,10 @@
 		<p>В гостях у кота Баюна. Волшебные сказки</p>
 	</div>
 				            
-	@if($categorys)
+	@if($categories)
 
 		<div class="block_cats">
-			@foreach($categorys as $category)
+			@foreach($categories as $category)
 				
 				<div class="block_cat">
 					<div class="text">

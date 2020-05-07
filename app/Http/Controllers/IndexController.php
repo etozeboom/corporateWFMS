@@ -44,12 +44,12 @@ class IndexController extends SiteController
 		
         
         //$articles = $this->getArticles();
-        $categorys = $this->c_rep->getCat();
-        //dd($categorys);
+        $categories = $this->c_rep->getCat();
+        //dd($categories);
         
        // $this->contentRightBar = view(config('settings.theme').'.indexBar')->with('articles',$articles)->render();
         
-        $content = view(config('settings.theme').'.indexContent')->with('categorys',$categorys)->render();
+        $content = view(config('settings.theme').'.indexContent')->with('categories',$categories)->render();
 		$this->vars = array_add($this->vars,'content',$content);
 
 

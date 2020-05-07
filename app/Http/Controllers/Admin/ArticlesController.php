@@ -45,6 +45,7 @@ class ArticlesController extends AdminController
         $this->title = 'Менеджер статтей';
         
         $articles = $this->getArticles();
+       // dd($articles);
         $this->content = view(config('settings.theme').'.admin.articles_content')->with('articles',$articles)->render();
        
         
@@ -138,9 +139,9 @@ class ArticlesController extends AdminController
        // dd($article);
 		
 		
-		$categories = Category::select(['title','alias','parent_id','id'])->get();
+		$categories = Category::select(['title','alias','parent_id','id'])->where('id', '<>', config('settings.zaid'))->where('id', '<>', 1)->where('id', '<>', config('settings.raid'))->get();
 		
-		$lists = array();
+	/*	$lists = array();
 		
 		foreach($categories as $category) {
 			if($category->parent_id == 0) {
@@ -149,12 +150,18 @@ class ArticlesController extends AdminController
 			else {
 				$lists[$categories->where('id',$category->parent_id)->first()->title][$category->id] = $category->title;    
 			}
+		}*/
+    
+    $lists = array();
+    foreach($article->categories as $category) {
+      $lists[$category->id] = true;
 		}
-		
-		$this->title = 'Реадактирование материала - '. $article->title;
-		
+    $this->title = 'Реадактирование материала - '. $article->title;
+    //dd($article->categories);
+		//dd($categories);
+		//dd($lists);
 		//dd($article);
-		$this->content = view(config('settings.theme').'.admin.articles_create_content')->with(['categories' =>$lists, 'article' => $article])->render();
+		$this->content = view(config('settings.theme').'.admin.articles_create_content')->with(['categories' =>$categories, 'article' => $article, 'listsCat' => $lists])->render();
 		
 		return $this->renderOutput();
 		
@@ -172,8 +179,10 @@ class ArticlesController extends AdminController
      //   articles -> Article  
     public function update(int $id, ArticleRequest $request, Article $article)
     {
-        dump("11111");
+       // dump($article);
+        //dd($request);
        // dd($id);
+
         $article = Article::where('id', $id)->first();
         //
         $result = $this->a_rep->updateArticle($request, $article);

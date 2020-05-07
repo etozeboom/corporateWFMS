@@ -11,8 +11,8 @@ class Article extends Model
     protected $fillable = ['title','alias','text','keywords','meta_desc','description','category_id','author','reading_time'];
 	
 	
-	public function category() {
-		return $this->belongsTo('App\Category');
+	public function categories() {
+		return $this->belongsToMany('App\Category','category_article');
 	}
 	
 	public function comments()

@@ -109,13 +109,15 @@
 		<li class="text_field">
 			<label for="name_contact_us">
 				<span class="label">Категория:</span>
-				<br />
+				<br />				{{$i=0}}
 				<span class="sublabel">Категория материала</span><br />
 			</label>
 			<div class="input_prepend">
-				{!! Form::select('category_id', $categories,isset($article->category_id) ? $article->category_id  : '') !!}
+				@foreach($categories as $category)
+				 {{$category->title}}	{!! Form::checkbox($i++, $category->id, array_key_exists($category->id, $listsCat)) !!}
+				@endforeach
 			 </div>
-			 
+
 		</li>	 
 		
 		@if(isset($article->id))
