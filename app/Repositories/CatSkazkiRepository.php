@@ -23,7 +23,7 @@ class CatSkazkiRepository extends Repository {
 	}
 	
 	public function getCat() {
-		$categories = Category::where('id', '<>', 1)->where('parent_id', '<>', config('settings.zaid'))->where('parent_id', '<>', config('settings.raid'))->where('parent_id', '<>', config('settings.zid'))->where('parent_id', '<>', config('settings.vozrastid'))->get();
+		$categories = Category::where('id', '<>', 1)->where('parent_id', '<>', config('settings.zaid'))->where('parent_id', '<>', config('settings.raid'))->where('parent_id', '<>', config('settings.ssid'))->where('parent_id', '<>', config('settings.zvsid'))->where('parent_id', '<>', config('settings.zid'))->where('parent_id', '<>', config('settings.vozrastid'))->get();
 		return $categories;
 	}
 	public function addCategory($request) {

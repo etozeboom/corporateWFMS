@@ -6,7 +6,14 @@
 		@foreach($categories as $category)
 		
 		@if($category->id != 12)
-			<li class="p_menu {{ ($category->id == 5 || $category->id == 8 || $category->id == 11) ? 'sub' : ''}}"><a href="{{ route('skazkiCat',['cat_alias' => $category->alias]) }}">{{ $category->title }} </a>
+			<li class="p_menu {{ ($category->id == 5 || $category->id == 8 || $category->id == 11 || $category->id == 3 || $category->id == 15) ? 'sub' : ''}}"><a href="{{ route('skazkiCat',['cat_alias' => $category->alias]) }}">{{ $category->title }} </a>
+				@if($category->id == 3)
+					<ul class="v_menu">
+					@foreach($ssid as $z)
+						<li><a href="{{ route('skazkiCat',['cat_alias' => $z->alias]) }}">{{ $z->title }}</a></li>
+					@endforeach
+					</ul>
+				@endif
 				@if($category->id == 5)
 					<ul class="v_menu">
 					@foreach($zar as $z)
@@ -28,18 +35,29 @@
 					@endforeach
 					</ul>
 				@endif
+				@if($category->id == 15)
+					<ul class="v_menu">
+					@foreach($zvsid as $z)
+						<li><a href="{{ route('skazkiCat',['cat_alias' => $z->alias]) }}">{{ $z->title }}</a></li>
+					@endforeach
+					</ul>
+				@endif
 			</li>
 		@endif
 
-		@if($category->id == 12)
-			<div class="vozrast">
-				@foreach($vozrast as $v)
-					<li p_menu><a href="{{ route('skazkiCat',['cat_alias' => $v->alias]) }}">{{ $v->title }}</a></li>
-				@endforeach
-			</div>
-		@endif
+
 
 			
+		@endforeach
+
+		@foreach($categories as $category)
+			@if($category->id == 12)
+				<div class="vozrast">
+					@foreach($vozrast as $v)
+						<li p_menu><a href="{{ route('skazkiCat',['cat_alias' => $v->alias]) }}">{{ $v->title }}</a></li>
+					@endforeach
+				</div>
+			@endif
 		@endforeach
 	</ul>
 	</div>   

@@ -153,7 +153,7 @@ class ArticlesController extends AdminController
 			}
     }
     
-    $multiCategories = Category::select(['title','alias','parent_id','id'])->where('id', '<>', config('settings.zaid'))->where('id', '<>', config('settings.zid'))->where('id', '<>', config('settings.vozrastid'))->where('id', '<>', 1)->where('id', '<>', config('settings.raid'))->get();
+    $multiCategories = Category::select(['title','alias','parent_id','id'])->where('id', '<>', config('settings.zaid'))->where('id', '<>', config('settings.zid'))->where('id', '<>', config('settings.ssid'))->where('id', '<>', config('settings.zvsid'))->where('id', '<>', config('settings.vozrastid'))->where('id', '<>', 1)->where('id', '<>', config('settings.raid'))->get();
 		
     $multilists = array();
     foreach($article->categories as $category) {
