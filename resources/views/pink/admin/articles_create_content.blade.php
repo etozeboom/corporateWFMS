@@ -137,9 +137,9 @@
 				<br />				{{$i=0}}
 				<span class="sublabel">Категория материала</span><br />
 			</label>
-			<div class="input_prepend">
+			<div class="input_prepend checkCat">
 				@foreach($multiCategories as $category)
-				 {{$category->title}}	{!! Form::checkbox($i++, $category->id, array_key_exists($category->id, $listsMultiCat)) !!}
+					<div class="checkText">{{$category->title}}</div>	{!! Form::checkbox($i++, $category->id, array_key_exists($category->id, $listsMultiCat)) !!}
 				@endforeach
 			 </div>
 

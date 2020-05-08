@@ -657,3 +657,17 @@ td img {
 .vozrast {
     margin-top: 5rem;
 }
+
+.checkCat {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.checkCat .checkText {
+    width: 50%;
+    border-bottom: 1px solid #000;
+}
+.content .artcl_form li.text_field .checkCat input {
+    width: 10%;
+    border-bottom: 1px solid #000;
+}

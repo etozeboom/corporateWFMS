@@ -141,13 +141,32 @@ class ArticlesRepository extends Repository {
 		unset($data['category_id']);
 		//dd($data);
 
-		DB::table('category_article')->where('article_id', '=', $article->id)->delete();
-
+		//DB::table('category_article')->where('article_id', '=', $article->id)->delete();
+		$ca = DB::table('category_article')
+		->where('article_id', '=', $article->id)
+		->get();
+		//dd($cc);
+		/*foreach($data as $d) {
+			 dump($d);
+			 dump($ca->contains('category_id', $d));
+			// DB::table('category_article')->insert(
+			// 	['article_id' => $article->id, 'category_id' => $d]
+			// );
+		}*/
+		foreach($ca as $c) {
+			if (!in_array($c->category_id, $data)) {
+				dump($c->category_id);
+				DB::table('category_article')->where('category_id', '=', $c->category_id)->where('article_id', '=', $article->id)->delete();
+			} 
+		}
+		//dd($ca);
 		foreach($data as $d) {
 			// dump($d);
-			DB::table('category_article')->insert(
-				['article_id' => $article->id, 'category_id' => $d]
-			);
+			if (!$ca->contains('category_id', $d)) {
+				DB::table('category_article')->insert(
+					['article_id' => $article->id, 'category_id' => $d]
+				);
+			}
 		}
 
 		//dd($dataArticle);
