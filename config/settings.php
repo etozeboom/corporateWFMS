@@ -13,7 +13,7 @@
 		'paginate' => 40,
 		'recent_comments' => 3,
 		'articles_img' => [
-						'mini' => ['width'=>280,'height'=>280]
+						'mini' => ['width'=>300,'height'=>300]
 						],
 		
 		'image' => [

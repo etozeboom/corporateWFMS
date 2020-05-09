@@ -8,57 +8,59 @@
 			<label for="name_contact_us">
 				<span class="label">Название:</span>
 				<br />
-				<span class="sublabel">Заголовок материала</span><br />
+				<span class="sublabel">Название раздела</span><br />
 			</label>
 			<div class="input_prepend">
-			{!! Form::text('title',isset($category->title) ? $category->title  : old('title'), ['placeholder'=>'Введите название страницы']) !!}
+			{!! Form::text('title',isset($category->title) ? $category->title  : old('title'), ['placeholder'=>'Введите название раздела']) !!}
 			 </div>
 		 </li>
 		 
+		 
+		 <li class="text_field">
+			<label for="name_contact_us">
+				<span class="label">meta_title:</span>
+				<br />
+				<span class="sublabel">введите meta_title страницы</span><br />
+			</label>
+			<div class="input_prepend">
+			{!! Form::text('meta_title', isset($category->meta_title) ? $category->meta_title  : old('meta_title'), ['placeholder'=>'Введите title страницы']) !!}
+			 </div>
+		 </li>
+
 		 <li class="text_field">
 			<label for="name_contact_us">
 				<span class="label">Ключевые слова:</span>
 				<br />
-				<span class="sublabel">Ключевые слова</span><br />
+				<span class="sublabel">keywords</span><br />
 			</label>
 			<div class="input_prepend">
-			{!! Form::text('keywords', isset($category->keywords) ? $category->keywords  : old('keywords'), ['placeholder'=>'Введите название страницы']) !!}
+			{!! Form::text('keywords', isset($category->keywords) ? $category->keywords  : old('keywords'), ['placeholder'=>'Введите keywords']) !!}
 			 </div>
 		 </li>
 		 
-		 <li class="text_field">
-			<label for="name_contact_us">
-				<span class="label">Мета описание:</span>
-				<br />
-				<span class="sublabel">Мета описание</span><br />
-			</label>
-			<div class="input_prepend">
-			{!! Form::text('meta_desc', isset($category->meta_desc) ? $category->meta_desc  : old('meta_desc'), ['placeholder'=>'Введите название страницы']) !!}
-			 </div>
-		 </li>
+
 		 
 		 <li class="text_field">
 			<label for="name_contact_us">
 				<span class="label">Псевдоним:</span>
 				<br />
-				<span class="sublabel">введите псевдоним</span><br />
+				<span class="sublabel">url</span><br />
 			</label>
 			<div class="input_prepend">
 			{!! Form::text('alias', isset($category->alias) ? $category->alias  : old('alias'), ['placeholder'=>'Введите псевдоним страницы']) !!}
 			 </div>
 		 </li>
 
-		 <li class="text_field">
+		 <li class="text_field li_meta_desc">
 			<label for="name_contact_us">
-				<span class="label">meta_title:</span>
+				<span class="label">Мета описание:</span>
 				<br />
-				<span class="sublabel">введите meta_title</span><br />
+				<span class="sublabel">meta_desc</span><br />
 			</label>
 			<div class="input_prepend">
-			{!! Form::text('meta_title', isset($category->meta_title) ? $category->meta_title  : old('meta_title'), ['placeholder'=>'Введите meta_title']) !!}
+			{!! Form::text('meta_desc', isset($category->meta_desc) ? $category->meta_desc  : old('meta_desc'), ['placeholder'=>'Введите meta_desc страницы']) !!}
 			 </div>
 		 </li>
-
 		
 		<li class="textarea_field">
 			<label for="message_contact_us">

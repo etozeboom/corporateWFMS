@@ -340,6 +340,7 @@ body.no_js .classic #nav ul li ul.submenu li:hover > ul, body.no_js .classic #na
 .content .artcl_form fieldset {padding:0;}          
 .content .artcl_form ul { margin:0; list-style:none; }  
 .content .artcl_form li { width: 44.2%; float: left; margin: 0 5% 2% 0; }
+.content .artcl_form li.li_meta_desc { width: 100%; margin: 0 0% 2% 0; }
 .content .artcl_form li.on-left { float:left; }
 .content .artcl_form li.on-right { float:right; }
 .content .artcl_form li.full { clear:both; float: none; width: 95%; }

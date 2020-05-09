@@ -53,43 +53,29 @@ class ArticlesRepository extends Repository {
 		}
 		//dd($request);
 
-		if($request->hasFile('image')) {
+		/*if($request->hasFile('image')) {
 			$image = $request->file('image');
-			
 			if($image->isValid()) {
-				
 				//$str = str_random(8);
-				
 				$obj = new \stdClass;
-				
 				$obj->mini = 'img_mini.jpg';
 				$obj->path = 'img.jpg';
-				
 				$img = Image::make($image);
-				
 				if(!Storage::disk('pub')->exists('/skaz/'.$result->id)) {
-
 					Storage::disk('pub')->makeDirectory('/skaz/'.$result->id, 0775, true); //creates directory
-				
 				}
-
 				$img->fit(Config::get('settings.image')['width'],
 						Config::get('settings.image')['height'])->save(public_path().'/skaz/'.$result->id.'/'.$obj->path); 
 				
 				$img->fit(Config::get('settings.articles_img')['mini']['width'],
 						Config::get('settings.articles_img')['mini']['height'])->save(public_path().'/skaz/'.$result->id.'/'.$obj->mini); 
-						
-				
 				//$data['img'] = json_encode($obj);  
-				
 				// $this->model->fill($data); 
-				
 				// if($request->user()->articles()->save($this->model)) {
 				// 	return ['status' => 'Материал добавлен'];
-				// }                          
-				
+				// }                      
 			}
-		}
+		}*/
 
 		$this->model->fill($data); 
 				
@@ -124,6 +110,7 @@ class ArticlesRepository extends Repository {
 		$dataArticle['description'] = $data['description'];
 		$dataArticle['text'] = $data['text'];
 		$dataArticle['category_id'] = $data['category_id'];
+		$dataArticle['title_meta'] = $data['title_meta'];
 
 		if ( array_key_exists('image', $data)) {
 			$dataArticle['image'] = $data['image'];
@@ -131,6 +118,7 @@ class ArticlesRepository extends Repository {
 		}
 
 		unset($data['title']);
+		unset($data['title_meta']);
 		unset($data['keywords']);
 		unset($data['meta_desc']);
 		unset($data['author']);
@@ -204,23 +192,19 @@ class ArticlesRepository extends Repository {
 				$obj = new \stdClass;
 				
 				$obj->mini = 'img_mini.jpg';
-				$obj->path = 'img.jpg';
+				//$obj->path = 'img.jpg';
 				
 				$img = Image::make($image);
 				
 				if(!Storage::disk('pub')->exists('/skaz/'.$result->id)) {
-
 					Storage::disk('pub')->makeDirectory('/skaz/'.$result->id, 0775, true); //creates directory
-				
 				}
-
-				$img->fit(Config::get('settings.image')['width'],
-						Config::get('settings.image')['height'])->save(public_path().'/skaz/'.$result->id.'/'.$obj->path); 
+				// $img->fit(Config::get('settings.image')['width'],
+				// 		Config::get('settings.image')['height'])->save(public_path().'/skaz/'.$result->id.'/'.$obj->path); 
 				
 				$img->fit(Config::get('settings.articles_img')['mini']['width'],
 						Config::get('settings.articles_img')['mini']['height'])->save(public_path().'/skaz/'.$result->id.'/'.$obj->mini); 
 						
-				
 				//$data['img'] = json_encode($obj);  
 				
 				// $this->model->fill($data); 

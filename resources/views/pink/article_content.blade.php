@@ -8,7 +8,7 @@
 	@if($article)
 	
 		<div class="post_img">
-			<img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img.jpg" />
+			<img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg" />
 		</div>
 
 		<div class="">

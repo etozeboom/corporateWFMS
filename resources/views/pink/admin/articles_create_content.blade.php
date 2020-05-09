@@ -22,7 +22,7 @@
 				<span class="sublabel">title_meta</span><br />
 			</label>
 			<div class="input_prepend">
-			{!! Form::text('keywords', isset($article->title_meta) ? $article->title_meta  : old('title_meta'), ['placeholder'=>'Введите title']) !!}
+			{!! Form::text('title_meta', isset($article->title_meta) ? $article->title_meta  : old('title_meta'), ['placeholder'=>'Введите title']) !!}
 			 </div>
 		 </li>
 
@@ -37,16 +37,6 @@
 			 </div>
 		 </li>
 		 
-		 <li class="text_field">
-			<label for="name_contact_us">
-				<span class="label">Мета описание:</span>
-				<br />
-				<span class="sublabel">meta_desc</span><br />
-			</label>
-			<div class="input_prepend">
-			{!! Form::text('meta_desc', isset($article->meta_desc) ? $article->meta_desc  : old('meta_desc'), ['placeholder'=>'Введите название страницы']) !!}
-			 </div>
-		 </li>
 		 
 		 <li class="text_field">
 			<label for="name_contact_us">
@@ -78,6 +68,17 @@
 			</label>
 			<div class="input_prepend">
 			{!! Form::text('reading_time', isset($article->reading_time) ? $article->reading_time  : old('reading_time'), ['placeholder'=>'Введите время чтения']) !!}
+			 </div>
+		 </li>
+		 
+		 <li class="text_field li_meta_desc">
+			<label for="name_contact_us">
+				<span class="label">Мета описание:</span>
+				<br />
+				<span class="sublabel">meta_desc</span><br />
+			</label>
+			<div class="input_prepend">
+			{!! Form::text('meta_desc', isset($article->meta_desc) ? $article->meta_desc  : old('meta_desc'), ['placeholder'=>'Введите название страницы']) !!}
 			 </div>
 		 </li>
 		 
