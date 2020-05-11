@@ -111,6 +111,7 @@ class ArticlesRepository extends Repository {
 		$dataArticle['text'] = $data['text'];
 		$dataArticle['category_id'] = $data['category_id'];
 		$dataArticle['title_meta'] = $data['title_meta'];
+		$dataArticle['img_plaha'] = $data['img_plaha'];
 
 		if ( array_key_exists('image', $data)) {
 			$dataArticle['image'] = $data['image'];
@@ -127,6 +128,7 @@ class ArticlesRepository extends Repository {
 		unset($data['text']);
 		unset($data['alias']);
 		unset($data['category_id']);
+		unset($data['img_plaha']);
 		//dd($data);
 
 		//DB::table('category_article')->where('article_id', '=', $article->id)->delete();

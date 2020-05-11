@@ -6,10 +6,11 @@
 	@endif
 
 	@if($article)
-	
-		<div class="post_img">
-			<img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg" />
-		</div>
+		@if($article->img_plaha > 0)
+			<div class="post_img">
+				<img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg" />
+			</div>
+		@endif
 
 		<div class="">
 			<h1 class="post_title">{{ $article->title }}</h1>
@@ -26,11 +27,13 @@
 		<div class="randSkazkiTitle">Читать ещё</div>
 		<div class="randSkazki">
 			@foreach($randArticles as $randArticle)
-				<div class="randSkazka" style="background: url({{route('home')}}/public/skaz/{{$randArticle->id}}/img_mini.jpg) no-repeat;">
-					<div class="plahka">
-						<a href="{{ route('skazki.show',['alias'=>$randArticle->alias]) }}">{{ $randArticle->title }}</a>
+				<a href="{{ route('skazki.show',['alias'=>$randArticle->alias]) }}" class="randSkazka" style="background: url({{route('home')}}/public/skaz/{{$randArticle->id}}/img_mini.jpg) no-repeat;">
+					<div class="plahka {{$randArticle->img_plaha == 1 ? 'dark_p' : 'white_p'}}">
+						<div class="plahka_title">
+						{{ $randArticle->title }}
+						</div>
 					</div>
-				</div>
+				</a>
 			@endforeach	
 		</div>
 	@endif

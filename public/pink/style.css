@@ -36,6 +36,7 @@ Light grey: #dedede
 Grey:       #939191
 Orange:     #ac670c
 -------------------- */
+*{box-sizing: border-box}
 @font-face {
     font-family: "MontserratRegular";  
     src: url("../pink/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype"); 
@@ -218,7 +219,7 @@ a, a.text-color:hover {
 }
 
 #header .menu {
-    height: 1.75rem;
+    /* height: 1.75rem; */
     padding: 1.5rem 0 0;
     position: relative;
 }
@@ -609,9 +610,9 @@ td img {
 }
 
 .sidebar_home .block_cats {
-    width: 70%;
+    width: 100%;
     display: flex;
-    margin-left: 30%;
+    justify-content: flex-end;
     flex-wrap: wrap;
 }
 
@@ -637,8 +638,11 @@ td img {
 }
 
 .randSkazka {
-    padding: 8rem 0;
-    width: 31%;
+    padding: 0;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
 }
 
 .randSkazkiTitle {
@@ -653,6 +657,23 @@ td img {
 .randSkazka .plahka {
     padding: 1rem;
     background: rgba(0, 0, 0, 0.075);
+    width: 100%;
+}
+
+.randSkazka .white_p {
+    background: linear-gradient(to top, rgb(253, 253, 253), rgba(171, 171, 171, 0.3));
+}
+
+.randSkazka .white_p .plahka_title{
+    color: #030303;
+}
+
+.randSkazka .dark_p {
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(86, 86, 86, 0.3));
+}
+
+.randSkazka .dark_p .plahka_title{
+    color: #E0E0E0;
 }
 
 .vozrast {
@@ -666,9 +687,30 @@ td img {
 
 .checkCat .checkText {
     width: 50%;
-    border-bottom: 1px solid #000;
+    /* border-bottom: 1px solid #000; */
 }
 .content .artcl_form li.text_field .checkCat input {
     width: 10%;
     border-bottom: 1px solid #000;
+}
+
+.content_skazka {
+    margin-bottom: 2rem;
+}
+
+.breadcrumb {
+    margin-bottom: 1rem;
+}
+
+.check_div {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #000;
+}
+
+.checkTitle {
+    width: 100%;
+    border-bottom: 3px solid #f00;
+    text-align: center;
+    margin-top: 2rem;
 }

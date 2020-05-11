@@ -153,8 +153,20 @@ class ArticlesController extends AdminController
 			}
     }
     
-    $multiCategories = Category::select(['title','alias','parent_id','id'])->where('id', '<>', config('settings.zaid'))->where('id', '<>', config('settings.zid'))->where('id', '<>', config('settings.ssid'))->where('id', '<>', config('settings.zvsid'))->where('id', '<>', config('settings.vozrastid'))->where('id', '<>', 1)->where('id', '<>', config('settings.raid'))->get();
-		
+   // $multiCategories = Category::select(['title','alias','parent_id','id'])
+    $multiCategories = Category::all()->groupBy('parent_id');
+   // ->groupBy('parent_id')
+   /* ->where('id', '<>', config('settings.zaid'))
+    ->where('id', '<>', config('settings.zid'))
+    ->where('id', '<>', config('settings.ssid'))
+    ->where('id', '<>', config('settings.zvsid'))
+    ->where('id', '<>', config('settings.vozrastid'))
+    ->where('id', '<>', 1)
+    ->where('id', '<>', config('settings.raid'))*/
+    //->get();
+
+    $listsCat = array(config('settings.zaid'),config('settings.zid'),config('settings.ssid'),config('settings.zvsid'),config('settings.vozrastid'),config('settings.raid'),1);
+		//dd( $listsCat);
     $multilists = array();
     foreach($article->categories as $category) {
       $multilists[$category->id] = true;
@@ -163,8 +175,9 @@ class ArticlesController extends AdminController
     //dd($article->categories);
 		//dd($categories);
 		//dd($lists);
-		//dd($article);
-		$this->content = view(config('settings.theme').'.admin.articles_create_content')->with(['multiCategories' =>$multiCategories, 'categories' =>$lists, 'article' => $article, 'listsMultiCat' => $multilists, 'lists' => $lists])->render();
+    //dd($article);
+    //dd($multiCategories);
+		$this->content = view(config('settings.theme').'.admin.articles_create_content')->with(['multiCategories' =>$multiCategories, 'categories' =>$lists, 'article' => $article, 'listsMultiCat' => $multilists, 'lists' => $lists, 'listsCat' => $listsCat])->render();
 		
 		return $this->renderOutput();
 		

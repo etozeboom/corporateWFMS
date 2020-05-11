@@ -115,6 +115,9 @@
 			<div class="input_prepend">
 				{!! Form::file('image', ['class' => 'filestyle','data-buttonText'=>'Выберите изображение','data-buttonName'=>"btn-primary",'data-placeholder'=>"Файл"]) !!}
 			 </div>
+			<div class="input_prepend">
+				{!! Form::select('img_plaha', [0 => 'нет картинки', 1 => 'белые буквы на темном фоне', 2 => 'черные буквы на светлом фоне'],isset($article->img_plaha) ? $article->img_plaha  : 0) !!}
+			 </div>
 			 
 		</li>
 		@endif
@@ -139,9 +142,36 @@
 				<span class="sublabel">Категория материала</span><br />
 			</label>
 			<div class="input_prepend checkCat">
-				@foreach($multiCategories as $category)
-					<div class="checkText">{{$category->title}}</div>	{!! Form::checkbox($i++, $category->id, array_key_exists($category->id, $listsMultiCat)) !!}
+				
+				<div class="checkTitle">Сказки</div>
+				@foreach($multiCategories[1] as $category)
+					<div class="check_div"><div class="checkText">{{$category->title}}</div> {!! Form::checkbox($i++, $category->id, array_key_exists($category->id, $listsMultiCat)) !!}</div>
 				@endforeach
+				<div class="checkTitle">Сборник сказок</div>
+				@foreach($multiCategories[config('settings.ssid')] as $category)
+					<div class="check_div"><div class="checkText">{{$category->title}}</div> {!! Form::checkbox($i++, $category->id, array_key_exists($category->id, $listsMultiCat)) !!}</div>
+				@endforeach
+				<div class="checkTitle">Зарубежные авторы</div>
+				@foreach($multiCategories[config('settings.zaid')] as $category)
+					<div class="check_div"><div class="checkText">{{$category->title}}</div> {!! Form::checkbox($i++, $category->id, array_key_exists($category->id, $listsMultiCat)) !!}</div>
+				@endforeach
+				<div class="checkTitle">Русские авторы</div>
+				@foreach($multiCategories[config('settings.raid')] as $category)
+					<div class="check_div"><div class="checkText">{{$category->title}}</div> {!! Form::checkbox($i++, $category->id, array_key_exists($category->id, $listsMultiCat)) !!}</div>
+				@endforeach
+				<div class="checkTitle">Сказки о животных</div>
+				@foreach($multiCategories[config('settings.zid')] as $category)
+					<div class="check_div"><div class="checkText">{{$category->title}}</div> {!! Form::checkbox($i++, $category->id, array_key_exists($category->id, $listsMultiCat)) !!}</div>
+				@endforeach
+				<div class="checkTitle">Сказки по возрасту</div>
+				@foreach($multiCategories[config('settings.vozrastid')] as $category)
+					<div class="check_div"><div class="checkText">{{$category->title}}</div> {!! Form::checkbox($i++, $category->id, array_key_exists($category->id, $listsMultiCat)) !!}</div>
+				@endforeach
+				<div class="checkTitle">Зимние волшебные сказки</div>
+				@foreach($multiCategories[config('settings.zvsid')] as $category)
+					<div class="check_div"><div class="checkText">{{$category->title}}</div> {!! Form::checkbox($i++, $category->id, array_key_exists($category->id, $listsMultiCat)) !!}</div>
+				@endforeach
+
 			 </div>
 
 		</li>	 

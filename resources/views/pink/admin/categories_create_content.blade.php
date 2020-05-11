@@ -82,7 +82,7 @@
 			<div class="msg_error"></div>
 		</li>
 		
-		@if(!isset($category->id) || (isset($category->id) && $category->id != 5 && $category->id != 8 && $category->id != 1 && $category->id != 11 && $category->id != 12))
+		@if(!isset($category->id) || (isset($category->id) && $category->id != config('settings.ssid') && $category->id != config('settings.zaid') && $category->id != config('settings.raid') && $category->id != config('settings.zid') && $category->id != config('settings.vozrastid') && $category->id != config('settings.zvsid')))
 		<li class="text_field">
 			<label for="name_contact_us">
 				<span class="label">Категория:</span>

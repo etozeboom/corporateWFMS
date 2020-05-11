@@ -25,6 +25,7 @@ class CreateArticlesTable extends Migration
             $table->string('keywords');
             $table->string('meta_desc');
             $table->integer('view_count')->default(0);
+            $table->tinyInteger('img_plaha')->unsigned()->default(0);
         });
     }
 

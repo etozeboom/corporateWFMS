@@ -90,7 +90,7 @@ class CatSkazkiController extends AdminController
     $lists[config('settings.raid')]="Русские авторы";
     $lists[config('settings.zid')]="О животных";
     $lists[config('settings.ssid')]="Сборник сказок";
-    $lists[config('settings.zzvid')]="Зимние волшебные";
+    $lists[config('settings.zvsid')]="Зимние волшебные";
     $lists[config('settings.vozrastid')]="возраст";
 		$this->content = view(config('settings.theme').'.admin.categories_create_content')->with('categories', $lists)->render();
 		
@@ -161,7 +161,7 @@ class CatSkazkiController extends AdminController
     $lists[config('settings.raid')]="Русские авторы";
     $lists[config('settings.zid')]="О животных";
     $lists[config('settings.ssid')]="Сборник сказок";
-    $lists[config('settings.zzvid')]="Зимние волшебные";
+    $lists[config('settings.zvsid')]="Зимние волшебные";
     $lists[config('settings.vozrastid')]="возраст";
 
 		$this->title = 'Реадактирование материала - '. $categoryy->title;
