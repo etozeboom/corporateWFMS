@@ -1,9 +1,12 @@
-<div id="content_skazka" class="content content_skazka">
+<div  class="content content_skazka">
 	@if($article)
 		<div class="breadcrumb">
 			<a href="{{ route('skazki.index') }}">Сказки</a> -><a href="{{ route('skazki.show',['alias'=>$cat->alias]) }}">{{$cat->title}}</a>
 		</div>
 	@endif
+	
+	<button id="increase">increase +</button>
+	<button id="decrease">decrease -</button>
 
 	@if($article)
 		@if($article->img_plaha > 0)
@@ -16,7 +19,7 @@
 			<h1 class="post_title">{{ $article->title }}</h1>
 		</div>
 
-		<div class="the_content">
+		<div id="content_skazka" class="font_siz3">
 			<p>{!! $article->text !!}</p>
 		</div>
 			
@@ -38,3 +41,4 @@
 		</div>
 	@endif
 </div>
+<a id="buttonTop"></a>

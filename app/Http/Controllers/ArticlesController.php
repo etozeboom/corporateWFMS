@@ -149,7 +149,7 @@ class ArticlesController extends SiteController
 		$ssid = Category::where('parent_id', '=', config('settings.ssid'))->get();
 		$zvsid = Category::where('parent_id', '=', config('settings.zvsid'))->get();
 		$vozrast = Category::where('parent_id', '=', config('settings.vozrastid'))->get();
-        //dd($categories);
+       // dd($categories);
         $this->contentLeftBar = view(config('settings.theme').'.articlesBar')->with(['categories' => $categories,'zar' => $zar,'rus' => $rus, 'ziv' => $ziv, 'vozrast' => $vozrast, 'ssid' => $ssid, 'zvsid' => $zvsid]);
 		
 		

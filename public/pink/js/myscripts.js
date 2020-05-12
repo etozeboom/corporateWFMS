@@ -103,5 +103,36 @@ jQuery(document).ready(function($) {
 		}
 	);
 
+	var btn = $('#buttonTop');
 
+	$(window).scroll(function() {
+	  if ($(window).scrollTop() > 300) {
+		btn.addClass('show');
+	  } else {
+		btn.removeClass('show');
+	  }
+	});
+	
+	btn.on('click', function(e) {
+	  e.preventDefault();
+	  $('html, body').animate({scrollTop:0}, '300');
+	});
+
+	var fontSize = 3;
+	$('#increase, #decrease').on('click', function() { 
+		
+		var btn = $(this);
+		if (btn[0].id === "increase") { 
+			if (fontSize < 6) {
+				fontSize++;
+			}
+		} else {
+			if (fontSize > 1) {
+				fontSize--; 
+			}
+		}
+		//console.log('iiiiiiiiiiii ', fontSize);
+		$('#content_skazka').attr('class', 'fontSize'+fontSize);
+		
+	  });
 });

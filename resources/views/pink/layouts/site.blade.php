@@ -85,8 +85,8 @@
                         </div>
                         <div id="sidebar_header" class="">
                             <div class="yit_text_quote">
-                                <blockquote class="text_quote_quote">&#8220;The caterpillar does all the work but the butterfly gets all the publicity.&#8221;</blockquote>
-                                <cite class="text_quote_author">George Carlin</cite>
+                                <blockquote class="text_quote_quote">&#8220;Что за прелесть эти сказки!&#8221;</blockquote>
+                                <cite class="text_quote_author">А.С. Пушкин</cite>
                             </div>
                         </div>
                     </div>

@@ -6,7 +6,8 @@
 		@foreach($categories as $category)
 		
 		@if($category->id != config('settings.vozrastid'))
-			<li class="p_menu {{ ($category->id == config('settings.ssid') || $category->id == config('settings.zaid') || $category->id == config('settings.raid') || $category->id == config('settings.zid') || $category->id == config('settings.zvsid')) ? 'sub' : ''}}"><a href="{{ route('skazkiCat',['cat_alias' => $category->alias]) }}">{{ $category->title }} </a>
+			<li class="p_menu {{ ($category->id == config('settings.ssid') || $category->id == config('settings.zaid') || $category->id == config('settings.raid') || $category->id == config('settings.zid') || $category->id == config('settings.zvsid')) ? 'sub' : ''}}">
+				<a href="{{ route('skazkiCat',['cat_alias' => $category->alias]) }}">{{ $category->title }} </a>
 				@if($category->id == config('settings.ssid'))
 					<ul class="v_menu">
 					@foreach($ssid as $z)

@@ -30,7 +30,7 @@ Route::resource('comment','CommentController',['only'=>['store']]);
 
 Route::get('obratnaja-svjaz',['uses'=>'PagesController@index','as'=>'obratnajaSvjaz']);
 Route::get('holders',['uses'=>'PagesController@index','as'=>'holders']);
-Route::get('policy',['uses'=>'PagesController@index','as'=>'policy']);
+//Route::get('policy',['uses'=>'PagesController@index','as'=>'policy']);
 
 // Route::get('greeting', function () {
 //     return view('login');

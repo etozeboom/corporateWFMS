@@ -714,3 +714,97 @@ td img {
     text-align: center;
     margin-top: 2rem;
 }
+
+#buttonTop {
+    display: inline-block;
+    background-color: #f2f2f2;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, 
+        opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+#buttonTop::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+}
+#buttonTop:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+#buttonTop:active {
+    background-color: #555;
+}
+#buttonTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#content_skazka h3, #content_skazka h3 a, #content_skazka h2, #content_skazka h2 a, #content_skazka h1, #content_skazka h1 a {
+    font-family: "MontserratMedium"; 
+}
+#content_skazka p {
+    font-family: 'MontserratRegular', 'MontserratRegular', 'Verdana', 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #000000;
+}
+
+
+#content_skazka.fontSize1 p {
+    font-size: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+ #content_skazka.fontSize2 p, #content_skazka.fontSize1 h3, #content_skazka.fontSize1 h3 a {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem; 
+}
+
+#content_skazka.fontSize2 h3, #content_skazka.fontSize2 h3 a, #content_skazka.fontSize1 h2, #content_skazka.fontSize1 h2 a {
+    font-size: 1rem;
+    margin-bottom: 1rem; 
+}
+
+/**************************/
+#content_skazka h3, #content_skazka h3 a, #content_skazka.fontSize4 p, #content_skazka.fontSize1 h1, #content_skazka.fontSize1 h1 a, #content_skazka.fontSize2 h2, #content_skazka.fontSize2 h2 a {
+    font-size: 1.35rem;
+    margin-bottom: 1.8rem;
+}
+
+#content_skazka h2, #content_skazka h2 a, #content_skazka.fontSize5 p, #content_skazka.fontSize4 h3, #content_skazka.fontSize4 h3 a, #content_skazka.fontSize2 h1, #content_skazka.fontSize2 h1 a {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+}
+
+#content_skazka h1, #content_skazka h1 a, #content_skazka.fontSize6 p, #content_skazka.fontSize5 h3, #content_skazka.fontSize5 h3 a, #content_skazka.fontSize4 h2, #content_skazka.fontSize4 h2 a {
+    font-size: 2rem;
+    margin-bottom: 3rem; 
+}
+/**************************/
+#content_skazka.fontSize6 h3, #content_skazka.fontSize6 h3 a, #content_skazka.fontSize5 h2, #content_skazka.fontSize5 h2 a, #content_skazka.fontSize4 h1, #content_skazka.fontSize4 h1 a {
+    font-size: 2.35rem;
+    margin-bottom: 4rem;
+}
+
+#content_skazka.fontSize6 h2, #content_skazka.fontSize6 h2 a, #content_skazka.fontSize5 h1, #content_skazka.fontSize5 h1 a {
+    font-size: 2.7rem;
+    margin-bottom: 5rem;
+}
+
+#content_skazka.fontSize6 h1, #content_skazka.fontSize6 h1 a, #content_skazka.fontSize6 p {
+    font-size: 3rem;
+    margin-bottom: 6rem; 
+}
+
