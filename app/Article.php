@@ -12,7 +12,7 @@ class Article extends Model
 	
 	
 	public function categories() {
-		return $this->belongsToMany('App\Category','category_article');
+		return $this->belongsToMany('App\Category','category_article', 'article_id', 'category_id');
 	}
 	
 	public function comments()
@@ -21,3 +21,5 @@ class Article extends Model
     }	
 	
 }
+//category_id
+//article_id

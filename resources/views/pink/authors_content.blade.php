@@ -23,7 +23,7 @@
 					@foreach($authors as $author)
 					<tr>
 						<td class="align_left"><a href="{{ route('skazki.show',['alias'=>$author->alias]) }}">{{ $author->title }}</a></td>
-						<td>{{$author->articles_count}}</td>
+						<td>{{count($author->articles)}}</td>
 						</tr>	
 					@endforeach	
 					

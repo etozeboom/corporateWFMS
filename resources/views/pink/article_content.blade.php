@@ -9,6 +9,13 @@
 	<button id="decrease">decrease -</button>
 
 	@if($article)
+
+		<div class="breadcrumb">
+		@foreach($article->categories as $category)
+			<a href="{{ route('skazki.show',['alias'=>$category->alias]) }}">{{$category->title}}</a>
+		@endforeach
+		</div>
+
 		@if($article->img_plaha > 0)
 			<div class="post_img">
 				<img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg" />

@@ -58,9 +58,15 @@ class ArticlesController extends SiteController
 		//DB::raw('categories.title, categories.alias , count(articles.id)')
 		if ($cat->id == config('settings.zaid') || $cat->id == config('settings.raid') || $cat->id == config('settings.zid') || $cat->id == config('settings.ssid') || $cat->id == config('settings.zvsid')) {
 			//$authors = Category::where('parent_id', '=', $cat->id)->select('title','alias')->get();
-			$authors = Category::where('parent_id', '=', $cat->id)->leftJoin('articles', 'categories.id', '=', 'articles.category_id')->select(DB::raw('categories.title, categories.alias , count(articles.id) as articles_count'))->where('categories.parent_id', '=', $cat->id)->groupBy('categories.id')->get();
-			//dd($authors);
-			$content = view(config('settings.theme').'.authors_content')->with(['cat' => $cat, 'authors' => $authors])->render();
+			//$authors = Category::where('parent_id', '=', $cat->id)->leftJoin('articles', 'categories.id', '=', 'articles.category_id')->select(DB::raw('categories.title, categories.alias , count(articles.id) as articles_count'))->where('categories.parent_id', '=', $cat->id)->groupBy('categories.id')->get();
+			//dd($cat->articles);
+			//$authors = Category::where('parent_id', '=', $cat->id)->leftJoin('articles', 'categories.id', '=', 'articles.category_id')->select(DB::raw('categories.title, categories.alias , count(articles.id) as articles_count'))->where('categories.parent_id', '=', $cat->id)->groupBy('categories.id')->get();
+			$categories = Category::where('parent_id', '=', $cat->id)->get();
+			/*foreach($categories as $category) {
+				dump($category->articles);
+			}
+			dd($categories);*/
+			$content = view(config('settings.theme').'.authors_content')->with(['cat' => $cat, 'authors' => $categories])->render();
 		} else {
 			$content = view(config('settings.theme').'.articles_content')->with(['cat' => $cat, 'articles' => $articles])->render();
 		}	
@@ -134,8 +140,10 @@ class ArticlesController extends SiteController
 		}
 		$cat = Category::select('title', 'alias')->where('id',$article->category_id)->first();
 		//dd($cat);
+		//dd($cat->articles);
 		$randArticles = $this->a_rep->getRandom(3, $article->id);
 		//dd($randArticles);
+		//dd($article->categories);
 		$content = view(config('settings.theme').'.article_content')->with(['cat' => $cat,'article' => $article,'randArticles' => $randArticles])->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		

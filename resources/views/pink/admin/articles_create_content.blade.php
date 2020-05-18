@@ -102,16 +102,17 @@
 			</div>
 			<div class="msg_error"></div>
 		</li>
-		@if(isset($article->id))
+
 		<li class="text_field">
 			<label for="name_contact_us">
 				<span class="label">Изображение:</span>
 
-					<!-- <img alt="" src="{{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg" style="max-width: 80px" /> -->
 				<br />
 
 				<span class="sublabel">Изображение материала</span><br />
 			</label>
+			
+		@if(isset($article->id))
 			<div class="randSkazki">
 				<div  class="randSkazka" style="background: url({{route('home')}}/public/skaz/{{$article->id}}/img_mini.jpg) no-repeat;">
 					<div class="plahka dark_p">
@@ -128,6 +129,7 @@
 					</div>
 				</div>
 			</div>
+		@endif
 			<div class="input_prepend">
 				{!! Form::file('image', ['class' => 'filestyle','data-buttonText'=>'Выберите изображение','data-buttonName'=>"btn-primary",'data-placeholder'=>"Файл"]) !!}
 			 </div>
@@ -136,7 +138,6 @@
 			 </div>
 			 
 		</li>
-		@endif
 
 		<li class="text_field">
 			<label for="name_contact_us">

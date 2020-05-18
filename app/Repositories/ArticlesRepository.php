@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Article;
+use App\Category;
 use Gate;
 use Illuminate\Support\Facades\Storage;
 
@@ -51,35 +52,89 @@ class ArticlesRepository extends Repository {
 			
 			return ['error' => 'Данный псевдоним уже успользуется'];
 		}
+
+		$dataArticle = array();
+		$dataArticle['title'] = $data['title'];
+		$dataArticle['alias'] = $data['alias'];
+		$dataArticle['keywords'] = $data['keywords'];
+		$dataArticle['meta_desc'] = $data['meta_desc'];
+		$dataArticle['author'] = $data['author'];
+		$dataArticle['reading_time'] = $data['reading_time'];
+		$dataArticle['description'] = $data['description'];
+		$dataArticle['text'] = $data['text'];
+		$dataArticle['category_id'] = $data['category_id'];
+		$dataArticle['title_meta'] = $data['title_meta'];
+		$dataArticle['img_plaha'] = $data['img_plaha'];
+
+		if ( array_key_exists('image', $data)) {
+			$dataArticle['image'] = $data['image'];
+			unset($data['image']);
+		}
+
+		unset($data['title']);
+		unset($data['title_meta']);
+		unset($data['keywords']);
+		unset($data['meta_desc']);
+		unset($data['author']);
+		unset($data['reading_time']);
+		unset($data['description']);
+		unset($data['text']);
+		unset($data['alias']);
+		unset($data['category_id']);
+		unset($data['img_plaha']);
+
+		
 		//dd($request);
 
-		/*if($request->hasFile('image')) {
-			$image = $request->file('image');
-			if($image->isValid()) {
-				//$str = str_random(8);
-				$obj = new \stdClass;
-				$obj->mini = 'img_mini.jpg';
-				$obj->path = 'img.jpg';
-				$img = Image::make($image);
-				if(!Storage::disk('pub')->exists('/skaz/'.$result->id)) {
-					Storage::disk('pub')->makeDirectory('/skaz/'.$result->id, 0775, true); //creates directory
-				}
-				$img->fit(Config::get('settings.image')['width'],
-						Config::get('settings.image')['height'])->save(public_path().'/skaz/'.$result->id.'/'.$obj->path); 
+		$this->model->fill($dataArticle); 
 				
-				$img->fit(Config::get('settings.articles_img')['mini']['width'],
-						Config::get('settings.articles_img')['mini']['height'])->save(public_path().'/skaz/'.$result->id.'/'.$obj->mini); 
-				//$data['img'] = json_encode($obj);  
-				// $this->model->fill($data); 
-				// if($request->user()->articles()->save($this->model)) {
-				// 	return ['status' => 'Материал добавлен'];
-				// }                      
-			}
-		}*/
+		if($this->model->fill($dataArticle)->save()) {
 
-		$this->model->fill($data); 
+
+////////////////////////////// cat
+			$ca = DB::table('category_article')
+			->where('article_id', '=', $this->model->fill($dataArticle)->id)
+			->get();
+
+			foreach($ca as $c) {
+				if (!in_array($c->category_id, $data)) {
+					dump($c->category_id);
+					DB::table('category_article')->where('category_id', '=', $c->category_id)->where('article_id', '=', $this->model->fill($dataArticle)->id)->delete();
+				} 
+			}
+			//dd($ca);
+			foreach($data as $d) {
+				// dump($d);
+				if (!$ca->contains('category_id', $d)) {
+					DB::table('category_article')->insert(
+						['article_id' => $this->model->fill($dataArticle)->id, 'category_id' => $d]
+					);
+				}
+			}
+
+//////////////////////////img
+			if($request->hasFile('image')) {
+				$image = $request->file('image');
 				
-		if($this->model->fill($data)->save()) {
+				if($image->isValid()) {
+					
+					$obj = new \stdClass;
+					
+					$obj->mini = 'img_mini.jpg';
+					
+					$img = Image::make($image);
+					
+					if(!Storage::disk('pub')->exists('/skaz/'.$this->model->fill($dataArticle)->id)) {
+						Storage::disk('pub')->makeDirectory('/skaz/'.$this->model->fill($dataArticle)->id, 0775, true); //creates directory
+					}
+					
+					$img->fit(Config::get('settings.articles_img')['mini']['width'],
+							Config::get('settings.articles_img')['mini']['height'])->save(public_path().'/skaz/'.$this->model->fill($dataArticle)->id.'/'.$obj->mini);                   
+					
+				}
+				
+			}
+
 			return ['status' => 'Материал добавлен'];
 		}   
 		
@@ -231,11 +286,11 @@ class ArticlesRepository extends Repository {
 	
 	
 	public function deleteArticle($article) {
-		// dd($article);
+		 //dd($article);
 		// if(Gate::denies('destroy', $article)) {
 		// 	abort(403);
 		// }
-		
+		DB::table('category_article')->where('article_id', '=', $article->id)->delete();
 		if($article->delete()) {
 			return ['status' => 'Материал удален'];
 		}

@@ -86,8 +86,15 @@ class ArticlesController extends AdminController
 				$lists[$categories->where('id',$category->parent_id)->first()->title][$category->id] = $category->title;    
 			}
 		}
-		
-		$this->content = view(config('settings.theme').'.admin.articles_create_content')->with('categories', $lists)->render();
+    
+    
+    $multiCategories = Category::all()->groupBy('parent_id');
+    $multilists = array();
+ 
+     $listsCat = array(config('settings.zaid'),config('settings.zid'),config('settings.ssid'),config('settings.zvsid'),config('settings.vozrastid'),config('settings.raid'),1);
+
+
+		$this->content = view(config('settings.theme').'.admin.articles_create_content')->with(['categories' =>$lists, 'multiCategories' =>$multiCategories, 'listsCat' => $listsCat, 'listsMultiCat' => $multilists])->render();
 		
 		return $this->renderOutput();
     }
